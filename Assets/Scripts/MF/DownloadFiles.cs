@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-
 public class HotFile {
     public double size;
     public string url;
@@ -134,7 +133,9 @@ public class DownloadFiles : MonoBehaviour {
             currentDownloadSize = 0;
             for (int i = 0; i < calcProgressList.Count; i++) {
                 calcProgress = calcProgressList[i];
-                currentDownloadSize += calcProgress.www.progress * calcProgress.hotFile.size;
+                if (string.IsNullOrEmpty(calcProgress.www.error)) {
+                    currentDownloadSize += calcProgress.www.progress * calcProgress.hotFile.size;
+                }
             }
         }
     }
