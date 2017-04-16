@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Security.Cryptography;
 using System.Text;
 using UnityEngine;
@@ -78,5 +79,70 @@ public class Utils {
         byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
 
         return UTF8Encoding.UTF8.GetString(resultArray);
+    }
+
+    #region PlayerPrefs
+    static string GetKey(string key) {
+        return AppConfig.APP_NAME + "_" + key;
+    }
+
+    public static bool HasKey(string key) {
+        string name = GetKey(key);
+        return PlayerPrefs.HasKey(name);
+    }
+
+    public static int GetInt(string key, int value) {
+        string name = GetKey(key);
+        if (PlayerPrefs.HasKey(name))
+            return PlayerPrefs.GetInt(name);
+        else
+            return value;
+    }
+
+    public static string GetString(string key, string value) {
+        string name = GetKey(key);
+        if (PlayerPrefs.HasKey(name)) {
+            string str = PlayerPrefs.GetString(name);
+            str = WWW.UnEscapeURL(str);
+            return str;
+        } else {
+            return value;
+        }
+    }
+
+    public static void SetInt(string key, int value) {
+        string name = GetKey(key);
+        PlayerPrefs.SetInt(name, value);
+    }
+
+    public static void SetString(string key, string value) {
+        string name = GetKey(key);
+        value = WWW.EscapeURL(value);//用url编码,否则无法识别中文
+        PlayerPrefs.SetString(name, value);
+    }
+
+    public static void RemoveKey(string key) {
+        string name = GetKey(key);
+        PlayerPrefs.DeleteKey(name);
+    }
+    #endregion
+
+    public static bool UncompressMemory(byte[] bytes) {
+        using (var ms = new MemoryStream(bytes)) {
+            using (var ar = SharpCompress.Archive.ArchiveFactory.Open(ms)) {
+                foreach (var item in ar.Entries) {
+                    if (!item.IsDirectory) {
+                        string file = AppConfig.HotAssetsPath + item.FilePath;
+                        string path = Path.GetDirectoryName(file);
+                        if (!Directory.Exists(path)) Directory.CreateDirectory(path);
+
+                        using (FileStream fs = new FileStream(file, FileMode.Create)) {
+                            item.WriteTo(fs);
+                        }
+                    }
+                }
+            }
+        }
+        return true;
     }
 }

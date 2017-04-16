@@ -2,6 +2,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Net;
+using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -49,17 +52,10 @@ public class Main : MonoBehaviour {
     //        print("结束时间" + DateTime.Now.ToLocalTime());
     //    }
     //}
-    enum CurrentBtnSattusEnum {
-        none = 0,
-        replaceApp = 1,
-        startUpdate = 2,
-        startPlay = 3,
-        startRetry = 4,
-    }
+
 
     string hotUpdateUrl = string.Empty; //热更地址
     string replaceAppUrl = string.Empty; //下载最新强更包的地址
-    CurrentBtnSattusEnum currentBtnSattusEnum = Main.CurrentBtnSattusEnum.none;
 
     public Button goReplaceAppBtn;
     public Button startUpdateBtn;
@@ -67,8 +63,11 @@ public class Main : MonoBehaviour {
     public Button startRetryBtn;
     public Text msgText;
 
+    HotUpdateHelper hotUpdateHelper = null;
+
 
     void Start() {
+        hotUpdateHelper = GetComponent<HotUpdateHelper>();
         RegisterButtonClick();
         RequestNet();
     }
@@ -90,7 +89,7 @@ public class Main : MonoBehaviour {
     //开始热更
     void onStartUpdate(GameObject go) {
         if (!string.IsNullOrEmpty(hotUpdateUrl)) {
-            
+            hotUpdateHelper.StartUpdate(hotUpdateUrl);
         }
     }
 
@@ -105,10 +104,10 @@ public class Main : MonoBehaviour {
     }
 
     void ChangeBtnStatus() {
-        goReplaceAppBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.replaceApp);
-        startUpdateBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.startUpdate);
-        startPlayBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.startPlay);
-        startRetryBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.startRetry);
+        //goReplaceAppBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.replaceApp);
+        //startUpdateBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.startUpdate);
+        //startPlayBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.startPlay);
+        //startRetryBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.retry);
     }
 
     /// <summary>
@@ -118,8 +117,8 @@ public class Main : MonoBehaviour {
         if (Utils.NetIsAvailable == false) {
             print("网络不可用");
         } else {
-            string fields = "name&" + 123 + "&age&" + 456 + "&hobby&" + 10;
-            Utils.PostHttp(AppConfig.LOGIN_URL + "messages", fields, onRequestSuccess, onRequestFailed);
+            string fields = "name&Tom&age&18";
+            Utils.PostHttp(AppConfig.ServerURL + "Login.ashx", fields, onRequestSuccess, onRequestFailed);
         }
     }
 
@@ -128,26 +127,26 @@ public class Main : MonoBehaviour {
             JsonData res = JsonMapper.ToObject(message);
             string result = (string)res["result"];
             if (result == "success") {
-                string data = (string)res["data"];
+                JsonData note = res["data"];
                 int encrypted = Convert.ToInt16(res["encrypted"].ToString());
                 if (encrypted > 0) {//是加密数据 
-                    data = Utils.Decrypt(data);
+                    note = JsonMapper.ToObject(Utils.Decrypt((string)note));
                 }
-                JsonData note = JsonMapper.ToObject(data);
                 string version = (string)note["version"];
                 if (version == "needReplace") { //需要强更换包
-                    replaceAppUrl = (string)note["messageURL"];
-                    currentBtnSattusEnum = CurrentBtnSattusEnum.replaceApp;
+                    replaceAppUrl = (string)note["replaceAppUrl"];
                 } else {
-                    currentBtnSattusEnum = CurrentBtnSattusEnum.startUpdate;
-                    hotUpdateUrl = (string)note["onlineUpdatePackageURL"];
+                    hotUpdateUrl = (string)note["hotUpdateUrl"];
+                    hotUpdateHelper.ConfirmDownload += (size) => {
+                        return true;
+                    };
+                    hotUpdateHelper.StartUpdate(hotUpdateUrl);
                 }
             } else {
                 //这里是由服务器返回请求失败的原因，例如服务器正在维护，在某某时间段才开服
                 print((string)res["error"]);
             }
         } catch (Exception ex) {
-            currentBtnSattusEnum = CurrentBtnSattusEnum.startRetry;
             print(ex.Message);
         }
         ChangeBtnStatus();
@@ -155,8 +154,18 @@ public class Main : MonoBehaviour {
     void onRequestFailed(string message) {
         //这里的错误消息主要是因为网络原因造成，是由自己根据网络错误类型定义的
         print("请求服务器失败 = " + message);
-        currentBtnSattusEnum = CurrentBtnSattusEnum.startRetry;
         ChangeBtnStatus();
     }
 
+    void OnGUI() {
+        if (hotUpdateHelper.NeedUpdateSize > 0) {
+            GUIStyle fontStyle = new GUIStyle();
+            fontStyle.normal.background = null;    //设置背景填充  
+            fontStyle.normal.textColor = new Color(1, 0, 0);   //设置字体颜色  
+            fontStyle.fontSize = 40;       //字体大小  
+
+            GUI.Label(new Rect(0, 0, 200, 200), (hotUpdateHelper.fileDownloadHelper.DownloadSize + " = " + hotUpdateHelper.NeedUpdateSize).ToString(), fontStyle);
+            GUI.Label(new Rect(0, 50, 200, 200), ((float)hotUpdateHelper.fileDownloadHelper.DownloadSize / hotUpdateHelper.NeedUpdateSize).ToString("0.##"), fontStyle);
+        }
+    }
 }
