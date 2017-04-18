@@ -21,4 +21,15 @@ public static class StaticText {
     public static readonly string STR_RETRY_ASK = "部分资源下载失败，需要再试一次吗？";
     public static readonly string STR_RETRY = "重试";
     public static readonly string STR_LOW_DEVICE = "为了更好的体验,单核2G以内的安卓设备暂未开放游戏!";
+
+    public static readonly string Data_Error = "处理数据出错";
+    public static readonly string QuitGame = "退出游戏";
+    public static readonly string ChangeApp = "需要去应用商店下载最新包";
+    public static readonly string GoDownloadApp = "去下载";
+
+    public static readonly string DownloadFileListError = "检查热更失败";
+    public static readonly string DownloadAssetsError = "下载资源失败";
+    public static readonly string ConfirmDownloadAssets = "本次热更新大小为{0}，是否确认下载";
+    public static readonly string StartDownloadAssets = "开始下载";
+    public static readonly string DownloadShowText = "本次下载{0}，速度为{1}/s ({2})";
 }

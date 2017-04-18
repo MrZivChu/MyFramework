@@ -35,7 +35,7 @@ public static class AppConfig {
 
 
     /// <summary>
-    /// 获取热更新资源所在路径
+    /// 热更新资源所在路径
     /// </summary>
     public static string HotAssetsPath {
         get {

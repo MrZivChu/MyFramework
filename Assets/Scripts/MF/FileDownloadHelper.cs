@@ -148,7 +148,6 @@ public class FileDownloadHelper : MonoBehaviour {
         if (!IsDownloading) {
             return;
         }
-        print(123);
         if (mRunning.Count > 0) {
             for (int i = mRunning.Count - 1; i >= 0; i--) {
                 mSecondSize += mRunning[i].GetFrameSize();
@@ -173,13 +172,10 @@ public class FileDownloadHelper : MonoBehaviour {
         if (mWaiting.Count > 0) {
             if (mRunning.Count < MaxTaskCountInSameTime) {
                 UrlData urlData = FindEnabledTask();
-                print("mWaiting" + mWaiting.Count);
                 if (urlData != null) {
-                    print("Url" + urlData.Url + " = " + urlData.TryTimes);
                     urlData.Start();
                     mRunning.Add(urlData);
                 }
-                print("mRunning" + mRunning.Count);
             }
         }
 
@@ -189,7 +185,6 @@ public class FileDownloadHelper : MonoBehaviour {
                 WorkDone(this, null);
             }
         }
-        print(456);
     }
 
     private UrlData FindEnabledTask() {

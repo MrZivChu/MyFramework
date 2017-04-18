@@ -13,72 +13,112 @@ class FileData {
 
 public class HotUpdateHelper : MonoBehaviour {
 
-    string HotUpdateFileSavePath = string.Empty;//热更文件保存地址
+    //文件下载器
+    FileDownloadHelper fileDownloadHelper = null;
+    //服务器下发的热更地址
+    string HotUpdateUrl = string.Empty;
+    //总共需要下载的资源大小
+    [HideInInspector]
+    public int NeedUpdateSize = 0;
+    //已经下载的资源大小
+    public int HasDownloadSize {
+        get {
+            return fileDownloadHelper.DownloadSize;
+        }
+    }
+    //每秒下载的数据大小
+    public float DownloadSizePerSecond {
+        get {
+            return fileDownloadHelper.DownloadSizePerSecond;
+        }
+    }
 
-    public FileDownloadHelper fileDownloadHelper = null;
-    public event Func<int, bool> ConfirmDownload;
-
+    //下载资源失败
+    public event Action DownloadAssetsError;
+    //下载文件列表失败
+    public event Action DownloadFileListError;
+    //是否确认下载
+    public event Action ConfirmDownloadAssets;
 
     void Awake() {
         fileDownloadHelper = GetComponent<FileDownloadHelper>();
     }
 
+    /// <summary>
+    /// 热更新开始
+    /// </summary>
+    /// <param name="hotUpdateUrl"></param>
     public void StartUpdate(string hotUpdateUrl) {
-        hotUpdateUrl = HandleUpdateUrl(hotUpdateUrl);
         HotUpdateUrl = hotUpdateUrl;
-        ToDownloadFileList(hotUpdateUrl);
+        HandleHotUpdateUrl();
+        HandleHotAssetsPath();
+        ToDownloadFileList();
+    }
+    /// <summary>
+    /// 重试
+    /// </summary>
+    public void Retry() {
+        fileDownloadHelper.Retry();
     }
 
-    string HotUpdateUrl = string.Empty;
     /// <summary>
     /// 根据不同的平台来确定不同的热更地址
     /// </summary>
     /// <param name="hotUpdateUrl"></param>
-    string HandleUpdateUrl(string hotUpdateUrl) {
-        if (!string.IsNullOrEmpty(hotUpdateUrl)) {
-            if (!hotUpdateUrl.EndsWith("/")) {
-                hotUpdateUrl += "/";
+    void HandleHotUpdateUrl() {
+        if (!string.IsNullOrEmpty(HotUpdateUrl)) {
+            if (!HotUpdateUrl.EndsWith("/")) {
+                HotUpdateUrl += "/";
             }
-            hotUpdateUrl += AppConfig.APP_FoceVERSION;
+            HotUpdateUrl += AppConfig.APP_FoceVERSION;
 #if UNITY_ANDROID
-            hotUpdateUrl += "/Android/";
+            HotUpdateUrl += "/Android/";
 #elif UNITY_IOS
-			HotUpdateUrl += "/iOS/";
+			HotUpdateUrl += "/IOS/";
 #else
 			HotUpdateUrl += "/Windows/";
 #endif
-            if (!Directory.Exists(AppConfig.HotAssetsPath)) {
-                Directory.CreateDirectory(AppConfig.HotAssetsPath);
-            }
         }
-        return hotUpdateUrl;
     }
 
-    void ToDownloadFileList(string hotUpdateUrl) {
+    /// <summary>
+    /// 以确保资源目录存在
+    /// </summary>
+    void HandleHotAssetsPath() {
+        if (!Directory.Exists(AppConfig.HotAssetsPath)) {
+            Directory.CreateDirectory(AppConfig.HotAssetsPath);
+        }
+    }
+
+    void ToDownloadFileList() {
         fileDownloadHelper.Init();
         fileDownloadHelper.WorkDone += onDownloadFileListWorkDone;
-        fileDownloadHelper.PushTask(hotUpdateUrl + AppConfig.LIST_FILENAME, 0, null, onDownLoadFileListSuccess, onDownLoadFileListFailed);
+        fileDownloadHelper.PushTask(HotUpdateUrl + AppConfig.LIST_FILENAME, 0, null, onDownLoadFileListSuccess, onDownLoadFileListFailed);
         fileDownloadHelper.StartDownload();
     }
 
-    private void onDownloadFileListWorkDone(object sender, System.EventArgs e) {
+    void onDownloadFileListWorkDone(object sender, System.EventArgs e) {
         if (fileDownloadHelper.IsCompleted) {
             print("文件列表下载成功");
             CheckFileMD5();
         } else {
-            //重试
-            fileDownloadHelper.Retry();
+            print("文件列表下载失败");
+            if (DownloadFileListError != null) {
+                DownloadFileListError();
+            }
         }
     }
 
     string[] downloadFileStringList = null;
     List<FileData> mServerFileList = null;
-    private void onDownLoadFileListSuccess(WWW www, object o) {
+    void onDownLoadFileListSuccess(WWW www, object o) {
         print("onDownLoadFileListSuccess");
         downloadFileStringList = www.text.Split('\n');
         mServerFileList = new List<FileData>();
         foreach (var item in downloadFileStringList) {
-            if (string.IsNullOrEmpty(item.Trim())) continue;
+            if (string.IsNullOrEmpty(item.Trim())) {
+                continue;
+            }
             string[] tokens = item.Split('|');
             if (tokens.Length >= 3) {
                 FileData data = new FileData();
@@ -87,16 +127,18 @@ public class HotUpdateHelper : MonoBehaviour {
                 data.md5 = tokens[1].Trim();
                 data.size = 0;
                 int.TryParse(tokens[2], out data.size);
-                if (data.size > 0) mServerFileList.Add(data);
+                if (data.size > 0) {
+                    mServerFileList.Add(data);
+                }
             }
         }
     }
 
-    private void onDownLoadFileListFailed(string err, object item) {
+    void onDownLoadFileListFailed(string err, object item) {
         print(err);
     }
 
-    private string GetLocalFileListPath() {
+    string GetLocalFileListPath() {
         string localFile = AppConfig.HotAssetsPath + AppConfig.LIST_FILENAME;
         if (!File.Exists(localFile)) {
             using (File.Create(localFile)) { }
@@ -104,7 +146,7 @@ public class HotUpdateHelper : MonoBehaviour {
         return localFile;
     }
 
-    private void CheckFileMD5() {
+    void CheckFileMD5() {
         //得到本地的文件列表
         string localFile = GetLocalFileListPath();
         string[] oldLines = File.ReadAllLines(localFile);
@@ -131,19 +173,23 @@ public class HotUpdateHelper : MonoBehaviour {
             }
         }
         CalcUpdateSize();
-        if (ConfirmDownload != null) {
-            if (ConfirmDownload(NeedUpdateSize)) {
+        if (NeedUpdateSize > 0) {
+            if (ConfirmDownloadAssets != null) {
+                print("确认是否下载");
+                ConfirmDownloadAssets();
+            } else {
                 StartDownloadAssets();
             }
         } else {
-            StartDownloadAssets();
+            print("没有最新资源可更新，直接进入游戏");
         }
     }
 
-    public int NeedUpdateSize = 0;
     void CalcUpdateSize() {
         foreach (var item in mServerFileList) {
-            if (item.needUpdate) { NeedUpdateSize += item.size; }
+            if (item.needUpdate) {
+                NeedUpdateSize += item.size;
+            }
         }
     }
 
@@ -153,28 +199,30 @@ public class HotUpdateHelper : MonoBehaviour {
             fileDownloadHelper.Init();
             fileDownloadHelper.WorkDone += onDownloadAssetsWorkDone;
             foreach (var item in mServerFileList) {
-                if (item.needUpdate)
+                if (item.needUpdate) {
                     fileDownloadHelper.PushTask(HotUpdateUrl + item.name, item.size, item, onDownloadAssetSuccess, onDownloadAssetFailed);
+                }
             }
             fileDownloadHelper.StartDownload();
         }
     }
 
-
-
-    private void onDownloadAssetsWorkDone(object sender, System.EventArgs e) {
+    void onDownloadAssetsWorkDone(object sender, System.EventArgs e) {
         if (fileDownloadHelper.IsCompleted) {
             print("所有ab资源下载成功");
             string temp = GetLocalFileListPath();
             File.WriteAllLines(temp, downloadFileStringList);
         } else {
-            //重试
-            //fileDownloadHelper.Retry();
+            print("ab资源下载失败");
+            UpdateFileList();
+            if (DownloadAssetsError != null) {
+                DownloadAssetsError();
+            }
         }
     }
 
 
-    private void onDownloadAssetSuccess(WWW www, object item) {
+    void onDownloadAssetSuccess(WWW www, object item) {
         print("单个ab下载成功");
         if (www.isDone && string.IsNullOrEmpty(www.error)) {
             if (Utils.UncompressMemory(www.bytes)) {
@@ -184,7 +232,28 @@ public class HotUpdateHelper : MonoBehaviour {
         }
     }
 
-    private void onDownloadAssetFailed(string err, object item) {
+    void onDownloadAssetFailed(string err, object item) {
         print("单个ab下载失败" + err);
+    }
+
+    void OnApplicationQuit() {
+        print("程序退出");
+        UpdateFileList();
+    }
+    void UpdateFileList() {
+        if (mServerFileList != null && mServerFileList.Count > 0) {
+            string reslut = string.Empty;
+            FileData fileData = null;
+            for (int i = 0; i < mServerFileList.Count; i++) {
+                fileData = mServerFileList[i];
+                if (fileData.needUpdate == false) {
+                    reslut += fileData.name + "|" + fileData.md5 + "|" + fileData.size + "\n";
+                }
+            }
+            reslut.TrimEnd('\n');
+            string temp = GetLocalFileListPath();
+            File.WriteAllText(temp, reslut);
+            print("保存已经下载的文件的MD5值");
+        }
     }
 }

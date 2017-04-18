@@ -55,59 +55,15 @@ public class Main : MonoBehaviour {
 
 
     string hotUpdateUrl = string.Empty; //热更地址
-    string replaceAppUrl = string.Empty; //下载最新强更包的地址
-
-    public Button goReplaceAppBtn;
-    public Button startUpdateBtn;
-    public Button startPlayBtn;
-    public Button startRetryBtn;
-    public Text msgText;
 
     HotUpdateHelper hotUpdateHelper = null;
 
 
     void Start() {
-        hotUpdateHelper = GetComponent<HotUpdateHelper>();
-        RegisterButtonClick();
+        downloadTipText.gameObject.SetActive(false);
+        progress.gameObject.SetActive(false);
+        hotUpdateHelper = GameObject.Find("HotUpdateHelper").GetComponent<HotUpdateHelper>();
         RequestNet();
-    }
-
-    void RegisterButtonClick() {
-        EventTriggerListener.Get(goReplaceAppBtn.gameObject).onClick = onReplaceApp;
-        EventTriggerListener.Get(startUpdateBtn.gameObject).onClick = onStartUpdate;
-        EventTriggerListener.Get(startPlayBtn.gameObject).onClick = onStartPlay;
-        EventTriggerListener.Get(startRetryBtn.gameObject).onClick = onStartRetry;
-    }
-
-    //需要去重新下载最新包（强更）
-    void onReplaceApp(GameObject go) {
-        if (!string.IsNullOrEmpty(replaceAppUrl)) {
-            Application.OpenURL(replaceAppUrl);
-        }
-    }
-
-    //开始热更
-    void onStartUpdate(GameObject go) {
-        if (!string.IsNullOrEmpty(hotUpdateUrl)) {
-            hotUpdateHelper.StartUpdate(hotUpdateUrl);
-        }
-    }
-
-    //开始游戏
-    void onStartPlay(GameObject go) {
-        SceneManager.LoadScene(1);
-    }
-
-    //重试
-    void onStartRetry(GameObject go) {
-        RequestNet();
-    }
-
-    void ChangeBtnStatus() {
-        //goReplaceAppBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.replaceApp);
-        //startUpdateBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.startUpdate);
-        //startPlayBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.startPlay);
-        //startRetryBtn.gameObject.SetActive(currentBtnSattusEnum == CurrentBtnSattusEnum.retry);
     }
 
     /// <summary>
@@ -115,7 +71,9 @@ public class Main : MonoBehaviour {
     /// </summary>
     void RequestNet() {
         if (Utils.NetIsAvailable == false) {
-            print("网络不可用");
+            PopOK(StaticText.STR_NO_NET, () => {
+                RequestNet();
+            }, StaticText.STR_RETRY);
         } else {
             string fields = "name&Tom&age&18";
             Utils.PostHttp(AppConfig.ServerURL + "Login.ashx", fields, onRequestSuccess, onRequestFailed);
@@ -134,38 +92,98 @@ public class Main : MonoBehaviour {
                 }
                 string version = (string)note["version"];
                 if (version == "needReplace") { //需要强更换包
-                    replaceAppUrl = (string)note["replaceAppUrl"];
+                    string replaceAppUrl = (string)note["replaceAppUrl"];
+                    PopOK(StaticText.ChangeApp, () => {
+                        Application.OpenURL(replaceAppUrl);
+                    }, StaticText.GoDownloadApp);
                 } else {
                     hotUpdateUrl = (string)note["hotUpdateUrl"];
-                    hotUpdateHelper.ConfirmDownload += (size) => {
-                        return true;
-                    };
-                    hotUpdateHelper.StartUpdate(hotUpdateUrl);
+                    CallHotUpdateHelper();
                 }
             } else {
                 //这里是由服务器返回请求失败的原因，例如服务器正在维护，在某某时间段才开服
                 print((string)res["error"]);
             }
         } catch (Exception ex) {
-            print(ex.Message);
+            PopOK(StaticText.Data_Error + ex.Message, () => {
+                Application.Quit();
+            }, StaticText.QuitGame);
         }
-        ChangeBtnStatus();
     }
+
+    void CallHotUpdateHelper() {
+        hotUpdateHelper.DownloadFileListError += () => {
+            PopYesNo(StaticText.DownloadFileListError, () => {
+                Application.Quit();
+            }, () => {
+                hotUpdateHelper.Retry();
+            }, StaticText.QuitGame, StaticText.STR_RETRY);
+        };
+        hotUpdateHelper.DownloadAssetsError += () => {
+            PopYesNo(StaticText.DownloadAssetsError, () => {
+                Application.Quit();
+            }, () => {
+                hotUpdateHelper.Retry();
+            }, StaticText.QuitGame, StaticText.STR_RETRY);
+        };
+        hotUpdateHelper.ConfirmDownloadAssets += () => {
+            PopYesNo(string.Format(StaticText.ConfirmDownloadAssets, GetShortSize(hotUpdateHelper.NeedUpdateSize)), () => {
+                Application.Quit();
+            }, () => {
+                hotUpdateHelper.StartDownloadAssets();
+                downloadTipText.gameObject.SetActive(true);
+                progress.gameObject.SetActive(true);
+            }, StaticText.QuitGame, StaticText.StartDownloadAssets);
+        };
+        hotUpdateHelper.StartUpdate(hotUpdateUrl);
+    }
+
+
     void onRequestFailed(string message) {
         //这里的错误消息主要是因为网络原因造成，是由自己根据网络错误类型定义的
-        print("请求服务器失败 = " + message);
-        ChangeBtnStatus();
+        PopOK(StaticText.STR_SERVER_FAILED + message, () => {
+            RequestNet();
+        }, StaticText.STR_RETRY);
     }
 
-    void OnGUI() {
+    public Text tipText;
+    public Text downloadTipText;
+    public Text progress;
+    public Slider slider;
+    void Update() {
         if (hotUpdateHelper.NeedUpdateSize > 0) {
-            GUIStyle fontStyle = new GUIStyle();
-            fontStyle.normal.background = null;    //设置背景填充  
-            fontStyle.normal.textColor = new Color(1, 0, 0);   //设置字体颜色  
-            fontStyle.fontSize = 40;       //字体大小  
-
-            GUI.Label(new Rect(0, 0, 200, 200), (hotUpdateHelper.fileDownloadHelper.DownloadSize + " = " + hotUpdateHelper.NeedUpdateSize).ToString(), fontStyle);
-            GUI.Label(new Rect(0, 50, 200, 200), ((float)hotUpdateHelper.fileDownloadHelper.DownloadSize / hotUpdateHelper.NeedUpdateSize).ToString("0.##"), fontStyle);
+            downloadTipText.text = string.Format(StaticText.DownloadShowText, GetShortSize(hotUpdateHelper.NeedUpdateSize), GetShortSize((int)hotUpdateHelper.DownloadSizePerSecond), AppConfig.APP_VERSION);
+            float value = ((float)hotUpdateHelper.HasDownloadSize / hotUpdateHelper.NeedUpdateSize);
+            progress.text = string.Format("{0:#.##}%", value * 100);
+            slider.value = value;
         }
+    }
+
+    string GetShortSize(int size) {
+        if (size < 1024) {
+            return string.Format("{0:#.##}B", size);
+        } else if (size < 1048576) {
+            return string.Format("{0:#.##}KB", size / 1024f);
+        } else {
+            return string.Format("{0:#.##}MB", size / 1048576f);
+        }
+    }
+
+    void PopOK(string tip, Action callback, string btnText) {
+        UnityEngine.Object obj = Resources.Load("MessageBox");
+        GameObject tGameObject = Instantiate(obj) as GameObject;
+        tGameObject.transform.parent = transform.parent;
+        tGameObject.GetComponent<RectTransform>().anchoredPosition3D = Vector3.zero;
+        MessageBox messageBox = tGameObject.GetComponent<MessageBox>();
+        messageBox.PopOK(tip, callback, btnText);
+    }
+
+    void PopYesNo(string tip, Action callback1, Action callback2, string btnText1, string btnText2) {
+        UnityEngine.Object obj = Resources.Load("MessageBox");
+        GameObject tGameObject = Instantiate(obj) as GameObject;
+        tGameObject.transform.parent = transform.parent;
+        tGameObject.GetComponent<RectTransform>().anchoredPosition3D = Vector3.zero;
+        MessageBox messageBox = tGameObject.GetComponent<MessageBox>();
+        messageBox.PopYesNo(tip, callback1, callback2, btnText1, btnText2);
     }
 }
