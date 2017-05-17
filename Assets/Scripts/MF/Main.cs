@@ -9,7 +9,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class Main : MonoBehaviour {
+public class Main : MonoBehaviour
+{
 
     //List<HotFile> updateFiles1 = new List<HotFile>() {
     //    new HotFile() { size = 103322224, url = "http://www.hotupdate.com/ab/1.zip" },
@@ -59,7 +60,8 @@ public class Main : MonoBehaviour {
     HotUpdateHelper hotUpdateHelper = null;
 
 
-    void Start() {
+    void Start()
+    {
         downloadTipText.gameObject.SetActive(false);
         progress.gameObject.SetActive(false);
         hotUpdateHelper = GameObject.Find("HotUpdateHelper").GetComponent<HotUpdateHelper>();
@@ -69,79 +71,113 @@ public class Main : MonoBehaviour {
     /// <summary>
     /// 第一次请求服务器
     /// </summary>
-    void RequestNet() {
-        if (Utils.NetIsAvailable == false) {
-            PopOK(StaticText.STR_NO_NET, () => {
+    void RequestNet()
+    {
+        if (Utils.NetIsAvailable == false)
+        {
+            MessageBox.Instance.PopOK(StaticText.STR_NO_NET, () =>
+            {
                 RequestNet();
             }, StaticText.STR_RETRY);
-        } else {
+        }
+        else
+        {
             string fields = "name&Tom&age&18";
             Utils.PostHttp(AppConfig.ServerURL + "Login.ashx", fields, onRequestSuccess, onRequestFailed);
         }
     }
 
-    void onRequestSuccess(string message) {
-        try {
+    void onRequestSuccess(string message)
+    {
+        try
+        {
             JsonData res = JsonMapper.ToObject(message);
             string result = (string)res["result"];
-            if (result == "success") {
+            if (result == "success")
+            {
                 JsonData note = res["data"];
                 int encrypted = Convert.ToInt16(res["encrypted"].ToString());
-                if (encrypted > 0) {//是加密数据 
+                if (encrypted > 0)
+                {//是加密数据 
                     note = JsonMapper.ToObject(Utils.Decrypt((string)note));
                 }
                 string version = (string)note["version"];
-                if (version == "needReplace") { //需要强更换包
+                if (version == "needReplace")
+                { //需要强更换包
                     string replaceAppUrl = (string)note["replaceAppUrl"];
-                    PopOK(StaticText.ChangeApp, () => {
+                    MessageBox.Instance.PopOK(StaticText.ChangeApp, () =>
+                    {
                         Application.OpenURL(replaceAppUrl);
                     }, StaticText.GoDownloadApp);
-                } else {
-                    hotUpdateUrl = (string)note["hotUpdateUrl"];
+                }
+                else
+                {
+                    hotUpdateUrl = ((string)note["hotUpdateUrl"]).Replace("com", "xyz");
                     CallHotUpdateHelper();
                 }
-            } else {
-                //这里是由服务器返回请求失败的原因，例如服务器正在维护，在某某时间段才开服
-                print((string)res["error"]);
             }
-        } catch (Exception ex) {
-            PopOK(StaticText.Data_Error + ex.Message, () => {
+            else
+            {
+                //这里是由服务器返回请求失败的原因，例如服务器正在维护，在某某时间段才开服
+                MessageBox.Instance.PopOK(res["error"].ToString(), null, StaticText.Ok);
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Instance.PopOK(StaticText.Data_Error + ex.Message, () =>
+            {
                 Application.Quit();
             }, StaticText.QuitGame);
         }
     }
 
-    void CallHotUpdateHelper() {
-        hotUpdateHelper.DownloadFileListError += () => {
-            PopYesNo(StaticText.DownloadFileListError, () => {
+    void CallHotUpdateHelper()
+    {
+        hotUpdateHelper.DownloadFileListError += () =>
+        {
+            MessageBox.Instance.PopYesNo(StaticText.DownloadFileListError, () =>
+            {
                 Application.Quit();
-            }, () => {
+            }, () =>
+            {
                 hotUpdateHelper.Retry();
             }, StaticText.QuitGame, StaticText.STR_RETRY);
         };
-        hotUpdateHelper.DownloadAssetsError += () => {
-            PopYesNo(StaticText.DownloadAssetsError, () => {
+        hotUpdateHelper.DownloadAssetsError += () =>
+        {
+            MessageBox.Instance.PopYesNo(StaticText.DownloadAssetsError, () =>
+            {
                 Application.Quit();
-            }, () => {
+            }, () =>
+            {
                 hotUpdateHelper.Retry();
             }, StaticText.QuitGame, StaticText.STR_RETRY);
         };
-        hotUpdateHelper.ConfirmDownloadAssets += () => {
-            PopYesNo(string.Format(StaticText.ConfirmDownloadAssets, GetShortSize(hotUpdateHelper.NeedUpdateSize)), () => {
+        hotUpdateHelper.ConfirmDownloadAssets += () =>
+        {
+            MessageBox.Instance.PopYesNo(string.Format(StaticText.ConfirmDownloadAssets, GetShortSize(hotUpdateHelper.NeedUpdateSize)), () =>
+            {
                 Application.Quit();
-            }, () => {
+            }, () =>
+            {
                 hotUpdateHelper.StartDownloadAssets();
                 downloadTipText.gameObject.SetActive(true);
                 progress.gameObject.SetActive(true);
             }, StaticText.QuitGame, StaticText.StartDownloadAssets);
         };
+        hotUpdateHelper.AllDownloadSuccess += () =>
+        {
+            MessageBox.Instance.PopOK(StaticText.Welcome, null, StaticText.StartGame);
+        };
         hotUpdateHelper.StartUpdate(hotUpdateUrl);
     }
 
 
-    void onRequestFailed(string message) {
+    void onRequestFailed(string message)
+    {
         //这里的错误消息主要是因为网络原因造成，是由自己根据网络错误类型定义的
-        PopOK(StaticText.STR_SERVER_FAILED + message, () => {
+        MessageBox.Instance.PopOK(StaticText.STR_SERVER_FAILED + message, () =>
+        {
             RequestNet();
         }, StaticText.STR_RETRY);
     }
@@ -150,8 +186,10 @@ public class Main : MonoBehaviour {
     public Text downloadTipText;
     public Text progress;
     public Slider slider;
-    void Update() {
-        if (hotUpdateHelper.NeedUpdateSize > 0) {
+    void Update()
+    {
+        if (hotUpdateHelper.NeedUpdateSize > 0)
+        {
             downloadTipText.text = string.Format(StaticText.DownloadShowText, GetShortSize(hotUpdateHelper.NeedUpdateSize), GetShortSize((int)hotUpdateHelper.DownloadSizePerSecond), AppConfig.APP_VERSION);
             float value = ((float)hotUpdateHelper.HasDownloadSize / hotUpdateHelper.NeedUpdateSize);
             progress.text = string.Format("{0:#.##}%", value * 100);
@@ -159,31 +197,20 @@ public class Main : MonoBehaviour {
         }
     }
 
-    string GetShortSize(int size) {
-        if (size < 1024) {
+    string GetShortSize(int size)
+    {
+        if (size < 1024)
+        {
             return string.Format("{0:#.##}B", size);
-        } else if (size < 1048576) {
+        }
+        else if (size < 1048576)
+        {
             return string.Format("{0:#.##}KB", size / 1024f);
-        } else {
+        }
+        else
+        {
             return string.Format("{0:#.##}MB", size / 1048576f);
         }
     }
 
-    void PopOK(string tip, Action callback, string btnText) {
-        UnityEngine.Object obj = Resources.Load("MessageBox");
-        GameObject tGameObject = Instantiate(obj) as GameObject;
-        tGameObject.transform.parent = transform.parent;
-        tGameObject.GetComponent<RectTransform>().anchoredPosition3D = Vector3.zero;
-        MessageBox messageBox = tGameObject.GetComponent<MessageBox>();
-        messageBox.PopOK(tip, callback, btnText);
-    }
-
-    void PopYesNo(string tip, Action callback1, Action callback2, string btnText1, string btnText2) {
-        UnityEngine.Object obj = Resources.Load("MessageBox");
-        GameObject tGameObject = Instantiate(obj) as GameObject;
-        tGameObject.transform.parent = transform.parent;
-        tGameObject.GetComponent<RectTransform>().anchoredPosition3D = Vector3.zero;
-        MessageBox messageBox = tGameObject.GetComponent<MessageBox>();
-        messageBox.PopYesNo(tip, callback1, callback2, btnText1, btnText2);
-    }
 }

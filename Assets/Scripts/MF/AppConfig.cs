@@ -14,7 +14,7 @@ public static class AppConfig {
 
 
     //服务器地址
-    public const string ServerURL = "http://www.hotupdate.com/";
+    public const string ServerURL = "http://www.hotupdate.xyz/";
     //强更版本号
     public const string APP_FoceVERSION = "1.3";
     //版本号

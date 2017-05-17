@@ -32,4 +32,9 @@ public static class StaticText {
     public static readonly string ConfirmDownloadAssets = "本次热更新大小为{0}，是否确认下载";
     public static readonly string StartDownloadAssets = "开始下载";
     public static readonly string DownloadShowText = "本次下载{0}，速度为{1}/s ({2})";
+
+
+    public static readonly string Ok = "确定";
+    public static readonly string StartGame = "开始游戏";
+    public static readonly string Welcome = "欢迎来到我的游戏";
 }
