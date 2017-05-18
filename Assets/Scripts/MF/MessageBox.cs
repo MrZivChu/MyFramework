@@ -47,7 +47,7 @@ public class MessageBox : MonoBehaviour
         rightBtn.gameObject.SetActive(true);
         rightBtnText.text = btnText;
         tipText.text = tip;
-        EventTriggerListener.Get(rightBtn.gameObject).onClick = (go) =>
+        EventTriggerListener.Get(rightBtn.gameObject).onClick = (go, data) =>
         {
             if (callback != null)
             {
@@ -65,7 +65,7 @@ public class MessageBox : MonoBehaviour
         tipText.text = tip;
         leftBtn.gameObject.SetActive(true);
         rightBtn.gameObject.SetActive(true);
-        EventTriggerListener.Get(leftBtn.gameObject).onClick = (go) =>
+        EventTriggerListener.Get(leftBtn.gameObject).onClick = (go, data) =>
         {
             if (leftCallback != null)
             {
@@ -73,7 +73,7 @@ public class MessageBox : MonoBehaviour
             }
             gameObject.SetActive(false);
         };
-        EventTriggerListener.Get(rightBtn.gameObject).onClick = (go) =>
+        EventTriggerListener.Get(rightBtn.gameObject).onClick = (go, data) =>
         {
             if (rightCallback != null)
             {
