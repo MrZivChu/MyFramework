@@ -39,6 +39,8 @@ public class HotUpdateHelper : MonoBehaviour {
     public event Action DownloadFileListError;
     //是否确认下载
     public event Action ConfirmDownloadAssets;
+    //没有资源需要更新，开始游戏
+    public event Action StartGame;
 
     void Awake() {
         fileDownloadHelper = GetComponent<FileDownloadHelper>();
@@ -182,6 +184,9 @@ public class HotUpdateHelper : MonoBehaviour {
             }
         } else {
             print("没有最新资源可更新，直接进入游戏");
+            if (StartGame != null) {
+                StartGame();
+            }
         }
     }
 

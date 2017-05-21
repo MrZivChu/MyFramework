@@ -27,9 +27,17 @@ public static class StaticText {
     public static readonly string ChangeApp = "需要去应用商店下载最新包";
     public static readonly string GoDownloadApp = "去下载";
 
-    public static readonly string DownloadFileListError = "检查热更失败";
-    public static readonly string DownloadAssetsError = "下载资源失败";
-    public static readonly string ConfirmDownloadAssets = "本次热更新大小为{0}，是否确认下载";
+    public static readonly string CheckAssetsUpdateError = "检查热更资源失败";
+    public static readonly string DownloadAssetsUpdateError = "下载热更资源失败";
+    public static readonly string ConfirmDownloadAssets = "本次热更新资源大小为{0}\n是否确认下载";
     public static readonly string StartDownloadAssets = "开始下载";
     public static readonly string DownloadShowText = "本次下载{0}，速度为{1}/s ({2})";
+
+
+    public static readonly string CheckVersioning = "正在检查版本更新";
+    public static readonly string CheckVersionOver = "版本更新检查完毕";
+    public static readonly string CheckAssetsing = "正在检查资源更新";
+    public static readonly string CheckAssetsOver = "资源更新检查完毕";
+
+    public static readonly string DownloadAssetsing = "正在为您下载更新资源包";
 }

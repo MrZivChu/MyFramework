@@ -9,59 +9,35 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public enum CheckStatus {
+    Default = 0,
+    CheckVersioning = 1,//检查版本更新
+    CheckVersionOver = 1,//检查版本更新完毕
+    CheckAssetsing = 2,//检查资源更新
+    CheckAssetsOver = 3,//检查资源更新结束完毕
+    DownloadAssetsing = 4,//下载资源
+    StartGame = 5,//开始游戏
+}
+
 public class Main : MonoBehaviour {
 
-    //List<HotFile> updateFiles1 = new List<HotFile>() {
-    //    new HotFile() { size = 103322224, url = "http://www.hotupdate.com/ab/1.zip" },
-    //    new HotFile() { size = 19071619, url = "http://www.hotupdate.com/ab/2.zip"},
-    //    new HotFile() { size = 20777879, url = "http://www.hotupdate.com/ab/3.zip" },
-    //    new HotFile() { size = 23822, url = "http://www.hotupdate.com/ab/4.zip"},
-    //    new HotFile() { size = 84323, url = "http://www.hotupdate.com/ab/5.zip"},
-    //    new HotFile() { size = 110628, url = "http://www.hotupdate.com/ab/6.zip"},
-    //    new HotFile() { size = 1486058, url = "http://www.hotupdate.com/ab/7.zip"},
-    //    new HotFile() { size = 294906, url =  "http://www.hotupdate.com/ab/8.zip"},
-    //    new HotFile() { size = 126255, url =  "http://www.hotupdate.com/ab/9.zip"},
-    //    new HotFile() { size = 49140, url = "http://www.hotupdate.com/ab/10.zip"},
-    //    new HotFile() { size = 8381791, url = "http://www.hotupdate.com/ab/11.zip"},
-    //    new HotFile() { size = 44287, url = "http://www.hotupdate.com/ab/12.zip"},
-    //    new HotFile() { size = 339696, url = "http://www.hotupdate.com/ab/13.zip"},
-    //    new HotFile() { size = 339696, url = "http://www.hotupdate.com/ab/14.zip"},
-    //};
-    //double allSize = 154452324;
-    //DownloadFiles downloadFiles;
-    //void Start() {
-    //    //可以实例化带有脚本DownloadFiles的对象，来达到多线程处理多个下载任务
-    //    print("开始时间" + DateTime.Now.ToLocalTime());
-    //    downloadFiles = GetComponent<DownloadFiles>();
-    //    downloadFiles.Download(updateFiles1);
-    //}
-
-    //double currentSize = 0;
-    //void OnGUI() {
-    //    GUIStyle fontStyle = new GUIStyle();
-    //    fontStyle.normal.background = null;    //设置背景填充  
-    //    fontStyle.normal.textColor = new Color(1, 0, 0);   //设置字体颜色  
-    //    fontStyle.fontSize = 40;       //字体大小  
-
-    //    currentSize = downloadFiles.currentDownloadSize;
-    //    GUI.Label(new Rect(0, 0, 200, 200), (currentSize + " = " + allSize).ToString(), fontStyle);
-    //    GUI.Label(new Rect(0, 50, 200, 200), (currentSize / allSize).ToString("0.##"), fontStyle);
-    //    string num = ((currentSize / allSize) * 100).ToString("0");
-    //    GUI.Label(new Rect(0, 100, 200, 200), (num == "100" ? (currentSize == allSize ? "100" : "99") : num) + "%", fontStyle);
-    //    if (currentSize == allSize) {
-    //        print("结束时间" + DateTime.Now.ToLocalTime());
-    //    }
-    //}
-
-
     string hotUpdateUrl = string.Empty; //热更地址
-
     HotUpdateHelper hotUpdateHelper = null;
+    CheckStatus currentCheckStatus = CheckStatus.Default;
+    CheckStatus preCheckStatus = CheckStatus.Default;
 
+    public Text tipText;
+    public Text downloadTipText;
+    public Text progress;
+    public Slider slider;
+    public Button startBtn;
 
     void Start() {
         downloadTipText.gameObject.SetActive(false);
         progress.gameObject.SetActive(false);
+        slider.gameObject.SetActive(false);
+        tipText.gameObject.SetActive(true);
+        startBtn.gameObject.SetActive(false);
         hotUpdateHelper = GameObject.Find("HotUpdateHelper").GetComponent<HotUpdateHelper>();
         RequestNet();
     }
@@ -71,16 +47,20 @@ public class Main : MonoBehaviour {
     /// </summary>
     void RequestNet() {
         if (Utils.NetIsAvailable == false) {
-            PopOK(StaticText.STR_NO_NET, () => {
+            PopYesNo(StaticText.STR_NO_NET, () => {
+                Application.Quit();
+            }, () => {
                 RequestNet();
-            }, StaticText.STR_RETRY);
+            }, StaticText.QuitGame, StaticText.STR_RETRY);
         } else {
+            currentCheckStatus = CheckStatus.CheckVersioning;
             string fields = "name&Tom&age&18";
             Utils.PostHttp(AppConfig.ServerURL + "Login.ashx", fields, onRequestSuccess, onRequestFailed);
         }
     }
 
     void onRequestSuccess(string message) {
+        currentCheckStatus = CheckStatus.CheckVersionOver;
         try {
             JsonData res = JsonMapper.ToObject(message);
             string result = (string)res["result"];
@@ -95,14 +75,17 @@ public class Main : MonoBehaviour {
                     string replaceAppUrl = (string)note["replaceAppUrl"];
                     PopOK(StaticText.ChangeApp, () => {
                         Application.OpenURL(replaceAppUrl);
+                        Application.Quit();
                     }, StaticText.GoDownloadApp);
                 } else {
-                    hotUpdateUrl = (string)note["hotUpdateUrl"];
+                    hotUpdateUrl = ((string)note["hotUpdateUrl"]).Replace("com","xyz");
                     CallHotUpdateHelper();
                 }
             } else {
                 //这里是由服务器返回请求失败的原因，例如服务器正在维护，在某某时间段才开服
-                print((string)res["error"]);
+                PopOK((string)res["error"], () => {
+                    Application.Quit();
+                }, StaticText.QuitGame);
             }
         } catch (Exception ex) {
             PopOK(StaticText.Data_Error + ex.Message, () => {
@@ -113,49 +96,82 @@ public class Main : MonoBehaviour {
 
     void CallHotUpdateHelper() {
         hotUpdateHelper.DownloadFileListError += () => {
-            PopYesNo(StaticText.DownloadFileListError, () => {
+            PopYesNo(StaticText.CheckAssetsUpdateError, () => {
                 Application.Quit();
             }, () => {
                 hotUpdateHelper.Retry();
             }, StaticText.QuitGame, StaticText.STR_RETRY);
         };
         hotUpdateHelper.DownloadAssetsError += () => {
-            PopYesNo(StaticText.DownloadAssetsError, () => {
+            PopYesNo(StaticText.DownloadAssetsUpdateError, () => {
                 Application.Quit();
             }, () => {
                 hotUpdateHelper.Retry();
             }, StaticText.QuitGame, StaticText.STR_RETRY);
         };
         hotUpdateHelper.ConfirmDownloadAssets += () => {
+            currentCheckStatus = CheckStatus.CheckAssetsOver;
             PopYesNo(string.Format(StaticText.ConfirmDownloadAssets, GetShortSize(hotUpdateHelper.NeedUpdateSize)), () => {
                 Application.Quit();
             }, () => {
+                currentCheckStatus = CheckStatus.DownloadAssetsing;
                 hotUpdateHelper.StartDownloadAssets();
                 downloadTipText.gameObject.SetActive(true);
                 progress.gameObject.SetActive(true);
             }, StaticText.QuitGame, StaticText.StartDownloadAssets);
         };
+        hotUpdateHelper.StartGame += () => {
+            currentCheckStatus = CheckStatus.StartGame;
+
+        };
+        currentCheckStatus = CheckStatus.CheckAssetsing;
         hotUpdateHelper.StartUpdate(hotUpdateUrl);
     }
 
 
     void onRequestFailed(string message) {
+        currentCheckStatus = CheckStatus.CheckVersionOver;
         //这里的错误消息主要是因为网络原因造成，是由自己根据网络错误类型定义的
         PopOK(StaticText.STR_SERVER_FAILED + message, () => {
             RequestNet();
         }, StaticText.STR_RETRY);
     }
 
-    public Text tipText;
-    public Text downloadTipText;
-    public Text progress;
-    public Slider slider;
+
     void Update() {
-        if (hotUpdateHelper.NeedUpdateSize > 0) {
-            downloadTipText.text = string.Format(StaticText.DownloadShowText, GetShortSize(hotUpdateHelper.NeedUpdateSize), GetShortSize((int)hotUpdateHelper.DownloadSizePerSecond), AppConfig.APP_VERSION);
-            float value = ((float)hotUpdateHelper.HasDownloadSize / hotUpdateHelper.NeedUpdateSize);
-            progress.text = string.Format("{0:#.##}%", value * 100);
-            slider.value = value;
+        if (preCheckStatus != currentCheckStatus) {
+            if (currentCheckStatus == CheckStatus.CheckVersioning) {
+                tipText.text = StaticText.CheckVersioning;
+            } else if (currentCheckStatus == CheckStatus.CheckVersionOver) {
+                tipText.text = StaticText.CheckVersionOver;
+            } else if (currentCheckStatus == CheckStatus.CheckAssetsing) {
+                tipText.text = StaticText.CheckAssetsing;
+            } else if (currentCheckStatus == CheckStatus.CheckAssetsOver) {
+                tipText.text = StaticText.CheckAssetsOver;
+            } else if (currentCheckStatus == CheckStatus.DownloadAssetsing) {
+                downloadTipText.gameObject.SetActive(true);
+                progress.gameObject.SetActive(true);
+                slider.gameObject.SetActive(true);
+                tipText.text = StaticText.DownloadAssetsing;
+            } else if (currentCheckStatus == CheckStatus.StartGame) {
+                downloadTipText.gameObject.SetActive(false);
+                tipText.gameObject.SetActive(false);
+                progress.gameObject.SetActive(false);
+                slider.gameObject.SetActive(false);
+                startBtn.gameObject.SetActive(true);
+            }
+            preCheckStatus = currentCheckStatus;
+        }
+        if (currentCheckStatus == CheckStatus.DownloadAssetsing) {
+            if (hotUpdateHelper.NeedUpdateSize > 0) {
+                downloadTipText.text = string.Format(StaticText.DownloadShowText, GetShortSize(hotUpdateHelper.NeedUpdateSize), GetShortSize((int)hotUpdateHelper.DownloadSizePerSecond), AppConfig.APP_VERSION);
+                float value = ((float)hotUpdateHelper.HasDownloadSize / hotUpdateHelper.NeedUpdateSize);
+                progress.text = string.Format("{0:#.##}%", value * 100);
+                slider.value = value;
+                if (value == 1) {
+                    currentCheckStatus = CheckStatus.StartGame;
+                }
+            }
         }
     }
 
@@ -173,6 +189,7 @@ public class Main : MonoBehaviour {
         UnityEngine.Object obj = Resources.Load("MessageBox");
         GameObject tGameObject = Instantiate(obj) as GameObject;
         tGameObject.transform.parent = transform.parent;
+        tGameObject.transform.localScale = Vector3.one;
         tGameObject.GetComponent<RectTransform>().anchoredPosition3D = Vector3.zero;
         MessageBox messageBox = tGameObject.GetComponent<MessageBox>();
         messageBox.PopOK(tip, callback, btnText);
@@ -182,6 +199,7 @@ public class Main : MonoBehaviour {
         UnityEngine.Object obj = Resources.Load("MessageBox");
         GameObject tGameObject = Instantiate(obj) as GameObject;
         tGameObject.transform.parent = transform.parent;
+        tGameObject.transform.localScale = Vector3.one;
         tGameObject.GetComponent<RectTransform>().anchoredPosition3D = Vector3.zero;
         MessageBox messageBox = tGameObject.GetComponent<MessageBox>();
         messageBox.PopYesNo(tip, callback1, callback2, btnText1, btnText2);

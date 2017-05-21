@@ -31,7 +31,7 @@ public class Utils {
     }
 
     private static IEnumerator HttpPost(string url, Dictionary<string, string> fields, System.Action<string> onSuccess, System.Action<string> onFailed) {
-        WWWForm form = new WWWForm();
+        WWWForm form = new WWWForm(); 
         form.AddField("cpId", AppConfig.CP_ID.ToString());
         form.AddField("appId", AppConfig.APP_ID.ToString());
         form.AddField("channelId", AppConfig.CHANNEL_ID.ToString());

@@ -6,5 +6,4 @@ public class CoroutineHelper : MonoBehaviour {
     void Start() {
         DontDestroyOnLoad(gameObject);
     }
-	
 }
