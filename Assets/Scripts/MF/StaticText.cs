@@ -34,10 +34,16 @@ public static class StaticText {
     public static readonly string DownloadShowText = "本次下载{0}，速度为{1}/s ({2})";
 
 
+<<<<<<< HEAD
     public static readonly string CheckVersioning = "正在检查版本更新";
     public static readonly string CheckVersionOver = "版本更新检查完毕";
     public static readonly string CheckAssetsing = "正在检查资源更新";
     public static readonly string CheckAssetsOver = "资源更新检查完毕";
 
     public static readonly string DownloadAssetsing = "正在为您下载更新资源包";
+=======
+    public static readonly string Ok = "确定";
+    public static readonly string StartGame = "开始游戏";
+    public static readonly string Welcome = "欢迎来到我的游戏";
+>>>>>>> c3e92b749ef8b510585b42d49c16188b88c64d6c
 }
