@@ -16,12 +16,10 @@ public static class AppConfig {
     //文件列表的文件名称
     public const string LIST_FILENAME = "files.list";
     //强更版本号
-    public const string APP_FoceVERSION = "1.3";
     //我们的热更新规则是根据下载的文件列表来确定更新内容的，而不是根据版本号
     //因为本地文件有可能会被清除，所以用下载的文件列表对本地文件进行检测是最保险的方式
     //所以检查更新，只要检查是否有强更就行了，没有强更就下载文件列表进行资源更新检测
-    //APP_VERSION仅仅用来显示app的版本号而已，此值是从服务器获取的，然后保存到本地的PlayerPrefs
-    public const string APP_VERSION = "";
+    public const string APP_FoceVERSION = "1.3";
 
     //网络数据加密盐
     public const string APP_SALT = "AQMSQEchcrYkbN5A";

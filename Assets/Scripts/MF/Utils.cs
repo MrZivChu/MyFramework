@@ -17,6 +17,38 @@ public class Utils {
     public static bool WifiIsAvailable { get { return Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork; } }
 
     /// <summary>
+    /// Get方式网络请求
+    /// </summary>
+    /// <param name="url"></param>
+    /// <param name="onSuccess"></param>
+    /// <param name="onFailed"></param>
+    public static void GetHttp(string url, System.Action<string> onSuccess, System.Action<string> onFailed) {
+        GameObject go = GameObject.Find("CoroutineHelper");
+        go.GetComponent<CoroutineHelper>().StartCoroutine(HttpGet(url, onSuccess, onFailed));
+    }
+
+    private static System.Collections.IEnumerator HttpGet(string url, System.Action<string> onSuccess, System.Action<string> onFailed) {
+        if (url.IndexOf('?') > 0) {
+            if (!url.EndsWith("&")) url += "&";
+        } else {
+            url += "?";
+        }
+        url += "&appId=" + AppConfig.APP_ID;
+        url += "&channelId=" + AppConfig.CHANNEL_ID;
+        url += "&clientFoceVersion=" + AppConfig.APP_FoceVERSION;
+
+        WWW www = new WWW(url);
+        yield return www;
+
+        if (www.isDone && string.IsNullOrEmpty(www.error)) {
+            onSuccess(www.text);
+        } else {
+            onFailed(www.error);
+        }
+    }
+
+
+    /// <summary>
     /// post方式网络请求
     /// </summary>
     /// <param name="url"></param>
@@ -36,7 +68,7 @@ public class Utils {
     }
 
     private static IEnumerator HttpPost(string url, Dictionary<string, string> fields, System.Action<string> onSuccess, System.Action<string> onFailed) {
-        WWWForm form = new WWWForm(); 
+        WWWForm form = new WWWForm();
         form.AddField("appId", AppConfig.APP_ID.ToString());
         form.AddField("channelId", AppConfig.CHANNEL_ID.ToString());
         form.AddField("clientFoceVersion", AppConfig.APP_FoceVERSION);

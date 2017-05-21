@@ -59,6 +59,8 @@ public class Main : MonoBehaviour {
         }
     }
 
+    //游戏的完整版本号
+    string appVersion = string.Empty;
     void onRequestSuccess(string message) {
         currentCheckStatus = CheckStatus.CheckVersionOver;
         try {
@@ -78,6 +80,7 @@ public class Main : MonoBehaviour {
                         Application.Quit();
                     }, StaticText.GoDownloadApp);
                 } else {
+                    appVersion = "";//(string)note["Version"];
                     hotUpdateUrl = ((string)note["hotUpdateUrl"]).Replace("com", "xyz");
                     CallHotUpdateHelper();
                 }
@@ -165,7 +168,7 @@ public class Main : MonoBehaviour {
         }
         if (currentCheckStatus == CheckStatus.DownloadAssetsing) {
             if (hotUpdateHelper.NeedUpdateSize > 0) {
-                downloadTipText.text = string.Format(StaticText.DownloadShowText, GetShortSize(hotUpdateHelper.NeedUpdateSize), GetShortSize((int)hotUpdateHelper.DownloadSizePerSecond), AppConfig.APP_VERSION);
+                downloadTipText.text = string.Format(StaticText.DownloadShowText, GetShortSize(hotUpdateHelper.NeedUpdateSize), GetShortSize((int)hotUpdateHelper.DownloadSizePerSecond), appVersion);
                 float value = ((float)hotUpdateHelper.HasDownloadSize / hotUpdateHelper.NeedUpdateSize);
                 progress.text = string.Format("{0:#.##}%", value * 100);
                 slider.value = value;
