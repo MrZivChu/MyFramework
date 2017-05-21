@@ -12,6 +12,11 @@ public class Utils {
     public static bool NetIsAvailable { get { return Application.internetReachability != NetworkReachability.NotReachable; } }
 
     /// <summary>
+    /// wifi是否可用
+    /// </summary>
+    public static bool WifiIsAvailable { get { return Application.internetReachability == NetworkReachability.ReachableViaLocalAreaNetwork; } }
+
+    /// <summary>
     /// post方式网络请求
     /// </summary>
     /// <param name="url"></param>
@@ -32,10 +37,9 @@ public class Utils {
 
     private static IEnumerator HttpPost(string url, Dictionary<string, string> fields, System.Action<string> onSuccess, System.Action<string> onFailed) {
         WWWForm form = new WWWForm(); 
-        form.AddField("cpId", AppConfig.CP_ID.ToString());
         form.AddField("appId", AppConfig.APP_ID.ToString());
         form.AddField("channelId", AppConfig.CHANNEL_ID.ToString());
-        form.AddField("clientVersion", AppConfig.APP_VERSION);
+        form.AddField("clientFoceVersion", AppConfig.APP_FoceVERSION);
         if (fields != null) {
             foreach (var item in fields) {
                 form.AddField(item.Key, item.Value);
@@ -61,13 +65,33 @@ public class Utils {
         www = null;
     }
 
-    //解密AES
-    public static string Decrypt(string toDecrypt) {
-        byte[] keyArray = UTF8Encoding.UTF8.GetBytes(AppConfig.APP_SECRET);
+    //加密AES
+    public static string Encrypt(string toEncrypt, string salt) {
+        byte[] keyArray = UTF8Encoding.UTF8.GetBytes(salt);
         SHA256 sha256 = new SHA256Managed();
         keyArray = sha256.ComputeHash(keyArray);
 
-        byte[] ivArray = UTF8Encoding.UTF8.GetBytes("MrZivChu FrameWork");
+        byte[] toEncryptArray = UTF8Encoding.UTF8.GetBytes(toEncrypt);
+        byte[] ivArray = UTF8Encoding.UTF8.GetBytes("writedbyMrzivchu");
+
+        RijndaelManaged rDel = new RijndaelManaged();
+        rDel.Key = keyArray;
+        rDel.IV = ivArray;
+        rDel.Mode = CipherMode.CBC;
+        rDel.Padding = PaddingMode.PKCS7;
+
+        ICryptoTransform cTransform = rDel.CreateEncryptor();
+        byte[] resultArray = cTransform.TransformFinalBlock(toEncryptArray, 0, toEncryptArray.Length);
+        return System.Convert.ToBase64String(resultArray, 0, resultArray.Length);
+    }
+
+    //解密AES
+    public static string Decrypt(string toDecrypt, string salt) {
+        byte[] keyArray = UTF8Encoding.UTF8.GetBytes(salt);
+        SHA256 sha256 = new SHA256Managed();
+        keyArray = sha256.ComputeHash(keyArray);
+
+        byte[] ivArray = UTF8Encoding.UTF8.GetBytes("writedbyMrzivchu");
         byte[] toEncryptArray = System.Convert.FromBase64String(toDecrypt);
         RijndaelManaged rDel = new RijndaelManaged();
         rDel.Key = keyArray;

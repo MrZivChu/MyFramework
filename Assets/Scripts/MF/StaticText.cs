@@ -20,7 +20,6 @@ public static class StaticText {
     public static readonly string STR_BAD_NET = "网络不稳定，请再试一次。如果依然失败，请检查网络！(GN2)";
     public static readonly string STR_RETRY_ASK = "部分资源下载失败，需要再试一次吗？";
     public static readonly string STR_RETRY = "重试";
-    public static readonly string STR_LOW_DEVICE = "为了更好的体验,单核2G以内的安卓设备暂未开放游戏!";
 
     public static readonly string Data_Error = "处理数据出错";
     public static readonly string QuitGame = "退出游戏";
@@ -29,21 +28,19 @@ public static class StaticText {
 
     public static readonly string CheckAssetsUpdateError = "检查热更资源失败";
     public static readonly string DownloadAssetsUpdateError = "下载热更资源失败";
-    public static readonly string ConfirmDownloadAssets = "本次热更新资源大小为{0}\n是否确认下载";
+    public static readonly string ConfirmDownloadAssetsHasWifi = "本次热更新资源大小为{0}\n您现在处于WIFI环境中,可以放心下载\n是否确认下载";
+    public static readonly string ConfirmDownloadAssetsNoWifi = "本次热更新资源大小为{0}\n您现在处于非WIFI环境中\n是否确认下载";
     public static readonly string StartDownloadAssets = "开始下载";
     public static readonly string DownloadShowText = "本次下载{0}，速度为{1}/s ({2})";
 
 
-<<<<<<< HEAD
     public static readonly string CheckVersioning = "正在检查版本更新";
     public static readonly string CheckVersionOver = "版本更新检查完毕";
     public static readonly string CheckAssetsing = "正在检查资源更新";
     public static readonly string CheckAssetsOver = "资源更新检查完毕";
 
     public static readonly string DownloadAssetsing = "正在为您下载更新资源包";
-=======
     public static readonly string Ok = "确定";
     public static readonly string StartGame = "开始游戏";
     public static readonly string Welcome = "欢迎来到我的游戏";
->>>>>>> c3e92b749ef8b510585b42d49c16188b88c64d6c
 }

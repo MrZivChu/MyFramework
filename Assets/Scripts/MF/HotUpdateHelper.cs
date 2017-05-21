@@ -39,13 +39,8 @@ public class HotUpdateHelper : MonoBehaviour {
     public event Action DownloadFileListError;
     //是否确认下载
     public event Action ConfirmDownloadAssets;
-<<<<<<< HEAD
     //没有资源需要更新，开始游戏
     public event Action StartGame;
-=======
-    //全部下载完成
-    public event Action AllDownloadSuccess;
->>>>>>> c3e92b749ef8b510585b42d49c16188b88c64d6c
 
     void Awake() {
         fileDownloadHelper = GetComponent<FileDownloadHelper>();
@@ -190,14 +185,8 @@ public class HotUpdateHelper : MonoBehaviour {
             }
         } else {
             print("没有最新资源可更新，直接进入游戏");
-<<<<<<< HEAD
             if (StartGame != null) {
                 StartGame();
-=======
-            if (AllDownloadSuccess != null)
-            {
-                AllDownloadSuccess();
->>>>>>> c3e92b749ef8b510585b42d49c16188b88c64d6c
             }
         }
     }
@@ -229,9 +218,8 @@ public class HotUpdateHelper : MonoBehaviour {
             print("所有ab资源下载成功");
             string temp = GetLocalFileListPath();
             File.WriteAllLines(temp, downloadFileStringList);
-            if (AllDownloadSuccess != null)
-            {
-                AllDownloadSuccess();
+            if (StartGame != null) {
+                StartGame();
             }
         } else {
             print("ab资源下载失败");
