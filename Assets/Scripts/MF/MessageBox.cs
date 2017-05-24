@@ -51,7 +51,7 @@ public class MessageBox : MonoBehaviour
             {
                 callback();
             }
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         };
     }
 
