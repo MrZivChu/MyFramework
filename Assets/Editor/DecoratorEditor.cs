@@ -1,48 +1,95 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using UnityEditor;
 using UnityEngine;
 
-public class HandlePage {
-    int index = 0;
+public class HandlePrefabEditorHelper
+{
+    public string podaFileSavePath = "d:/{0}.pda";
 
-    public void AddRootPage(Transform parent, List<InspectorObj> list) {
-        InspectorObj inspectorObj = new InspectorObj();
-        inspectorObj.ID = index;
-        inspectorObj.obj = parent.gameObject;
-        list.Add(inspectorObj);
-        GetPageChildsKeyValue(parent, list);
+    Transform parent;
+    public HandlePrefabEditorHelper(Transform tparent)
+    {
+        parent = tparent;
     }
 
-    public void GetPageChildsKeyValue(Transform parent, List<InspectorObj> list) {
-        InspectorObj inspectorObj = null;
-        foreach (Transform item in parent) {
+
+
+    public void CreatePdaFile()
+    {
+        string content = "local tab = { \r\t";
+        Dictionary<string, GameObject> dic = GetFlagChilds(parent);
+        int index = 0;
+        string temp = string.Empty;
+        foreach (var item in dic)
+        {
+            temp = ",\r\t";
+            if (index == dic.Count - 1)
+            {
+                temp = "\r";
+            }
+            content += "[\"" + item.Key + "\"] = " + index + temp;
             index++;
-            inspectorObj = new InspectorObj();
-            inspectorObj.ID = index;
-            inspectorObj.obj = item.gameObject;
-            list.Add(inspectorObj);
-            if (item.childCount > 0) {
-                GetPageChildsKeyValue(item, list);
+        }
+        content += "}\rreturn tab";
+        File.WriteAllText(string.Format(podaFileSavePath, parent.name), content);
+    }
+
+    public void BindScriptForPrefab()
+    {
+        Dictionary<string, GameObject> dic = GetFlagChilds(parent);
+        InspectorObjectsHelper helper = parent.GetComponent<InspectorObjectsHelper>();
+        helper.allInspectorObjects = new List<GameObject>();
+        foreach (var item in dic)
+        {
+            helper.allInspectorObjects.Add(item.Value);
+        }
+    }
+
+    Dictionary<string, GameObject> GetFlagChilds(Transform parent)
+    {
+        Dictionary<string, GameObject> dic = new Dictionary<string, GameObject>();
+        dic[parent.name] = parent.gameObject;
+        GetPageChildsKeyValue(parent, dic);
+        return dic;
+    }
+
+    void GetPageChildsKeyValue(Transform parent, Dictionary<string, GameObject> dic)
+    {
+        foreach (Transform item in parent)
+        {
+            if (item.name.StartsWith("_"))
+            {
+                dic[item.name.Substring(1, item.name.Length - 1)] = item.gameObject;
+            }
+            if (item.childCount > 0)
+            {
+                GetPageChildsKeyValue(item, dic);
             }
         }
     }
 }
 
 [CustomEditor(typeof(InspectorObjectsHelper))]
-public class DecoratorEditor : Editor {
-
-    public override void OnInspectorGUI() {
+public class DecoratorEditor : Editor
+{
+    //在预设中需要用到的节点需要在前面加_
+    //生成一个poda文件，里面存一个集合    Name -> ID
+    //预设上绑一个脚本，脚本里存一个集合  ID -> Obj
+    //备注：ID为集合的索引，Name必须是唯一的(一个好处就是强制命名是有意义的)
+    public override void OnInspectorGUI()
+    {
         base.OnInspectorGUI();
-        if (GUILayout.Button("Spawn Inspector Objects")) {
-            List<InspectorObj> allObjectsDic = new List<InspectorObj>();
+        if (GUILayout.Button("Spawn Child Objects"))
+        {
             InspectorObjectsHelper bindAllObjects = (InspectorObjectsHelper)target;
-            HandlePage handlePage = new HandlePage();
-            handlePage.AddRootPage(bindAllObjects.gameObject.transform, allObjectsDic);
-            bindAllObjects.allInspectorObjects = allObjectsDic;
+            HandlePrefabEditorHelper handlePage = new HandlePrefabEditorHelper(bindAllObjects.transform);
+            handlePage.CreatePdaFile();
+            handlePage.BindScriptForPrefab();
         }
     }
 }

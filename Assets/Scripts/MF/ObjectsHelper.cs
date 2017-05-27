@@ -1,65 +1,58 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
+public class ObjectsHelper
+{
 
-public class ObjectsHelper {
+    static Dictionary<int, List<GameObject>> allObjectsDic = new Dictionary<int, List<GameObject>>();
 
-    static Dictionary<int, List<InspectorObj>> allObjectsDic = new Dictionary<int, List<InspectorObj>>();
-
-    public static int SpawnPage(string pageName) {
+    public static int SpawnPage(string pageName)
+    {
         GameObject page = GameObject.Instantiate(Resources.Load(pageName)) as GameObject;
         int pageID = page.GetInstanceID();
         allObjectsDic[pageID] = page.GetComponent<InspectorObjectsHelper>().allInspectorObjects;
         return pageID;
     }
 
-    public static void SetPageNull(int pageID) {
-        if (allObjectsDic.ContainsKey(pageID)) {
+    public static void SetPageNull(int pageID)
+    {
+        if (allObjectsDic.ContainsKey(pageID))
+        {
             allObjectsDic[pageID] = null;
+            allObjectsDic.Remove(pageID);
         }
     }
 
 
 
-    //public static void SetUILabel(string parentID, string childPath, string content)
-    //{
-    //    GameObject obj = GetChildObjectByPath(parentID, childPath);
-    //    if (obj != null)
-    //    {
-    //        UILabel uiLabel = obj.GetComponent<UILabel>();
-    //        if (uiLabel != null)
-    //        {
-    //            uiLabel.text = content;
-    //        }
-    //    }
-    //}
+    public static void SetText(int parentID, int childID, string content)
+    {
+        GameObject obj = allObjectsDic[parentID][childID];
+        if (obj != null)
+        {
+            Text uiText = obj.GetComponent<Text>();
+            if (uiText != null)
+            {
+                uiText.text = content;
+            }
+        }
+    }
 
-    //public static void SetUISprite(string parentID, string childPath, string tSpriteName)
-    //{
-    //    GameObject obj = GetChildObjectByPath(parentID, childPath);
-    //    if (obj != null)
-    //    {
-    //        UISprite uiSprite = obj.GetComponent<UISprite>();
-    //        if (uiSprite != null)
-    //        {
-    //            uiSprite.spriteName = tSpriteName;
-    //        }
-    //    }
-    //}
-
-    //public static void SetUITexture(string parentID, string childPath, string tMainTexture)
-    //{
-    //    GameObject obj = GetChildObjectByPath(parentID, childPath);
-    //    if (obj != null)
-    //    {
-    //        UITexture uiTexture = obj.GetComponent<UITexture>();
-    //        if (uiTexture != null)
-    //        {
-    //            uiTexture.mainTexture = XYClient.Resource.ResourceManager.LoadTexture(tMainTexture);
-    //        }
-    //    }
-    //}
+    public static void SetImage(int parentID, int childID, string tSpriteName)
+    {
+        GameObject obj = allObjectsDic[parentID][childID];
+        Sprite sprite = null;
+        if (obj != null)
+        {
+            Image uiImage = obj.GetComponent<Image>();
+            if (uiImage != null)
+            {
+                uiImage.sprite = sprite;
+            }
+        }
+    }
 
     //public static void SetUISlider(string parentID, string childPath, float value)
     //{
