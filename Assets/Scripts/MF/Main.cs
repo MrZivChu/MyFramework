@@ -33,6 +33,10 @@ public class Main : MonoBehaviour {
     public Button startBtn;
 
     void Start() {
+
+        ObjectsHelper.SpawnPage("MessageBox");
+        ObjectsHelper.SpawnPage("MF");
+
         downloadTipText.gameObject.SetActive(false);
         progress.gameObject.SetActive(false);
         slider.gameObject.SetActive(false);
