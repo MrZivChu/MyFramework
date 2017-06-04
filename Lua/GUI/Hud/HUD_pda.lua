@@ -1,0 +1,1 @@
+local tab = { 	["HUD"] = 0,	["A"] = 1,	["E"] = 2,	["Toggle"] = 3}return tab

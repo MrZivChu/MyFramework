@@ -1,4 +1,5 @@
 ﻿using LitJson;
+using LuaInterface;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -33,17 +34,29 @@ public class Main : MonoBehaviour {
     public Button startBtn;
 
     void Start() {
-
-        ObjectsHelper.SpawnPage("MessageBox");
-        ObjectsHelper.SpawnPage("MF");
-
         downloadTipText.gameObject.SetActive(false);
         progress.gameObject.SetActive(false);
         slider.gameObject.SetActive(false);
         tipText.gameObject.SetActive(true);
         startBtn.gameObject.SetActive(false);
         hotUpdateHelper = GameObject.Find("HotUpdateHelper").GetComponent<HotUpdateHelper>();
+
+        EventTriggerListener.Get(startBtn.gameObject).onClick = StartGame;
         RequestNet();
+    }
+
+    void StartGame(GameObject obj, object param) {
+        print("startgame");
+        LuaState lua = new LuaState();
+        LuaBinder.Bind(lua);
+        lua.Start();
+        string fullPath = Application.dataPath.Replace("Assets", "Lua");
+        lua.AddSearchPath(fullPath);
+        lua.DoFile("Others/main.lua");
+        //lua.Collect();
+        //lua.CheckTop();
+        //lua.Dispose();
+        //lua = null;
     }
 
     /// <summary>

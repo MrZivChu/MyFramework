@@ -2,24 +2,29 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using LuaInterface;
 
-public class ObjectsHelper
-{
+public class ObjectsHelper {
 
-    static Dictionary<int, List<GameObject>> allObjectsDic = new Dictionary<int, List<GameObject>>();
+    public static Dictionary<int, List<GameObject>> allObjectsDic = new Dictionary<int, List<GameObject>>();
 
-    public static int SpawnPage(string pageName)
-    {
+    public static int SpawnPage(int parentID, int childID, string abName, string pageName) {
+        GameObject parent = null;
+        if (parentID == 0) {
+            parent = GameObject.Find("GUI/Canvas/Root");
+        } else {
+            parent = allObjectsDic[parentID][childID];
+        }
         GameObject page = GameObject.Instantiate(Resources.Load(pageName)) as GameObject;
         int pageID = page.GetInstanceID();
         allObjectsDic[pageID] = page.GetComponent<InspectorObjectsHelper>().allInspectorObjects;
+        page.transform.parent = parent.transform;
+        page.transform.localScale = Vector3.one;
         return pageID;
     }
 
-    public static void SetPageNull(int pageID)
-    {
-        if (allObjectsDic.ContainsKey(pageID))
-        {
+    public static void SetPageNull(int pageID) {
+        if (allObjectsDic.ContainsKey(pageID)) {
             allObjectsDic[pageID] = null;
             allObjectsDic.Remove(pageID);
         }
@@ -27,31 +32,43 @@ public class ObjectsHelper
 
 
 
-    public static void SetText(int parentID, int childID, string content)
-    {
+    public static void SetText(int parentID, int childID, string content) {
         GameObject obj = allObjectsDic[parentID][childID];
-        if (obj != null)
-        {
+        if (obj != null) {
             Text uiText = obj.GetComponent<Text>();
-            if (uiText != null)
-            {
+            if (uiText != null) {
                 uiText.text = content;
             }
         }
     }
 
-    public static void SetImage(int parentID, int childID, string tSpriteName)
-    {
+    public static void SetImage(int parentID, int childID, string tSpriteName) {
         GameObject obj = allObjectsDic[parentID][childID];
         Sprite sprite = null;
-        if (obj != null)
-        {
+        if (obj != null) {
             Image uiImage = obj.GetComponent<Image>();
-            if (uiImage != null)
-            {
+            if (uiImage != null) {
                 uiImage.sprite = sprite;
             }
         }
+    }
+
+    public static void AddButtonClick(int parentID, int childID, object lua) {
+        GameObject obj = allObjectsDic[parentID][childID];
+        Button btn = obj.GetComponent<Button>();
+        btn.onClick.AddListener(delegate () {
+            LuaFunction func = (LuaFunction)lua;
+            func.Call();
+        });
+    }
+
+    public static void AddToggleClick(int parentID, int childID, object lua) {
+        GameObject obj = allObjectsDic[parentID][childID];
+        Toggle tog = obj.GetComponent<Toggle>();
+        tog.onValueChanged.AddListener(delegate (bool isOn) {
+            LuaFunction func = (LuaFunction)lua;
+            func.Call(isOn);
+        });
     }
 
     //public static void SetUISlider(string parentID, string childPath, float value)

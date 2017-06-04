@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class HandlePrefabEditorHelper
 {
-    public string podaFileSavePath = "d:/{0}.pda";
+    public string podaFileSavePath = "d:/{0}_pda.lua";
 
     Transform parent;
     public HandlePrefabEditorHelper(Transform tparent)
