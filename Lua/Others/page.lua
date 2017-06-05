@@ -22,6 +22,10 @@ function Page:onExit()
 	
 end
 
+function Page:onNotify( sender , e , data )
+	-- body
+end
+
 function Page:addChild( name , parentID , ... )
 	local layer = requireLuaFile(name)
 	if layer then

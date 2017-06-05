@@ -29,4 +29,10 @@ function Route.pop( num )
 	end
 end
 
+function  Route.notify( sender , e , data)
+	for i,v in ipairs(nodes) do
+		nodes[i]:onNotify(sender , e , data)
+	end
+end
+
 return Route
