@@ -1,0 +1,25 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: activity.png (1024 x 1024)
+# $TexturePacker:SmartUpdate:c693919c44023e59baf4228ea9e2d2b2:00f94f170858e72850d2c55a87e9e748:fbc6e5675a0edef87f451c35174234c5$
+#
+
+Activitybg;2;411;573;111;0.5;0.5
+bg2;672;771;350;251;0.5;0.5
+bg4;317;771;353;251;0.5;0.5
+btn01;317;660;141;109;0.5;0.5
+got;317;606;102;52;0.5;0.5
+hw01;520;142;311;28;0.5;0.5
+hw02;316;113;311;27;0.5;0.5
+hw03;520;172;339;16;0.5;0.5
+hw04;520;190;339;16;0.5;0.5
+pz;316;158;202;251;0.5;0.5
+role3;577;300;266;469;0.5;0.5
+role5;2;524;313;498;0.5;0.5
+role6;2;41;312;368;0.5;0.5
+wordchongzhi;520;208;298;90;0.5;0.5
+wordxiaofei;629;54;291;86;0.5;0.5

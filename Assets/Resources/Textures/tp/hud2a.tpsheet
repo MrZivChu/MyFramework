@@ -1,0 +1,14 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: hud2a.png (468 x 516)
+# $TexturePacker:SmartUpdate:0dc58863c36e4b72683633149686a937:8fc43e33a7b61630e2e2f08cc371034e:d4ffbefbc3f23db887db005492f618b1$
+#
+
+blood;2;92;256;256;0.5;0.5
+bossdi;2;350;387;164;0.5;0.5
+clearance;2;3;265;87;0.5;0.5
+start;260;244;206;104;0.5;0.5

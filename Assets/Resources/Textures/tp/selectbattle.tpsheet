@@ -1,0 +1,19 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: selectbattle.png (1024 x 1024)
+# $TexturePacker:SmartUpdate:5ff5b5845900d593848c6680702cc8cc:19657b257472c3a2aa0c311db760ccbc:29fdbdd026fb8b123e5bbb05ea49de3d$
+#
+
+jqtitle;640;942;342;80;0.5;0.5
+pic01;2;316;231;351;0.5;0.5
+pic02;401;48;237;275;0.5;0.5
+pic03;490;408;183;274;0.5;0.5
+pic04;204;18;195;296;0.5;0.5
+pic05;2;9;200;305;0.5;0.5
+pic06;243;684;253;338;0.5;0.5
+pic07;235;325;253;342;0.5;0.5
+pic08;2;669;239;353;0.5;0.5

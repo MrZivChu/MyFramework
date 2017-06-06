@@ -1,0 +1,401 @@
+fileFormatVersion: 2
+guid: 5f6f033cda0a47d4ba840d02b69aaa75
+timeCreated: 1480384915
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: day_di01
+    21300002: guild_active
+    21300004: guild_bigdi
+    21300006: guild_bossdi01
+    21300008: guild_bossko
+    21300010: guild_bosslook
+    21300012: guild_bosstitle
+    21300014: guild_btn+10
+    21300016: guild_btn-10
+    21300018: guild_change
+    21300020: guild_delete
+    21300022: guild_di
+    21300024: guild_gongxian
+    21300026: guild_jianzhu
+    21300028: guild_jt
+    21300030: guild_kejijuan
+    21300032: guild_monthcard
+    21300034: guild_monthzz
+    21300036: guild_pic1
+    21300038: guild_pic2
+    21300040: guild_pic3
+    21300042: guild_pic4
+    21300044: guild_pic5
+    21300046: guild_pic6
+    21300048: guild_pic7
+    21300050: guild_zicai
+    21300052: icon_sxj
+    21300054: private chat 1
+    21300056: search
+    21300058: store_purchased
+    21300060: guild_pic8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: guild_active
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 523
+        width: 46
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_bigdi
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 439
+        width: 260
+        height: 445
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_bossdi01
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 37
+        width: 240
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_bossko
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 738
+        width: 145
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_bosstitle
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 886
+        width: 453
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_btn+10
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 628
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_btn-10
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 644
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_change
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 573
+        width: 55
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_delete
+      rect:
+        serializedVersion: 2
+        x: 585
+        y: 527
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_di
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 761
+        width: 78
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 0, z: 32, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_gongxian
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 679
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_jt
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_kejijuan
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 695
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_monthcard
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 811
+        width: 336
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_monthzz
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 682
+        width: 123
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_pic1
+      rect:
+        serializedVersion: 2
+        x: 668
+        y: 136
+        width: 210
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_pic2
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 145
+        width: 210
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_pic3
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 136
+        width: 210
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_pic4
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 358
+        width: 210
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_pic5
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 367
+        width: 210
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_pic6
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 580
+        width: 210
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_pic7
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 589
+        width: 210
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_pic8
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 802
+        width: 210
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_zicai
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 745
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_sxj
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 578
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: store_purchased
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 569
+        width: 107
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 58, y: 4, z: 5, w: 32}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: gui/guild.tex
+  assetBundleVariant: 

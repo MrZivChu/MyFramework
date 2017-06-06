@@ -1,0 +1,4525 @@
+fileFormatVersion: 2
+guid: 6060c8cee30ebb24f94af66e771a37f1
+timeCreated: 1484035217
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: 1st
+    21300002: 1stS
+    21300004: 2nd
+    21300006: 2ndS
+    21300008: 3001
+    21300010: 3nd
+    21300012: 3ndS
+    21300014: 9GG00
+    21300016: 9GG01
+    21300018: 9GG02
+    21300020: 9GG03
+    21300022: 9GG04
+    21300024: 9GG05
+    21300026: 9GG06
+    21300028: 9GG07
+    21300030: 9GG08
+    21300032: 9GG08a
+    21300034: 9GG09
+    21300036: 9GG10
+    21300038: 9GG11
+    21300040: 9GG12
+    21300042: 9GG16
+    21300044: 9GG17
+    21300046: 9GG18
+    21300048: 9GG21
+    21300050: 9GG23
+    21300052: 9GG24
+    21300054: 9GG25
+    21300056: 9GG26
+    21300058: 9GG27
+    21300060: 9GG28
+    21300062: 9GG28a
+    21300064: 9GG29
+    21300066: 9GG30
+    21300068: 9GG31
+    21300070: 9GG32
+    21300072: 9GG34
+    21300074: 9GG35
+    21300076: 9GG36
+    21300078: 9GG37
+    21300080: Bossicon
+    21300082: Close1
+    21300084: Close2
+    21300086: DZicon
+    21300088: Dy
+    21300090: E
+    21300092: EXPFill
+    21300094: EXPdi
+    21300096: FW01
+    21300098: FWDi_select
+    21300100: FWZC01
+    21300102: FWZC02
+    21300104: GG
+    21300106: Gou
+    21300108: Gou01
+    21300110: Icon_lhs
+    21300112: Icon_tf01
+    21300114: Icon_tf02
+    21300116: Icon_zs
+    21300118: Key
+    21300120: Level1
+    21300122: Skip
+    21300124: SuiPian01
+    21300126: SuiPian02
+    21300128: SuiPian03
+    21300130: SuiPian04
+    21300132: SuiPian05
+    21300134: SuiPian06
+    21300136: SuiPian07
+    21300138: SuiPian08
+    21300140: SuiPian09
+    21300142: TFJT01
+    21300144: TFJT02
+    21300146: TFJT03
+    21300148: TFJTdk01
+    21300150: TFJTdk02
+    21300152: TYDi_select
+    21300154: Title01
+    21300156: Title01a
+    21300158: Title02
+    21300160: Title02a
+    21300162: Title03
+    21300164: a001
+    21300166: a002
+    21300168: a003
+    21300170: a004
+    21300172: a005
+    21300174: a006
+    21300176: a007
+    21300178: a008
+    21300180: a009
+    21300182: a010
+    21300184: a011
+    21300186: a012
+    21300188: a013
+    21300190: a014
+    21300192: a015
+    21300194: a016
+    21300196: a017
+    21300198: about
+    21300200: add
+    21300202: add01
+    21300204: arrow1
+    21300206: arrow2
+    21300208: back01
+    21300210: back02
+    21300212: bg03
+    21300214: bgplayer01a_Cui
+    21300216: bgplayer02a_Cui
+    21300218: bgplayer03a_Cui+1
+    21300220: bgplayer03a_Cui
+    21300222: bgplayer04a_Cui+1
+    21300224: bgplayer04a_Cui+2
+    21300226: bgplayer04a_Cui
+    21300228: bgplayer05a_Cui+1
+    21300230: bgplayer05a_Cui+2
+    21300232: bgplayer05a_Cui+3
+    21300234: bgplayer05a_Cui
+    21300236: bgplayer06a_Cui+1
+    21300238: bgplayer06a_Cui+2
+    21300240: bgplayer06a_Cui+3
+    21300242: bgplayer06a_Cui+4
+    21300244: bgplayer06a_Cui
+    21300246: bgplayer07a_Cui+1
+    21300248: bgplayer07a_Cui
+    21300250: bgwheel01_Cui
+    21300252: bian
+    21300254: boss
+    21300256: btn01
+    21300258: btn01a
+    21300260: btn02
+    21300262: btn03
+    21300264: btn04
+    21300266: btn1
+    21300268: btn1a
+    21300270: btn1b
+    21300272: btn2
+    21300274: btn2a
+    21300276: btn2b
+    21300278: btn3a
+    21300280: btn3b
+    21300282: btn4a
+    21300284: btn4b
+    21300286: btnchat01_Cui
+    21300288: btnchat02
+    21300290: btnchat03
+    21300292: btncontrol01_Cui
+    21300294: btndi
+    21300296: btnranking
+    21300298: btntb1
+    21300300: btntb2
+    21300302: career1
+    21300304: career2
+    21300306: career3
+    21300308: career4
+    21300310: chat_delete
+    21300312: dian
+    21300314: down
+    21300316: f_dw
+    21300318: flag
+    21300320: flag1
+    21300322: flag2
+    21300324: gift
+    21300326: gift1
+    21300328: go
+    21300330: hc
+    21300332: headbg00
+    21300334: headbg01
+    21300336: headbg02
+    21300338: headbg03+1
+    21300340: headbg03
+    21300342: headbg04+1
+    21300344: headbg04+2
+    21300346: headbg04
+    21300348: headbg05+1
+    21300350: headbg05+2
+    21300352: headbg05+3
+    21300354: headbg05
+    21300356: headbg06+1
+    21300358: headbg06+2
+    21300360: headbg06+3
+    21300362: headbg06+4
+    21300364: headbg06
+    21300366: headmask
+    21300368: help
+    21300370: huat
+    21300372: hud_jdt
+    21300374: hud_jyt
+    21300376: hud_tlt
+    21300378: hw01
+    21300380: hw02
+    21300382: icon01
+    21300384: icon02
+    21300386: icon_bq
+    21300388: icon_hx
+    21300390: icon_jb
+    21300392: icon_nq
+    21300394: icon_rcj
+    21300396: icon_ry
+    21300398: icon_sdj
+    21300400: icon_sp
+    21300402: icon_sw
+    21300404: icon_tf
+    21300406: icon_tl
+    21300408: icon_wh
+    21300410: icon_wq
+    21300412: icon_yb
+    21300414: icon_zb
+    21300416: info
+    21300418: jbx_normal
+    21300420: jbx_pressed
+    21300422: jian
+    21300424: jian01
+    21300426: jiantou02
+    21300428: jiantou03
+    21300430: jiao
+    21300432: jq_di
+    21300434: jq_jt
+    21300436: jq_quan
+    21300438: jqgs
+    21300440: kc
+    21300442: levelup2
+    21300444: line
+    21300446: line1
+    21300448: look
+    21300450: lose
+    21300452: losebg
+    21300454: luckyranking
+    21300456: ludj
+    21300458: luyin
+    21300460: luyin1
+    21300462: luyin2
+    21300464: m_light
+    21300466: max
+    21300468: mazetitle1
+    21300470: new
+    21300472: off
+    21300474: on
+    21300476: p_di
+    21300478: private chat
+    21300480: rank
+    21300482: rankbg
+    21300484: red
+    21300486: ren
+    21300488: search
+    21300490: sm02
+    21300492: smbian01
+    21300494: smdi02
+    21300496: star1
+    21300498: star2
+    21300500: star3
+    21300502: star4
+    21300504: starhui
+    21300506: suo
+    21300508: suo01
+    21300510: suo02
+    21300512: sz
+    21300514: tbx_normal
+    21300516: tbx_pressed
+    21300518: title
+    21300520: up
+    21300522: victory
+    21300524: victorybg
+    21300526: victoryl
+    21300528: vip1
+    21300530: vip2
+    21300532: vip3
+    21300534: vip4
+    21300536: vs
+    21300538: ybx_normal
+    21300540: ybx_pressed
+    21300542: yqs_zs
+    21300544: zbx_normal
+    21300546: zbx_pressed
+    21300548: zhuan
+    21300550: zi01
+    21300552: zq_di
+    21300554: zq_di01
+    21300556: zq_kl
+    21300558: btnt
+    21300560: hdt
+    21300562: icon03
+    21300564: icon04
+    21300566: store_btn1
+    21300568: store_btn1a
+    21300570: store_btn2
+    21300572: store_btn2a
+    21300574: store_btn3
+    21300576: store_btn3a
+    21300578: store_vipbg02
+    21300580: pvpicon01
+    21300582: pvpicon02
+    21300584: pvpicon03
+    21300586: pvpicon04
+    21300588: store_double
+    21300590: TYDi
+    21300592: btnjt
+    21300594: day_di01
+    21300596: di
+    21300598: guild_bosslook
+    21300600: hxdi
+    21300602: nqdi
+    21300604: nqdi01
+    21300606: nqlight
+    21300608: nqtiao
+    21300610: tfdi
+    21300612: tflight
+    21300614: chardi
+    21300616: fw_tt01
+    21300618: fw_tt02
+    21300620: Input
+    21300622: btn_l01
+    21300624: btn_l02
+    21300626: yk
+    21300628: s0
+    21300630: got
+    21300632: bg2
+    21300634: bg4
+    21300636: btnnew01
+    21300638: btnnew02
+    21300640: btn_l03
+    21300642: btn_l04
+    21300644: btn_l05
+    21300646: btn_l06
+    21300648: icon_sxj
+    21300650: csd
+    21300652: Title04
+    21300654: icon05
+    21300656: btnt1
+    21300658: icon06
+    21300660: f_dw1
+    21300662: Title02aa
+    21300664: sc_bian
+    21300666: cbdi00
+    21300668: icon07
+    21300670: icon08
+    21300672: icon09
+    21300674: icon10
+    21300676: icon11
+    21300678: tkzc_line
+    21300680: Title05
+    21300682: icon_city
+    21300684: icon_jf
+    21300686: icon_xsl
+    21300688: icon_yc
+    21300690: losel
+    21300692: victory1
+    21300694: 3
+    21300696: sxbian
+    21300698: sxdi01
+    21300700: sxtiao
+    21300702: guild_bossko
+    21300704: add02
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 1
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    compressionQuality: 50
+    allowsAlphaSplitting: 1
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -3
+    compressionQuality: 100
+    allowsAlphaSplitting: 1
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: 1st
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 421
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: 1stS
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 635
+        width: 75
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: 2nd
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 427
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: 2ndS
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 549
+        width: 75
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: 3
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 734
+        width: 79
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: 3001
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 483
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: 3nd
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 427
+        width: 57
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: 3ndS
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 6
+        width: 74
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG00
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 2015
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG01
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 483
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG02
+      rect:
+        serializedVersion: 2
+        x: 2014
+        y: 1483
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 12, z: 12, w: 12}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG03
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1528
+        width: 81
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 29, y: 9, z: 19, w: 8}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG04
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 596
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 12, z: 12, w: 12}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG05
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 545
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 12, z: 12, w: 12}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG06
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 206
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG07
+      rect:
+        serializedVersion: 2
+        x: 1640
+        y: 582
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 12, z: 12, w: 12}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG08
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 865
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG08a
+      rect:
+        serializedVersion: 2
+        x: 1848
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG09
+      rect:
+        serializedVersion: 2
+        x: 1948
+        y: 1850
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 8, z: 8, w: 8}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG10
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 255
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG11
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 215
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG12
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG16
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 484
+        width: 168
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 76, y: 76, z: 76, w: 76}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG17
+      rect:
+        serializedVersion: 2
+        x: 1878
+        y: 730
+        width: 168
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 76, y: 76, z: 76, w: 76}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG18
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 587
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG21
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 1053
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG23
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 636
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 28}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG24
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 685
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG25
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 820
+        width: 80
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 38, y: 0, z: 38, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG26
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 477
+        width: 64
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 12, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG27
+      rect:
+        serializedVersion: 2
+        x: 1954
+        y: 94
+        width: 58
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 4, z: 18, w: 18}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG28
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 1082
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 128, z: 48, w: 72}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG28a
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1683
+        width: 256
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 120, y: 0, z: 120, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG29
+      rect:
+        serializedVersion: 2
+        x: 1356
+        y: 385
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 60, y: 60, z: 60, w: 60}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG30
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 857
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 28}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG31
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 734
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 12, z: 12, w: 12}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG32
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 771
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG34
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 91
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 12, z: 12, w: 12}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG35
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 91
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG36
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 15, z: 24, w: 38}
+      outline: []
+    - serializedVersion: 2
+      name: 9GG37
+      rect:
+        serializedVersion: 2
+        x: 2014
+        y: 1452
+        width: 33
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 12, z: 12, w: 12}
+      outline: []
+    - serializedVersion: 2
+      name: Bossicon
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 831
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Close1
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Close2
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: DZicon
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 831
+        width: 23
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Dy
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 946
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: E
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 629
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: EXPFill
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 1856
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 4, z: 6, w: 4}
+      outline: []
+    - serializedVersion: 2
+      name: EXPdi
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 1386
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 8, y: 8, z: 8, w: 8}
+      outline: []
+    - serializedVersion: 2
+      name: FW01
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1381
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: FWDi_select
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1458
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 36, y: 36, z: 36, w: 36}
+      outline: []
+    - serializedVersion: 2
+      name: FWZC01
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1478
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 28, y: 28, z: 28, w: 28}
+      outline: []
+    - serializedVersion: 2
+      name: FWZC02
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1555
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 28, y: 28, z: 28, w: 28}
+      outline: []
+    - serializedVersion: 2
+      name: GG
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 1760
+        width: 322
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Gou
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1027
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Gou01
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 633
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Icon_lhs
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 730
+        width: 43
+        height: 63
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Icon_tf01
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Icon_tf02
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Icon_zs
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 468
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Input
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1309
+        width: 291
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Key
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 1223
+        width: 50
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Level1
+      rect:
+        serializedVersion: 2
+        x: 2017
+        y: 1515
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Skip
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1628
+        width: 102
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: SuiPian01
+      rect:
+        serializedVersion: 2
+        x: 1761
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 28, y: 32, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: SuiPian02
+      rect:
+        serializedVersion: 2
+        x: 1674
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 28, y: 32, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: SuiPian03
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 28, y: 32, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: SuiPian04
+      rect:
+        serializedVersion: 2
+        x: 1500
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 28, y: 32, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: SuiPian05
+      rect:
+        serializedVersion: 2
+        x: 1413
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 28, y: 32, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: SuiPian06
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 28, y: 32, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: SuiPian07
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 36, y: 36, z: 32, w: 32}
+      outline: []
+    - serializedVersion: 2
+      name: SuiPian08
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 28, y: 32, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: SuiPian09
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 36, y: 36, z: 32, w: 32}
+      outline: []
+    - serializedVersion: 2
+      name: TFJT01
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 662
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 26, z: 0, w: 2}
+      outline: []
+    - serializedVersion: 2
+      name: TFJT02
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 972
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 12, z: 0, w: 12}
+      outline: []
+    - serializedVersion: 2
+      name: TFJT03
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 1133
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: TFJTdk01
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1108
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: TFJTdk02
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1189
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: TYDi
+      rect:
+        serializedVersion: 2
+        x: 1496
+        y: 428
+        width: 135
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: TYDi_select
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1652
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 36, y: 36, z: 36, w: 36}
+      outline: []
+    - serializedVersion: 2
+      name: Title01
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 1396
+        width: 300
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 140, y: 0, z: 140, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Title01a
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 1468
+        width: 305
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 140, y: 0, z: 140, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Title02
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 1544
+        width: 308
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 90, y: 0, z: 90, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Title02a
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 1966
+        width: 310
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 120, y: 0, z: 120, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Title02aa
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 1613
+        width: 308
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 90, y: 0, z: 90, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Title03
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 1689
+        width: 352
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 160, y: 0, z: 160, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Title04
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1969
+        width: 363
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 150, y: 0, z: 150, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Title05
+      rect:
+        serializedVersion: 2
+        x: 462
+        y: 1265
+        width: 248
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a001
+      rect:
+        serializedVersion: 2
+        x: 1438
+        y: 208
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a002
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 208
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a003
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 208
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a004
+      rect:
+        serializedVersion: 2
+        x: 1270
+        y: 208
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a005
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 208
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a006
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 208
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a007
+      rect:
+        serializedVersion: 2
+        x: 1505
+        y: 136
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a008
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 136
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a009
+      rect:
+        serializedVersion: 2
+        x: 1393
+        y: 136
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a010
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 273
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a011
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 329
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a012
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 136
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a013
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 136
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a014
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 136
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a015
+      rect:
+        serializedVersion: 2
+        x: 1169
+        y: 136
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a016
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 136
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: a017
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 1322
+        width: 55
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: about
+      rect:
+        serializedVersion: 2
+        x: 1654
+        y: 830
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: add
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 1174
+        width: 49
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: add01
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 468
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: add02
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 1005
+        width: 34
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: arrow1
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1426
+        width: 41
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: arrow2
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 1481
+        width: 41
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: back01
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 564
+        width: 140
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 0, z: 60, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: back02
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 593
+        width: 140
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 0, z: 60, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bg03
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 304
+        width: 122
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bg2
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 1428
+        width: 350
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bg4
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1680
+        width: 353
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer01a_Cui
+      rect:
+        serializedVersion: 2
+        x: 978
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer02a_Cui
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer03a_Cui+1
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer03a_Cui
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer04a_Cui+1
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer04a_Cui+2
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer04a_Cui
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer05a_Cui+1
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer05a_Cui+2
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer05a_Cui+3
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer05a_Cui
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 1
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer06a_Cui+1
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 88
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer06a_Cui+2
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 126
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer06a_Cui+3
+      rect:
+        serializedVersion: 2
+        x: 1868
+        y: 175
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer06a_Cui+4
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 461
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer06a_Cui
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 461
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer07a_Cui+1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 548
+        width: 86
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgplayer07a_Cui
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 599
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bgwheel01_Cui
+      rect:
+        serializedVersion: 2
+        x: 1538
+        y: 667
+        width: 163
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bian
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 1850
+        width: 8
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 2, z: 3, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: boss
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 1138
+        width: 243
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btn01
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 91
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn01a
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 947
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 12, y: 12, z: 12, w: 12}
+      outline: []
+    - serializedVersion: 2
+      name: btn02
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 91
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn03
+      rect:
+        serializedVersion: 2
+        x: 1249
+        y: 91
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn04
+      rect:
+        serializedVersion: 2
+        x: 1204
+        y: 91
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 16, z: 16, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn1
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 343
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 16, z: 24, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn1a
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 390
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 16, z: 24, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn1b
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 437
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 16, z: 24, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn2
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 980
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 16, z: 24, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn2a
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1027
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 16, z: 24, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn2b
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1074
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 16, z: 24, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn3a
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1121
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 16, z: 24, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn3b
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1168
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 16, z: 24, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn4a
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1215
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 16, z: 24, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn4b
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 1262
+        width: 62
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 16, z: 24, w: 16}
+      outline: []
+    - serializedVersion: 2
+      name: btn_l01
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1003
+        width: 189
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 80, y: 0, z: 80, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btn_l02
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1021
+        width: 189
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 80, y: 0, z: 80, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btn_l03
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 749
+        width: 160
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 76, y: 0, z: 76, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btn_l04
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 797
+        width: 160
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 76, y: 0, z: 76, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btn_l05
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 601
+        width: 160
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 76, y: 0, z: 76, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btn_l06
+      rect:
+        serializedVersion: 2
+        x: 1522
+        y: 619
+        width: 160
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 76, y: 0, z: 76, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnchat01_Cui
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 1261
+        width: 116
+        height: 119
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnchat02
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 124
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnchat03
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 196
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btncontrol01_Cui
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 1136
+        width: 83
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnjt
+      rect:
+        serializedVersion: 2
+        x: 2017
+        y: 1545
+        width: 29
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnnew01
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1367
+        width: 248
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 122, y: 0, z: 122, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnnew02
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 1204
+        width: 248
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 122, y: 0, z: 122, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnranking
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 1004
+        width: 90
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnt
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 904
+        width: 240
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnt1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 958
+        width: 240
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btntb1
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 522
+        width: 137
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btntb2
+      rect:
+        serializedVersion: 2
+        x: 1358
+        y: 514
+        width: 137
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: career1
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 879
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: career2
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 928
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: career3
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 977
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: career4
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 1026
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: cbdi00
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 757
+        width: 240
+        height: 380
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: chat_delete
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1270
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: csd
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1074
+        width: 228
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: day_di01
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 1646
+        width: 68
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: di
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1064
+        width: 227
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 115, y: 76, z: 10, w: 92}
+      outline: []
+    - serializedVersion: 2
+      name: dian
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 1711
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: down
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 616
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: f_dw
+      rect:
+        serializedVersion: 2
+        x: 1706
+        y: 1339
+        width: 284
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 111, y: 0, z: 116, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: f_dw1
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 1217
+        width: 115
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 52, y: 0, z: 56, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: flag
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 845
+        width: 200
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: flag1
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1270
+        width: 80
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: flag2
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1356
+        width: 80
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: fw_tt01
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1392
+        width: 300
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: fw_tt02
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1464
+        width: 300
+        height: 71
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: gift
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 688
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: gift1
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 198
+        width: 57
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: go
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 880
+        width: 173
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: got
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 1575
+        width: 102
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_bossko
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 548
+        width: 145
+        height: 146
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: guild_bosslook
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 1075
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: hc
+      rect:
+        serializedVersion: 2
+        x: 1592
+        y: 215
+        width: 47
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: hdt
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 1331
+        width: 25
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 4, y: 2, z: 4, w: 2}
+      outline: []
+    - serializedVersion: 2
+      name: headbg00
+      rect:
+        serializedVersion: 2
+        x: 1963
+        y: 1221
+        width: 84
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 40, z: 24, w: 40}
+      outline: []
+    - serializedVersion: 2
+      name: headbg01
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 195
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: headbg02
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 123
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: headbg03+1
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 195
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+    - serializedVersion: 2
+      name: headbg03
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 123
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: headbg04+1
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 195
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+    - serializedVersion: 2
+      name: headbg04+2
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 123
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+    - serializedVersion: 2
+      name: headbg04
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 195
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: headbg05+1
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 123
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+    - serializedVersion: 2
+      name: headbg05+2
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 195
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+    - serializedVersion: 2
+      name: headbg05+3
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 123
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+    - serializedVersion: 2
+      name: headbg05
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 195
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: headbg06+1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 123
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+    - serializedVersion: 2
+      name: headbg06+2
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 264
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+    - serializedVersion: 2
+      name: headbg06+3
+      rect:
+        serializedVersion: 2
+        x: 1608
+        y: 333
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+    - serializedVersion: 2
+      name: headbg06+4
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 392
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 20, y: 20, z: 20, w: 20}
+      outline: []
+    - serializedVersion: 2
+      name: headbg06
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 392
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: headmask
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 392
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: help
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 91
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: huat
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 676
+        width: 43
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: hud_jdt
+      rect:
+        serializedVersion: 2
+        x: 2013
+        y: 1853
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 6, z: 6, w: 6}
+      outline: []
+    - serializedVersion: 2
+      name: hud_jyt
+      rect:
+        serializedVersion: 2
+        x: 1998
+        y: 1853
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 6, z: 6, w: 6}
+      outline: []
+    - serializedVersion: 2
+      name: hud_tlt
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 1748
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 5, z: 6, w: 5}
+      outline: []
+    - serializedVersion: 2
+      name: hw01
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 1138
+        width: 111
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: hw02
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1481
+        width: 213
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: hxdi
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 899
+        width: 153
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 45, y: 45, z: 45, w: 45}
+      outline: []
+    - serializedVersion: 2
+      name: icon01
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 494
+        width: 44
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon02
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 522
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 631
+        width: 51
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon04
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 369
+        width: 60
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon05
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 501
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon06
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 533
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon07
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 533
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon08
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon09
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon10
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon11
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_bq
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 988
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_city
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_hx
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 215
+        width: 79
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_jb
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_jf
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 572
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_nq
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 292
+        width: 79
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_rcj
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 507
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_ry
+      rect:
+        serializedVersion: 2
+        x: 833
+        y: 566
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_sdj
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 1025
+        width: 37
+        height: 38
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_sp
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 402
+        width: 44
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_sw
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 572
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_sxj
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 527
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_tf
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 573
+        width: 79
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_tl
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 199
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_wh
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 127
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_wq
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 906
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_xsl
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 633
+        width: 47
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_yb
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 430
+        width: 61
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_yc
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 213
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_zb
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 90
+        width: 45
+        height: 45
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: info
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 1859
+        width: 73
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jbx_normal
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 192
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jbx_pressed
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 303
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jian
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1320
+        width: 49
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jian01
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 1852
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jiantou02
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 478
+        width: 58
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jiantou03
+      rect:
+        serializedVersion: 2
+        x: 1677
+        y: 414
+        width: 132
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jiao
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 1358
+        width: 92
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 30, y: 32, z: 28, w: 36}
+      outline: []
+    - serializedVersion: 2
+      name: jq_di
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 1791
+        width: 454
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jq_jt
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 1370
+        width: 40
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jq_quan
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 598
+        width: 62
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jqgs
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1012
+        width: 250
+        height: 413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: kc
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 1720
+        width: 12
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: levelup2
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 908
+        width: 184
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: line
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1749
+        width: 100
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 22, y: 0, z: 22, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: line1
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1770
+        width: 100
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 22, y: 0, z: 22, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: look
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 1075
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: lose
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 873
+        width: 179
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: losebg
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 686
+        width: 236
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: losel
+      rect:
+        serializedVersion: 2
+        x: 476
+        y: 1432
+        width: 255
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: luckyranking
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1560
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 5, z: 34, w: 34}
+      outline: []
+    - serializedVersion: 2
+      name: ludj
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 631
+        width: 43
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: luyin
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 808
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: luyin1
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 1378
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: luyin2
+      rect:
+        serializedVersion: 2
+        x: 2009
+        y: 1415
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: m_light
+      rect:
+        serializedVersion: 2
+        x: 1788
+        y: 128
+        width: 78
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: max
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 548
+        width: 64
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: mazetitle1
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1536
+        width: 342
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 160, y: 0, z: 160, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: new
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 447
+        width: 44
+        height: 46
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 18, y: 4, z: 2, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: nqdi
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 695
+        width: 177
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 46, y: 46, z: 46, w: 46}
+      outline: []
+    - serializedVersion: 2
+      name: nqdi01
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 637
+        width: 156
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 36, y: 36, z: 36, w: 36}
+      outline: []
+    - serializedVersion: 2
+      name: nqlight
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 794
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: nqtiao
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 598
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 32, z: 32, w: 32}
+      outline: []
+    - serializedVersion: 2
+      name: off
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 124
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: on
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 621
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: p_di
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1727
+        width: 480
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: private chat
+      rect:
+        serializedVersion: 2
+        x: 630
+        y: 689
+        width: 67
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: pvpicon01
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 717
+        width: 204
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: pvpicon02
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 908
+        width: 204
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: pvpicon03
+      rect:
+        serializedVersion: 2
+        x: 252
+        y: 1099
+        width: 204
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: pvpicon04
+      rect:
+        serializedVersion: 2
+        x: 257
+        y: 1290
+        width: 204
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: rank
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 1442
+        width: 80
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 51, z: 0, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: rankbg
+      rect:
+        serializedVersion: 2
+        x: 1720
+        y: 1682
+        width: 310
+        height: 77
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 140, y: 0, z: 140, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: red
+      rect:
+        serializedVersion: 2
+        x: 1982
+        y: 278
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: ren
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 27
+        width: 106
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: s0
+      rect:
+        serializedVersion: 2
+        x: 1589
+        y: 850
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: sc_bian
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 461
+        width: 86
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: search
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 1124
+        width: 48
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: sm02
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 1085
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: smbian01
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1176
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 32, z: 32, w: 32}
+      outline: []
+    - serializedVersion: 2
+      name: smdi02
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1267
+        width: 90
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: star1
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 572
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: star2
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 592
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: star3
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 915
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: star4
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 306
+        width: 78
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: starhui
+      rect:
+        serializedVersion: 2
+        x: 1934
+        y: 1054
+        width: 28
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: store_double
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 1854
+        width: 107
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 46, y: 7, z: 8, w: 53}
+      outline: []
+    - serializedVersion: 2
+      name: store_vipbg02
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 549
+        width: 78
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 31, y: 0, z: 37, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: suo
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 1032
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: suo01
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 93
+        width: 43
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: suo02
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 197
+        width: 54
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: sz
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 304
+        width: 78
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: tbx_normal
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 262
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: tbx_pressed
+      rect:
+        serializedVersion: 2
+        x: 1874
+        y: 373
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: tfdi
+      rect:
+        serializedVersion: 2
+        x: 1359
+        y: 648
+        width: 162
+        height: 163
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: tflight
+      rect:
+        serializedVersion: 2
+        x: 1948
+        y: 1869
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: title
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 1932
+        width: 427
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: tkzc_line
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 2020
+        width: 7
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 3, y: 12, z: 3, w: 12}
+      outline: []
+    - serializedVersion: 2
+      name: up
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 1407
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: victory
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 812
+        width: 175
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: victory1
+      rect:
+        serializedVersion: 2
+        x: 1362
+        y: 812
+        width: 175
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: victorybg
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1166
+        width: 245
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: victoryl
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1426
+        width: 255
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: vip1
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 649
+        width: 172
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: vip2
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 653
+        width: 172
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: vip3
+      rect:
+        serializedVersion: 2
+        x: 1702
+        y: 726
+        width: 172
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: vip4
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 803
+        width: 172
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: vs
+      rect:
+        serializedVersion: 2
+        x: 1137
+        y: 979
+        width: 145
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: ybx_normal
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 461
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: ybx_pressed
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 995
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: yk
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 650
+        width: 79
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 10, y: 14, z: 28, w: 45}
+      outline: []
+    - serializedVersion: 2
+      name: yqs_zs
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 699
+        width: 75
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: zbx_normal
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 1106
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: zbx_pressed
+      rect:
+        serializedVersion: 2
+        x: 1837
+        y: 1855
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: zhuan
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 1786
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: zi01
+      rect:
+        serializedVersion: 2
+        x: 1894
+        y: 1053
+        width: 39
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: zq_di
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1617
+        width: 354
+        height: 351
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: zq_di01
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 1510
+        width: 217
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: zq_kl
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 1716
+        width: 68
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: gui/comm.tex
+  assetBundleVariant: 

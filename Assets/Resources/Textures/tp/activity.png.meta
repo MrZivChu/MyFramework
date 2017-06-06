@@ -1,0 +1,373 @@
+fileFormatVersion: 2
+guid: d7101d4260868ea4eb6fab80436f13f3
+timeCreated: 1479708745
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Activitybg
+    21300002: bg2
+    21300004: bg3
+    21300006: bg4
+    21300008: btn01
+    21300010: daytitle
+    21300012: firstbg
+    21300014: got
+    21300016: growthbg
+    21300018: hw01
+    21300020: hw02
+    21300022: hw03
+    21300024: hw04
+    21300026: pz
+    21300028: role1
+    21300030: role2
+    21300032: role3
+    21300034: role5
+    21300036: role6
+    21300038: role7
+    21300040: sevendaybanner
+    21300042: store_btn1
+    21300044: store_btn1a
+    21300046: store_btn2
+    21300048: store_btn2a
+    21300050: store_btn3
+    21300052: store_btn3a
+    21300054: store_vipbg02
+    21300056: wordchongzhi
+    21300058: wordxiaofei
+    21300060: yqs_s
+    21300062: yqs_wz
+    21300064: yqs_zp
+    21300066: yqs_zp02
+    21300068: yqs_zs
+    21300070: 9GGRed
+    21300072: biao
+    21300074: day_di01
+    21300076: day_di02
+    21300078: ktzl_hw
+    21300080: s0
+    21300082: discount50%
+    21300084: ktzl
+    21300086: mrrw01
+    21300088: mrrw02
+    21300090: mrrw03
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -2
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Activitybg
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 411
+        width: 573
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bg2
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 771
+        width: 350
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bg4
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 771
+        width: 353
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btn01
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 660
+        width: 141
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: got
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 606
+        width: 102
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: hw01
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 142
+        width: 311
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: hw02
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 113
+        width: 311
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: hw03
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 172
+        width: 339
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 160, y: 0, z: 160, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: hw04
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 190
+        width: 339
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 160, y: 0, z: 160, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: pz
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 158
+        width: 202
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: role3
+      rect:
+        serializedVersion: 2
+        x: 577
+        y: 300
+        width: 266
+        height: 469
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: role5
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 524
+        width: 313
+        height: 498
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: role6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 41
+        width: 312
+        height: 368
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: store_btn1
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 524
+        width: 80
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 0, z: 32, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: store_btn1a
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 528
+        width: 80
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 0, z: 32, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: store_btn2
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 565
+        width: 80
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 0, z: 32, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: store_btn2a
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 569
+        width: 80
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 0, z: 32, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: store_btn3
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 689
+        width: 80
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 0, z: 32, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: store_btn3a
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 730
+        width: 80
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 0, z: 32, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: store_vipbg02
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 610
+        width: 78
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 0, z: 32, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: wordchongzhi
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 208
+        width: 298
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: wordxiaofei
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 54
+        width: 292
+        height: 86
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: gui/activity.tex
+  assetBundleVariant: 

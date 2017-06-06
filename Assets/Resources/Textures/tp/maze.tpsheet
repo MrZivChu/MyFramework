@@ -1,0 +1,22 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: maze.png (512 x 512)
+# $TexturePacker:SmartUpdate:ff8fde3849ee46091ad0544dfe64533e:243d3496bb6aeb725f1518b881d34554:b11a3cf7a4da5b01e0abf409bc265e3e$
+#
+
+M01;226;110;63;67;0.5;0.5
+maze01;353;179;125;102;0.5;0.5
+maze01a;114;57;110;111;0.5;0.5
+maze02;226;179;125;102;0.5;0.5
+maze02a;114;170;110;111;0.5;0.5
+maze03;368;283;125;102;0.5;0.5
+maze03a;2;48;110;111;0.5;0.5
+maze04;241;283;125;102;0.5;0.5
+maze04a;2;161;110;111;0.5;0.5
+maze05;114;283;125;102;0.5;0.5
+maze05a;2;274;110;111;0.5;0.5
+mazetitle;2;387;463;123;0.5;0.5

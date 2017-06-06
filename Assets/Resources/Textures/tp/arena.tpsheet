@@ -1,0 +1,16 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: arena.png (512 x 512)
+# $TexturePacker:SmartUpdate:da1bac1383d84992cdc8eb993e0a73b4:fa7b7efd8579c628c77c79b4ce1be30a:0c83a034ac0ecd4c42cdf2efd318509e$
+#
+
+3;394;201;79;85;0.5;0.5
+DLD_BG;2;50;306;320;0.5;0.5
+buff01;310;204;82;82;0.5;0.5
+buff02;394;288;82;82;0.5;0.5
+buff03;310;288;82;82;0.5;0.5
+pvptitlebg;2;372;454;138;0.5;0.5

@@ -1,0 +1,235 @@
+fileFormatVersion: 2
+guid: 1f39ecd46dc97be4181fecdc18850267
+timeCreated: 1480753869
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: TFJTdk00
+    21300002: TFJTdk01
+    21300004: TFJTdk02
+    21300006: bg
+    21300008: bg00
+    21300010: di
+    21300012: qhbg
+    21300014: zy01
+    21300016: zy02
+    21300018: zy03
+    21300020: zy04
+    21300022: TYDi
+    21300024: TYDi_select
+    21300026: bg01
+    21300028: hxdi
+    21300030: light01
+    21300032: nqdi
+    21300034: tfdi
+    21300036: tz01
+    21300038: chardi
+    21300040: di02
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TFJTdk00
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 242
+        width: 385
+        height: 429
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: TFJTdk01
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 625
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: TFJTdk02
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 707
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 24, y: 24, z: 24, w: 24}
+      outline: []
+    - serializedVersion: 2
+      name: bg00
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 622
+        width: 480
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 105, z: 0, w: 60}
+      outline: []
+    - serializedVersion: 2
+      name: bg01
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 789
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: di02
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 673
+        width: 402
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: light01
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 488
+        width: 141
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: qhbg
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 58
+        width: 359
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: tz01
+      rect:
+        serializedVersion: 2
+        x: 888
+        y: 913
+        width: 126
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: zy01
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 70
+        width: 185
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: zy02
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 70
+        width: 185
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: zy03
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 70
+        width: 185
+        height: 170
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: zy04
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 458
+        width: 185
+        height: 162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: gui/char.tex
+  assetBundleVariant: 

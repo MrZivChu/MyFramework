@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 464373e2824791b4f8340f78c1b8b59c
+timeCreated: 1480579030
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: E
+    21300002: Gou
+    21300004: TFJT
+    21300006: TYDi
+    21300008: TYDi_select
+    21300010: bg01
+    21300012: bg02
+    21300014: bg03
+    21300016: btnLvUp01
+    21300018: btnLvUp02
+    21300020: btnReform01
+    21300022: btnReform02
+    21300024: btnTalent01
+    21300026: btnTalent02
+    21300028: btnbag01
+    21300030: btnbag02
+    21300032: btnfate01
+    21300034: btnfate02
+    21300036: btninfo01
+    21300038: btninfo02
+    21300040: btnskill01
+    21300042: btnskill02
+    21300044: di01
+    21300046: di02
+    21300048: di03
+    21300050: di04
+    21300052: hud_jdt
+    21300054: hud_jyt
+    21300056: hxdi
+    21300058: light01
+    21300060: nqdi
+    21300062: sxbian
+    21300064: sxdi01
+    21300066: sxtiao
+    21300068: tfdi
+    21300070: tz01
+    21300072: up
+    21300074: zi01
+    21300076: btnjj01
+    21300078: btnjj02
+    21300080: chardi
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 2048
+    textureFormat: -2
+    compressionQuality: 50
+    allowsAlphaSplitting: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: E
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 955
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Gou
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 240
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: TFJT
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 989
+        width: 37
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bg02
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 85
+        width: 113
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 48, z: 48, w: 48}
+      outline: []
+    - serializedVersion: 2
+      name: bg03
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 868
+        width: 122
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnLvUp01
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 200
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnLvUp02
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 14
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnReform01
+      rect:
+        serializedVersion: 2
+        x: 490
+        y: 136
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnReform02
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 14
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnTalent01
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 136
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnTalent02
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 14
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnbag01
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 136
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnbag02
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 14
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnfate01
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 136
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnfate02
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 14
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btninfo01
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 136
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btninfo02
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 258
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnjj01
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 380
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnjj02
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 502
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnskill01
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 624
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnskill02
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 746
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: chardi
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 655
+        width: 414
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: di01
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 304
+        width: 402
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: di03
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 322
+        width: 402
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: di04
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 673
+        width: 402
+        height: 349
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: hud_jdt
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 972
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 6, z: 6, w: 6}
+      outline: []
+    - serializedVersion: 2
+      name: hud_jyt
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 981
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 6, z: 6, w: 6}
+      outline: []
+    - serializedVersion: 2
+      name: sxbian
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 993
+        width: 136
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 48, y: 0, z: 48, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: sxdi01
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 280
+        width: 86
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 16, y: 6, z: 16, w: 6}
+      outline: []
+    - serializedVersion: 2
+      name: sxtiao
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 280
+        width: 86
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 32, y: 0, z: 35, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: up
+      rect:
+        serializedVersion: 2
+        x: 999
+        y: 998
+        width: 20
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: gui/char.tex
+  assetBundleVariant: 

@@ -1,0 +1,734 @@
+fileFormatVersion: 2
+guid: f05a9a6342b5a234793a5b786c706b52
+timeCreated: 1479697365
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Bigmap01
+    21300002: Bigmap02
+    21300004: Bigmap03
+    21300006: bigmap01a
+    21300008: bigmap02a
+    21300010: bigmap03a
+    21300012: bigmap04
+    21300014: bigmap04a
+    21300016: bigmap05
+    21300018: bigmap05a
+    21300020: bigmap06
+    21300022: bigmap06a
+    21300024: bigmap07
+    21300026: bigmap07a
+    21300028: bigmap08
+    21300030: bigmap08a
+    21300032: bigmap09
+    21300034: bigmap09a
+    21300036: bigmap10
+    21300038: bigmap10a
+    21300040: bigmap11
+    21300042: bigmap11a
+    21300044: bigmap12
+    21300046: bigmap12a
+    21300048: bigmap13
+    21300050: bigmap13a
+    21300052: bigmap14
+    21300054: bigmap14a
+    21300056: bigmap15
+    21300058: bigmap15a
+    21300060: btndy01
+    21300062: btndy01a
+    21300064: btnkn01
+    21300066: btnkn01a
+    21300068: btnpu01
+    21300070: btnpu01a
+    21300072: icon_bx
+    21300074: icon_qz
+    21300076: icon_zd
+    21300078: icon_zd1
+    21300080: jbx_normal
+    21300082: jbx_pressed
+    21300084: ybx_normal
+    21300086: ybx_pressed
+    21300088: btndh
+    21300090: btndw
+    21300092: btnfight
+    21300094: btnry
+    21300096: g_cb
+    21300098: g_tl
+    21300100: g_zl
+    21300102: g_zl01
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bigmap01
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 840
+        width: 186
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Bigmap02
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 13
+        width: 138
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: Bigmap03
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 368
+        width: 245
+        height: 249
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap01a
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 428
+        width: 93
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap02a
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 27
+        width: 69
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap03a
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 93
+        width: 123
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap04
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 722
+        width: 300
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap04a
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 11
+        width: 150
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap05
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 595
+        width: 255
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap05a
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 382
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap06
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 423
+        width: 229
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap06a
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 527
+        width: 115
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap07
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 220
+        width: 227
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap07a
+      rect:
+        serializedVersion: 2
+        x: 904
+        y: 424
+        width: 114
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap08
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 531
+        width: 247
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap08a
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 327
+        width: 124
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap09
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 789
+        width: 323
+        height: 233
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap09a
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 619
+        width: 162
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap10
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 884
+        width: 502
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap10a
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 582
+        width: 251
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap11
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 738
+        width: 200
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap11a
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 521
+        width: 100
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap12
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 700
+        width: 174
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap12a
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 256
+        width: 87
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap13
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 491
+        width: 159
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap13a
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 121
+        width: 80
+        height: 51
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap14
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 480
+        width: 141
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap14a
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 275
+        width: 71
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap15
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 45
+        width: 113
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: bigmap15a
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 4
+        width: 57
+        height: 87
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btndh
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 306
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btndw
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 369
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btndy01
+      rect:
+        serializedVersion: 2
+        x: 940
+        y: 129
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btndy01a
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 174
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnfight
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 246
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnkn01
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 30
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnkn01a
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 112
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnpu01
+      rect:
+        serializedVersion: 2
+        x: 722
+        y: 188
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnpu01a
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 63
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: btnry
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 246
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: g_cb
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 138
+        width: 84
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: g_tl
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 652
+        width: 41
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: g_zl
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 134
+        width: 80
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: g_zl01
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 9
+        width: 80
+        height: 52
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_bx
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 211
+        width: 59
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_qz
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 181
+        width: 52
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_zd
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 653
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: icon_zd1
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 721
+        width: 64
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jbx_normal
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 145
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: jbx_pressed
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 194
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: ybx_normal
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 270
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - serializedVersion: 2
+      name: ybx_pressed
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 257
+        width: 110
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: gui/selectmap.tex
+  assetBundleVariant: 

@@ -1,0 +1,12 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: activity3.png (512 x 512)
+# $TexturePacker:SmartUpdate:e2ffc58fdf27e0592c39c702ce83fb53:f768919ebfd251bfb54f846dec7d100c:4d062bf70d815a48e6cfb0c6225b61b2$
+#
+
+growthbg;2;9;370;109;0.5;0.5
+role1;2;120;239;390;0.5;0.5

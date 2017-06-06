@@ -1,0 +1,41 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: store.png (1024 x 1024)
+# $TexturePacker:SmartUpdate:9032effdf6504483992f3f8e7eb387fb:e2559d608db0b365237f1f0a03c4b4b7:a1076d298048dc180075904d057a48cb$
+#
+
+bg02;150;47;113;113;0.5;0.5
+bg03;186;267;122;123;0.5;0.5
+bg4;419;771;353;251;0.5;0.5
+guild_gongxian 1;343;829;64;64;0.5;0.5
+hw01;2;635;311;28;0.5;0.5
+hw02;2;606;311;27;0.5;0.5
+hw04;2;877;339;16;0.5;0.5
+iconbg;758;424;260;306;0.5;0.5
+p_zs;975;975;47;47;0.5;0.5
+store_di1;532;515;177;48;0.5;0.5
+store_double;374;202;107;111;0.5;0.5
+store_icon168;2;450;190;154;0.5;0.5
+store_icon198;774;878;199;144;0.5;0.5
+store_icon25;340;457;190;106;0.5;0.5
+store_icon268;323;315;173;140;0.5;0.5
+store_icon30;532;415;175;98;0.5;0.5
+store_icon418;2;308;182;140;0.5;0.5
+store_icon50;194;480;144;124;0.5;0.5
+store_icon6;194;392;127;86;0.5;0.5
+store_icon648;774;732;192;144;0.5;0.5
+store_icon68;2;27;146;133;0.5;0.5
+store_icon98;2;162;171;144;0.5;0.5
+store_lifecard;2;665;336;210;0.5;0.5
+store_monthcard;340;565;336;204;0.5;0.5
+store_new;975;940;34;33;0.5;0.5
+store_purchased;265;41;107;111;0.5;0.5
+store_recharge;2;895;415;127;0.5;0.5
+store_tj;265;154;107;111;0.5;0.5
+store_vipbg;968;852;48;24;0.5;0.5
+store_vipbg01;678;721;78;48;0.5;0.5
+store_vipt;340;812;64;15;0.5;0.5

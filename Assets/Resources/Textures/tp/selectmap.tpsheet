@@ -1,0 +1,36 @@
+#
+# Sprite sheet data for Unity.
+#
+# To import these sprites into your Unity project, download "TexturePackerImporter":
+# http://www.codeandweb.com/texturepacker/unity
+#
+# Sprite sheet: selectmap.png (512 x 512)
+# $TexturePacker:SmartUpdate:c7b42c85eaf65b8da6b9cfb0c39845fe:260ea1e6b70b9e1f6cd1a34f950ab617:9db2238b64f34bf10b4aee67e915d1ce$
+#
+
+EnemyXue;348;480;80;8;0.5;0.5
+EnemyXue1;348;490;80;8;0.5;0.5
+Enemydi;348;500;82;10;0.5;0.5
+Key 1;447;377;50;46;0.5;0.5
+WZJL;2;185;263;135;0.5;0.5
+icon_J;435;236;35;46;0.5;0.5
+icon_suo;388;231;45;51;0.5;0.5
+light01;2;322;195;188;0.5;0.5
+light_in;387;116;102;102;0.5;0.5
+light_out;267;220;119;119;0.5;0.5
+mapdi;199;440;126;33;0.5;0.5
+mapdi01;199;475;147;35;0.5;0.5
+mapdian;480;337;26;38;0.5;0.5
+mapdian01;472;244;26;38;0.5;0.5
+sm01;370;24;90;90;0.5;0.5
+sm02;278;29;90;90;0.5;0.5
+sm03;186;29;90;90;0.5;0.5
+sm04;267;121;118;97;0.5;0.5
+sm05;327;376;118;97;0.5;0.5
+smbian01;94;93;90;90;0.5;0.5
+smbian02;199;341;118;97;0.5;0.5
+smdi01;2;93;90;90;0.5;0.5
+smdi02;388;284;90;90;0.5;0.5
+star1;432;487;23;23;0.5;0.5
+star3;2;27;64;64;0.5;0.5
+wenhao;447;425;44;60;0.5;0.5
