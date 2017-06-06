@@ -13,6 +13,9 @@ public class ObjectsHelperWrap
 		L.RegFunction("SetImage", SetImage);
 		L.RegFunction("AddButtonClick", AddButtonClick);
 		L.RegFunction("AddToggleClick", AddToggleClick);
+		L.RegFunction("SetObjIsActive", SetObjIsActive);
+		L.RegFunction("SetSortOrder", SetSortOrder);
+		L.RegFunction("SetIsReceiveClick", SetIsReceiveClick);
 		L.RegFunction("New", _CreateObjectsHelper);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("allObjectsDic", get_allObjectsDic, set_allObjectsDic);
@@ -123,7 +126,7 @@ public class ObjectsHelperWrap
 			ToLua.CheckArgsCount(L, 3);
 			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
 			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
-			object arg2 = ToLua.ToVarObject(L, 3);
+			LuaFunction arg2 = ToLua.CheckLuaFunction(L, 3);
 			ObjectsHelper.AddButtonClick(arg0, arg1, arg2);
 			return 0;
 		}
@@ -141,8 +144,61 @@ public class ObjectsHelperWrap
 			ToLua.CheckArgsCount(L, 3);
 			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
 			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
-			object arg2 = ToLua.ToVarObject(L, 3);
+			LuaFunction arg2 = ToLua.CheckLuaFunction(L, 3);
 			ObjectsHelper.AddToggleClick(arg0, arg1, arg2);
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetObjIsActive(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			int arg2 = (int)LuaDLL.luaL_checknumber(L, 3);
+			ObjectsHelper.SetObjIsActive(arg0, arg1, arg2);
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetSortOrder(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			ObjectsHelper.SetSortOrder(arg0, arg1);
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetIsReceiveClick(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			bool arg2 = LuaDLL.luaL_checkboolean(L, 3);
+			ObjectsHelper.SetIsReceiveClick(arg0, arg1, arg2);
 			return 0;
 		}
 		catch(Exception e)

@@ -2,9 +2,9 @@ local Page = {}
 
 function Page:spawnPrefab( parentID ,childID)
 	self.childs = {}
-
+	--获取poda文件的对象ID集合
 	self.index = require (self.config.podaPath)
-	
+	--加载预设生成界面
 	local abName = self.config.ab
 	local prefabName = self.config.prefab	
 	self.id = ObjectsHelper.SpawnPage(parentID or 0,childID or 0,abName,prefabName)
@@ -15,6 +15,10 @@ function Page:prepareData()
 end
 
 function Page:bindDataForUI()
+	
+end
+
+function Page:checkCustomOpenPage( ... )
 	
 end
 
@@ -35,8 +39,24 @@ function Page:addChild( name , parentID , ... )
 	end
 end
 
+local clickTime = os.clock()
+local function checkClickTime( ... )
+	local now = os.clock()
+	local diff = now - clickTime
+	if diff > 0.2 then
+		clickTime = now
+		return true
+	else
+		return false
+	end
+end
+
 function Page:addButtonClik( parentID , childID , func , param )
-	ObjectsHelper.AddButtonClick(parentID,childID, function() func(self,param) end)
+	ObjectsHelper.AddButtonClick(parentID,childID, function() 
+		if checkClickTime() == true then
+		 	func(self,param) end
+		end
+	)
 end
 
 function Page:addToggleClik( parentID , childID , func , param )

@@ -4,15 +4,20 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using LuaInterface;
 
-public class ObjectsHelper {
+public class ObjectsHelper
+{
 
     public static Dictionary<int, List<GameObject>> allObjectsDic = new Dictionary<int, List<GameObject>>();
 
-    public static int SpawnPage(int parentID, int childID, string abName, string pageName) {
+    public static int SpawnPage(int parentID, int childID, string abName, string pageName)
+    {
         GameObject parent = null;
-        if (parentID == 0) {
+        if (parentID == 0)
+        {
             parent = GameObject.Find("GUI/Canvas/Root");
-        } else {
+        }
+        else
+        {
             parent = allObjectsDic[parentID][childID];
         }
         GameObject page = GameObject.Instantiate(Resources.Load(pageName)) as GameObject;
@@ -23,8 +28,10 @@ public class ObjectsHelper {
         return pageID;
     }
 
-    public static void SetPageNull(int pageID) {
-        if (allObjectsDic.ContainsKey(pageID)) {
+    public static void SetPageNull(int pageID)
+    {
+        if (allObjectsDic.ContainsKey(pageID))
+        {
             allObjectsDic[pageID] = null;
             allObjectsDic.Remove(pageID);
         }
@@ -32,81 +39,170 @@ public class ObjectsHelper {
 
 
 
-    public static void SetText(int parentID, int childID, string content) {
+    public static void SetText(int parentID, int childID, string content)
+    {
         GameObject obj = allObjectsDic[parentID][childID];
-        if (obj != null) {
+        if (obj != null)
+        {
             Text uiText = obj.GetComponent<Text>();
-            if (uiText != null) {
+            if (uiText != null)
+            {
                 uiText.text = content;
             }
         }
     }
 
-    public static void SetImage(int parentID, int childID, string tSpriteName) {
+    public static void SetImage(int parentID, int childID, string tSpriteName)
+    {
         GameObject obj = allObjectsDic[parentID][childID];
         Sprite sprite = null;
-        if (obj != null) {
+        if (obj != null)
+        {
             Image uiImage = obj.GetComponent<Image>();
-            if (uiImage != null) {
+            if (uiImage != null)
+            {
                 uiImage.sprite = sprite;
             }
         }
     }
 
-    public static void AddButtonClick(int parentID, int childID, object lua) {
+    public static void SetSlider(int parentID, int childID, float value)
+    {
+        GameObject obj = allObjectsDic[parentID][childID];
+        if (obj != null)
+        {
+            Slider uiSlider = obj.GetComponent<Slider>();
+            if (uiSlider != null)
+            {
+                uiSlider.value = value;
+            }
+        }
+    }
+
+    public static void SetScrollbar(int parentID, int childID, float value)
+    {
+        GameObject obj = allObjectsDic[parentID][childID];
+        if (obj != null)
+        {
+            Scrollbar uiScrollbar = obj.GetComponent<Scrollbar>();
+            if (uiScrollbar != null)
+            {
+                uiScrollbar.value = value;
+            }
+        }
+    }
+
+    public static void SetInputField(int parentID, int childID, string value)
+    {
+        GameObject obj = allObjectsDic[parentID][childID];
+        if (obj != null)
+        {
+            InputField uiInputField = obj.GetComponent<InputField>();
+            if (uiInputField != null)
+            {
+                uiInputField.text = value;
+            }
+        }
+    }
+
+
+    public static void AddButtonClick(int parentID, int childID, LuaFunction func)
+    {
         GameObject obj = allObjectsDic[parentID][childID];
         Button btn = obj.GetComponent<Button>();
-        btn.onClick.AddListener(delegate () {
-            LuaFunction func = (LuaFunction)lua;
+        btn.onClick.AddListener(delegate ()
+        {
             func.Call();
         });
     }
 
-    public static void AddToggleClick(int parentID, int childID, object lua) {
+    public static void AddToggleClick(int parentID, int childID, LuaFunction func)
+    {
         GameObject obj = allObjectsDic[parentID][childID];
         Toggle tog = obj.GetComponent<Toggle>();
-        tog.onValueChanged.AddListener(delegate (bool isOn) {
-            LuaFunction func = (LuaFunction)lua;
+        tog.onValueChanged.AddListener(delegate (bool isOn)
+        {
             func.Call(isOn);
         });
     }
 
-    //public static void SetUISlider(string parentID, string childPath, float value)
-    //{
-    //    GameObject obj = GetChildObjectByPath(parentID, childPath);
-    //    if (obj != null)
-    //    {
-    //        UISlider uiSlider = obj.GetComponent<UISlider>();
-    //        if (uiSlider != null)
-    //        {
-    //            uiSlider.value = value;
-    //        }
-    //    }
-    //}
+    public static void SetObjIsActive(int parentID, int childID, int flag)
+    {
+        GameObject obj = allObjectsDic[parentID][childID];
+        obj.SetActive(flag > 0);
+    }
 
-    //public static void SetGameObjectActive(string parentID, string childPath, bool isActive)
-    //{
-    //    GameObject obj = GetChildObjectByPath(parentID, childPath);
-    //    if (obj != null)
-    //    {
-    //        obj.SetActive(isActive);
-    //    }
-    //}
+    public static void SetSortOrder(int parentID, int childID)
+    {
+        GameObject page = allObjectsDic[parentID][childID];
+        if (page == null)
+        {
+            return;
+        }
 
-    //public static void RegisterClick(string parentID, string childPath, object luaFunc)
-    //{
-    //    GameObject obj = GetChildObjectByPath(parentID, childPath);
-    //    if (obj != null)
-    //    {
-    //        LuaHelper.AddClick(obj, luaFunc);
-    //    }
-    //}
-    //public static void RegisterClickParam(string parentID, string childPath, object luaFunc, object luaParam)
-    //{
-    //    GameObject obj = GetChildObjectByPath(parentID, childPath);
-    //    if (obj != null)
-    //    {
-    //        LuaHelper.AddClick(obj, luaFunc, luaParam);
-    //    }
-    //}
+        GraphicRaycaster gr = page.GetComponent<GraphicRaycaster>();
+        if (gr == null)
+        {
+            gr = page.gameObject.AddComponent<GraphicRaycaster>();
+        }
+
+        int order = 0;
+        int index = page.transform.GetSiblingIndex();
+        for (int i = index - 1; i >= 0; --i)
+        {
+            var child = page.transform.parent.GetChild(index - 1);
+            var canvas = child.GetComponent<Canvas>();
+            if (canvas != null)
+            {
+                if (canvas.sortingOrder < 300)
+                {
+                    order = canvas.sortingOrder + (index - i) * 10;
+                    break;
+                }
+            }
+        }
+
+        Canvas[] children = page.GetComponentsInChildren<Canvas>(true);
+        foreach (var item in children)
+        {
+            item.overrideSorting = true;
+            item.sortingOrder += order;
+        }
+
+        ParticleSystemRenderer[] renders = page.GetComponentsInChildren<ParticleSystemRenderer>(true);
+        foreach (var item in renders)
+        {
+            if (item.sortingOrder < 10)
+            {
+                item.sortingOrder += order;
+            }
+        }
+    }
+
+
+    public static void SetIsReceiveClick(int parentID, int childID, bool isCanClick)
+    {
+        GameObject go = allObjectsDic[parentID][childID];
+        if (go == null) return;
+        if (isCanClick)
+        {
+            GraphicRaycaster comp = go.GetComponent<GraphicRaycaster>();
+            if (comp != null)
+            {
+                comp.enabled = true;
+            }
+        }
+        else
+        {
+            GraphicRaycaster comp = go.GetComponent<GraphicRaycaster>();
+            if (comp == null)
+            {
+                comp = go.AddComponent<GraphicRaycaster>();
+            }
+            comp.enabled = false;
+        }
+    }
+
+   
+ 
 }
