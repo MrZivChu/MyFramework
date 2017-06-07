@@ -13,6 +13,7 @@ end
 
 function Route.push( name , ... )
 	local layer = requireLuaFile(name)
+	print(123)
 	if layer then
 		--调用页面生命周期
 		Route.callLifeCycle(layer , 0 ,0, ...)

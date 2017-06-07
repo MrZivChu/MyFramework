@@ -7,5 +7,4 @@ MF.utils = require 'Others/utils'
 MF.route = require 'Others/route'
 MF.page = require 'Others/page'
 
--- MF.route.push('HUD')
-MF.route.batch('/HUD,false;HUDChild,true')
+MF.route.push('UILogin')

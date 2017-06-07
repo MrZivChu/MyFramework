@@ -1,5 +1,5 @@
 local names = {
-	-- login
+	UILogin='GUI/Login/UILogin',
 	HUD='GUI/Hud/Hud',
 	HUDChild='GUI/Hud/HUDChild'
 } 
