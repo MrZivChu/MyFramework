@@ -63,6 +63,10 @@ function Page:addToggleClik( parentID , childID , func , param )
 	ObjectsHelper.AddToggleClick(parentID,childID, function(isOn) func(self,isOn,param) end)
 end
 
+function Page:getText( parentID , childID  )
+   	return ObjectsHelper.GetText(parentID,childID)
+end
+
 
 function Page:emit( e, data )
 	if self.onEvents and self.onEvents[e] then

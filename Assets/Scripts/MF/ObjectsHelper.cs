@@ -52,6 +52,21 @@ public class ObjectsHelper
         }
     }
 
+    public static string GetText(int parentID, int childID)
+    {
+        string content = string.Empty;
+        GameObject obj = allObjectsDic[parentID][childID];
+        if (obj != null)
+        {
+            Text uiText = obj.GetComponent<Text>();
+            if (uiText != null)
+            {
+                content = uiText.text;
+            }
+        }
+        return content;
+    }
+
     public static void SetImage(int parentID, int childID, string tSpriteName)
     {
         GameObject obj = allObjectsDic[parentID][childID];
@@ -103,6 +118,21 @@ public class ObjectsHelper
                 uiInputField.text = value;
             }
         }
+    }
+
+    public static string GetInputField(int parentID, int childID, string value)
+    {
+        string content = string.Empty;
+        GameObject obj = allObjectsDic[parentID][childID];
+        if (obj != null)
+        {
+            InputField uiInputField = obj.GetComponent<InputField>();
+            if (uiInputField != null)
+            {
+                content = uiInputField.text;
+            }
+        }
+        return content;
     }
 
 
@@ -203,6 +233,6 @@ public class ObjectsHelper
         }
     }
 
-   
- 
+
+
 }
