@@ -145,6 +145,7 @@ public static class CustomSettings
 
 
         _GT(typeof(ObjectsHelper)),
+        _GT(typeof(LuaUtils)),
 
     };
 

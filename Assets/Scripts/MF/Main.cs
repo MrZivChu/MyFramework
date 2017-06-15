@@ -179,7 +179,8 @@ public class Main : MonoBehaviour {
                 tipText.gameObject.SetActive(false);
                 progress.gameObject.SetActive(false);
                 slider.gameObject.SetActive(false);
-                startBtn.gameObject.SetActive(true);
+                //startBtn.gameObject.SetActive(true);
+                StartGame(null, null);
             }
             preCheckStatus = currentCheckStatus;
         }

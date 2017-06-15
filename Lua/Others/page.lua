@@ -67,6 +67,9 @@ function Page:getText( parentID , childID  )
    	return ObjectsHelper.GetText(parentID,childID)
 end
 
+function Page:getInputField( parentID , childID  )
+   	return ObjectsHelper.GetInputField(parentID,childID)
+end
 
 function Page:emit( e, data )
 	if self.onEvents and self.onEvents[e] then

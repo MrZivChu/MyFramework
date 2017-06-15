@@ -17,7 +17,7 @@ public class MessageBox : MonoBehaviour
         {
             if (canvas == null)
             {
-                canvas = GameObject.Find("Canvas");
+                canvas = GameObject.Find("Canvas/Root");
             }
             if (messageBoxObj == null)
             {
