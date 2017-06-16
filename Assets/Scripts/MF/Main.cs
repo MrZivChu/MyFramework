@@ -47,6 +47,9 @@ public class Main : MonoBehaviour {
 
     void StartGame(GameObject obj, object param) {
         print("startgame");
+
+        AppGlobal.Start();
+
         LuaState lua = new LuaState();
         LuaBinder.Bind(lua);
         lua.Start();
