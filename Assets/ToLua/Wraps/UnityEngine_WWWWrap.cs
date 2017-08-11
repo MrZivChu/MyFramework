@@ -15,6 +15,7 @@ public class UnityEngine_WWWWrap
 		L.RegFunction("GetAudioClipCompressed", GetAudioClipCompressed);
 		L.RegFunction("LoadImageIntoTexture", LoadImageIntoTexture);
 		L.RegFunction("LoadFromCacheOrDownload", LoadFromCacheOrDownload);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_WWW);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("responseHeaders", get_responseHeaders, null);
@@ -340,6 +341,15 @@ public class UnityEngine_WWWWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.WWW);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

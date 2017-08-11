@@ -22,6 +22,7 @@ public class UnityEngine_InputWrap
 		L.RegFunction("ResetInputAxes", ResetInputAxes);
 		L.RegFunction("GetAccelerationEvent", GetAccelerationEvent);
 		L.RegFunction("GetTouch", GetTouch);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegVar("compensateSensors", get_compensateSensors, set_compensateSensors);
 		L.RegVar("gyro", get_gyro, null);
 		L.RegVar("mousePosition", get_mousePosition, null);
@@ -346,6 +347,15 @@ public class UnityEngine_InputWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);			
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Input);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

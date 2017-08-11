@@ -11,6 +11,7 @@ public class UnityEngine_QualitySettingsWrap
 		L.RegFunction("SetQualityLevel", SetQualityLevel);
 		L.RegFunction("IncreaseLevel", IncreaseLevel);
 		L.RegFunction("DecreaseLevel", DecreaseLevel);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("__eq", op_Equality);
 		L.RegVar("names", get_names, null);
 		L.RegVar("pixelLightCount", get_pixelLightCount, set_pixelLightCount);
@@ -163,6 +164,15 @@ public class UnityEngine_QualitySettingsWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.QualitySettings);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

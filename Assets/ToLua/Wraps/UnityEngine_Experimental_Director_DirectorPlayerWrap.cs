@@ -13,6 +13,7 @@ public class UnityEngine_Experimental_Director_DirectorPlayerWrap
 		L.RegFunction("GetTime", GetTime);
 		L.RegFunction("SetTimeUpdateMode", SetTimeUpdateMode);
 		L.RegFunction("GetTimeUpdateMode", GetTimeUpdateMode);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_Experimental_Director_DirectorPlayer);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
@@ -160,6 +161,15 @@ public class UnityEngine_Experimental_Director_DirectorPlayerWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Experimental.Director.DirectorPlayer);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 }
 

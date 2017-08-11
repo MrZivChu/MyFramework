@@ -25,6 +25,7 @@ public class ObjectsHelperWrap
 		L.RegFunction("SetObjIsActive", SetObjIsActive);
 		L.RegFunction("SetSortOrder", SetSortOrder);
 		L.RegFunction("SetIsReceiveClick", SetIsReceiveClick);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateObjectsHelper);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("allObjectsDic", get_allObjectsDic, set_allObjectsDic);
@@ -378,6 +379,15 @@ public class ObjectsHelperWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(ObjectsHelper);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

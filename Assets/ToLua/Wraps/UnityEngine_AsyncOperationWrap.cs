@@ -7,6 +7,7 @@ public class UnityEngine_AsyncOperationWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginClass(typeof(UnityEngine.AsyncOperation), typeof(System.Object));
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_AsyncOperation);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("isDone", get_isDone, null);
@@ -38,6 +39,15 @@ public class UnityEngine_AsyncOperationWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.AsyncOperation);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

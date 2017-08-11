@@ -43,6 +43,7 @@ public class UnityEngine_CameraWrap
 		L.RegFunction("RemoveAllCommandBuffers", RemoveAllCommandBuffers);
 		L.RegFunction("GetCommandBuffers", GetCommandBuffers);
 		L.RegFunction("CalculateObliqueMatrix", CalculateObliqueMatrix);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_Camera);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
@@ -812,6 +813,15 @@ public class UnityEngine_CameraWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Camera);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

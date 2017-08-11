@@ -9,6 +9,7 @@ public class UnityEngine_TrackedReferenceWrap
 		L.BeginClass(typeof(UnityEngine.TrackedReference), typeof(System.Object));
 		L.RegFunction("Equals", Equals);
 		L.RegFunction("GetHashCode", GetHashCode);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.EndClass();
@@ -65,6 +66,15 @@ public class UnityEngine_TrackedReferenceWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.TrackedReference);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 }
 

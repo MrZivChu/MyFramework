@@ -9,6 +9,9 @@ UILogin.config = {
 
 function UILogin:prepareData( data )
 	self:addButtonClik(self.id,self.index.btnOK,self.StartLogin )
+
+	print('^^^^^^^^^^^^^^^^^^^')
+	print_r(ObjectsHelper.GetClassType())
 end
 
 function UILogin:onNotify( sender , e , data )

@@ -8,6 +8,7 @@ public class LuaUtilsWrap
 	{
 		L.BeginClass(typeof(LuaUtils), typeof(System.Object));
 		L.RegFunction("LoadLevel", LoadLevel);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateLuaUtils);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.EndClass();
@@ -51,6 +52,15 @@ public class LuaUtilsWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(LuaUtils);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 }
 

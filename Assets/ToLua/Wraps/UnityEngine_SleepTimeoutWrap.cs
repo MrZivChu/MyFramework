@@ -7,9 +7,19 @@ public class UnityEngine_SleepTimeoutWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginStaticLibs("SleepTimeout");
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegConstant("NeverSleep", -1);
 		L.RegConstant("SystemSetting", -2);
 		L.EndStaticLibs();
+	}
+
+	static Type classType = typeof(UnityEngine.SleepTimeout);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 }
 

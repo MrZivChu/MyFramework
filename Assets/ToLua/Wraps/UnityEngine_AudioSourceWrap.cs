@@ -23,6 +23,7 @@ public class UnityEngine_AudioSourceWrap
 		L.RegFunction("GetSpectrumData", GetSpectrumData);
 		L.RegFunction("SetSpatializerFloat", SetSpatializerFloat);
 		L.RegFunction("GetSpatializerFloat", GetSpatializerFloat);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_AudioSource);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
@@ -422,6 +423,15 @@ public class UnityEngine_AudioSourceWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.AudioSource);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
