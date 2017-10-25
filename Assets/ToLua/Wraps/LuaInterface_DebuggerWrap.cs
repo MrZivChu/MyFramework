@@ -11,6 +11,7 @@ public class LuaInterface_DebuggerWrap
 		L.RegFunction("LogWarning", LogWarning);
 		L.RegFunction("LogError", LogError);
 		L.RegFunction("LogException", LogException);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegVar("useLog", get_useLog, set_useLog);
 		L.RegVar("threadStack", get_threadStack, set_threadStack);
 		L.RegVar("logger", get_logger, set_logger);
@@ -229,6 +230,15 @@ public class LuaInterface_DebuggerWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(LuaInterface.Debugger);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

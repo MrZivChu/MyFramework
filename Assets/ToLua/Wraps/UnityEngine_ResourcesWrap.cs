@@ -14,6 +14,7 @@ public class UnityEngine_ResourcesWrap
 		L.RegFunction("GetBuiltinResource", GetBuiltinResource);
 		L.RegFunction("UnloadAsset", UnloadAsset);
 		L.RegFunction("UnloadUnusedAssets", UnloadUnusedAssets);
+		L.RegFunction("GetClassType", GetClassType);
 		L.EndStaticLibs();
 	}
 
@@ -181,6 +182,15 @@ public class UnityEngine_ResourcesWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Resources);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 }
 

@@ -23,6 +23,7 @@ public class UnityEngine_AnimationWrap
 		L.RegFunction("SyncLayer", SyncLayer);
 		L.RegFunction("GetEnumerator", GetEnumerator);
 		L.RegFunction("GetClip", GetClip);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_Animation);
 		L.RegVar("this", _this, null);
 		L.RegFunction("__eq", op_Equality);
@@ -608,6 +609,15 @@ public class UnityEngine_AnimationWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Animation);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

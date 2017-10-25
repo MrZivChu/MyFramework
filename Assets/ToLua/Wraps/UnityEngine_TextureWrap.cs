@@ -9,6 +9,7 @@ public class UnityEngine_TextureWrap
 		L.BeginClass(typeof(UnityEngine.Texture), typeof(UnityEngine.Object));
 		L.RegFunction("SetGlobalAnisotropicFilteringLimits", SetGlobalAnisotropicFilteringLimits);
 		L.RegFunction("GetNativeTexturePtr", GetNativeTexturePtr);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_Texture);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
@@ -99,6 +100,15 @@ public class UnityEngine_TextureWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Texture);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

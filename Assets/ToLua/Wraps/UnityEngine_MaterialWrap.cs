@@ -43,6 +43,7 @@ public class UnityEngine_MaterialWrap
 		L.RegFunction("EnableKeyword", EnableKeyword);
 		L.RegFunction("DisableKeyword", DisableKeyword);
 		L.RegFunction("IsKeywordEnabled", IsKeywordEnabled);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_Material);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
@@ -1235,6 +1236,15 @@ public class UnityEngine_MaterialWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Material);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

@@ -17,8 +17,6 @@ public class HandlePrefabEditorHelper
         parent = tparent;
     }
 
-
-
     public void CreatePdaFile()
     {
         string content = "local tab = { \r\t";
@@ -36,7 +34,9 @@ public class HandlePrefabEditorHelper
             index++;
         }
         content += "}\rreturn tab";
-        File.WriteAllText(string.Format(podaFileSavePath, parent.name), content);
+        string fileName = string.Format(podaFileSavePath, parent.name);
+        File.WriteAllText(fileName, content);
+        System.Diagnostics.Process.Start(Path.GetDirectoryName(fileName));
     }
 
     public void BindScriptForPrefab()

@@ -8,6 +8,7 @@ public class UnityEngine_ScreenWrap
 	{
 		L.BeginStaticLibs("Screen");
 		L.RegFunction("SetResolution", SetResolution);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegVar("resolutions", get_resolutions, null);
 		L.RegVar("currentResolution", get_currentResolution, null);
 		L.RegVar("width", get_width, null);
@@ -56,6 +57,15 @@ public class UnityEngine_ScreenWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Screen);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

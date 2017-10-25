@@ -61,6 +61,7 @@ public class UnityEngine_AnimatorWrap
 		L.RegFunction("Update", Update);
 		L.RegFunction("Rebind", Rebind);
 		L.RegFunction("ApplyBuiltinRootMotion", ApplyBuiltinRootMotion);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_Animator);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
@@ -1591,6 +1592,15 @@ public class UnityEngine_AnimatorWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Animator);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

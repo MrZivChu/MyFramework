@@ -47,6 +47,9 @@ public class Main : MonoBehaviour {
 
     void StartGame(GameObject obj, object param) {
         print("startgame");
+
+        AppGlobal.Start();
+
         LuaState lua = new LuaState();
         LuaBinder.Bind(lua);
         lua.Start();
@@ -179,7 +182,8 @@ public class Main : MonoBehaviour {
                 tipText.gameObject.SetActive(false);
                 progress.gameObject.SetActive(false);
                 slider.gameObject.SetActive(false);
-                startBtn.gameObject.SetActive(true);
+                //startBtn.gameObject.SetActive(true);
+                StartGame(null, null);
             }
             preCheckStatus = currentCheckStatus;
         }

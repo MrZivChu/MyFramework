@@ -13,6 +13,7 @@ public class UnityEngine_LightWrap
 		L.RegFunction("RemoveAllCommandBuffers", RemoveAllCommandBuffers);
 		L.RegFunction("GetCommandBuffers", GetCommandBuffers);
 		L.RegFunction("GetLights", GetLights);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_Light);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
@@ -185,6 +186,15 @@ public class UnityEngine_LightWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Light);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

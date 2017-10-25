@@ -20,10 +20,10 @@ function Route.push( name , ... )
 		--设置上一个界面不好点击
 		local prePage = nodes[#nodes]
 		if prePage then
-			ObjectsHelper.SetIsReceiveClick(prePage.id,0,false)
+			ObjectsHelper.SetIsReceiveClick(prePage.id,0,0)
 		end
 		--设置界面的Canvas
-		ObjectsHelper.SetSortOrder(layer.id,0)
+		ObjectsHelper.SetSortOrder(layer.id,0,0)
 		--执行自定义方法
 		layer:checkCustomOpenPage()
 		table.insert(nodes,layer)

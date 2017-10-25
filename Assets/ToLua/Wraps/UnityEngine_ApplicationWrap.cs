@@ -21,6 +21,7 @@ public class UnityEngine_ApplicationWrap
 		L.RegFunction("SetStackTraceLogType", SetStackTraceLogType);
 		L.RegFunction("RequestUserAuthorization", RequestUserAuthorization);
 		L.RegFunction("HasUserAuthorization", HasUserAuthorization);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegVar("streamedBytes", get_streamedBytes, null);
 		L.RegVar("isPlaying", get_isPlaying, null);
 		L.RegVar("isEditor", get_isEditor, null);
@@ -342,6 +343,15 @@ public class UnityEngine_ApplicationWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Application);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

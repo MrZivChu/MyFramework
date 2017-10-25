@@ -307,6 +307,7 @@ public static class ToLuaExport
         GenItemPropertyFunction();             
         GenFunctions();
         //GenToStringFunction();
+        GenGetType();
         GenIndexFunc();
         GenNewIndexFunc();
         GenOutFunction();
@@ -314,6 +315,19 @@ public static class ToLuaExport
 
         EndCodeGen(dir);
     }
+
+    static void GenGetType()
+    {
+        sb.AppendFormat("\r\n\tstatic Type classType = typeof({0});\r\n", className);
+
+        sb.AppendLine("\r\n\t[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]");
+        sb.AppendFormat("\tstatic int {0}(IntPtr L)\r\n", "GetClassType");
+        sb.AppendLine("\t{");
+        sb.AppendLine("\t\tToLua.Push(L, classType);");
+        sb.AppendLine("\t\treturn 1;");
+        sb.AppendLine("\t}");
+    }
+
 
     //记录所有的导出类型
     public static List<Type> allTypes = new List<Type>();
@@ -667,6 +681,8 @@ public static class ToLuaExport
                 nameCounter[name] = count + 1;
             }
         }
+
+        sb.AppendLine("\t\tL.RegFunction(\"GetClassType\", GetClassType);");
 
         if (ctorList.Count > 0 || type.IsValueType || ctorExtList.Count > 0)
         {

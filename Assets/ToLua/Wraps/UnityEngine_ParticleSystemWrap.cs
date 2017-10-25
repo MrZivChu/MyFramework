@@ -18,6 +18,7 @@ public class UnityEngine_ParticleSystemWrap
 		L.RegFunction("Clear", Clear);
 		L.RegFunction("IsAlive", IsAlive);
 		L.RegFunction("Emit", Emit);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_ParticleSystem);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
@@ -416,6 +417,15 @@ public class UnityEngine_ParticleSystemWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.ParticleSystem);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

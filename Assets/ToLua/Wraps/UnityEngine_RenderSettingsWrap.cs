@@ -7,6 +7,7 @@ public class UnityEngine_RenderSettingsWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginStaticLibs("RenderSettings");
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("__eq", op_Equality);
 		L.RegVar("fog", get_fog, set_fog);
 		L.RegVar("fogMode", get_fogMode, set_fogMode);
@@ -50,6 +51,15 @@ public class UnityEngine_RenderSettingsWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.RenderSettings);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

@@ -7,6 +7,7 @@ public class UnityEngine_TimeWrap
 	public static void Register(LuaState L)
 	{
 		L.BeginStaticLibs("Time");
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegVar("time", get_time, null);
 		L.RegVar("timeSinceLevelLoad", get_timeSinceLevelLoad, null);
 		L.RegVar("deltaTime", get_deltaTime, null);
@@ -23,6 +24,15 @@ public class UnityEngine_TimeWrap
 		L.RegVar("realtimeSinceStartup", get_realtimeSinceStartup, null);
 		L.RegVar("captureFramerate", get_captureFramerate, set_captureFramerate);
 		L.EndStaticLibs();
+	}
+
+	static Type classType = typeof(UnityEngine.Time);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

@@ -9,22 +9,33 @@ public class ObjectsHelper
 
     public static Dictionary<int, List<GameObject>> allObjectsDic = new Dictionary<int, List<GameObject>>();
 
-    public static int SpawnPage(int parentID, int childID, string abName, string pageName)
+    public static int SpawnPage(int parentID, int childID, string abName, string assetName)
     {
         GameObject parent = null;
+        int pageID = -1;
         if (parentID == 0)
         {
             parent = GameObject.Find("GUI/Canvas/Root");
         }
         else
         {
-            parent = allObjectsDic[parentID][childID];
+            parent = GetGameObject(parentID, childID);
         }
-        GameObject page = GameObject.Instantiate(Resources.Load(pageName)) as GameObject;
-        int pageID = page.GetInstanceID();
-        allObjectsDic[pageID] = page.GetComponent<InspectorObjectsHelper>().allInspectorObjects;
-        page.transform.parent = parent.transform;
-        page.transform.localScale = Vector3.one;
+        if (parent)
+        {
+            GameObject page = GameObject.Instantiate(Resources.Load(assetName)) as GameObject;
+            if (page)
+            {
+                pageID = page.GetInstanceID();
+                InspectorObjectsHelper inspectorObjectsHelper = page.GetComponent<InspectorObjectsHelper>();
+                if (inspectorObjectsHelper)
+                {
+                    allObjectsDic[pageID] = inspectorObjectsHelper.allInspectorObjects;
+                }
+                page.transform.parent = parent.transform;
+                page.transform.localScale = Vector3.one;
+            }
+        }
         return pageID;
     }
 
@@ -38,10 +49,20 @@ public class ObjectsHelper
     }
 
 
+    public static GameObject GetGameObject(int parentID, int childID)
+    {
+        GameObject go = null;
+        if (allObjectsDic.ContainsKey(parentID))
+        {
+            List<GameObject> list = allObjectsDic[parentID];
+            go = list[childID];
+        }
+        return go;
+    }
 
     public static void SetText(int parentID, int childID, string content)
     {
-        GameObject obj = allObjectsDic[parentID][childID];
+        GameObject obj = GetGameObject(parentID, childID);
         if (obj != null)
         {
             Text uiText = obj.GetComponent<Text>();
@@ -52,9 +73,24 @@ public class ObjectsHelper
         }
     }
 
-    public static void SetImage(int parentID, int childID, string tSpriteName)
+    public static string GetText(int parentID, int childID)
     {
-        GameObject obj = allObjectsDic[parentID][childID];
+        string content = string.Empty;
+        GameObject obj = GetGameObject(parentID, childID);
+        if (obj != null)
+        {
+            Text uiText = obj.GetComponent<Text>();
+            if (uiText != null)
+            {
+                content = uiText.text;
+            }
+        }
+        return content;
+    }
+
+    public static void SetImage(int parentID, int childID, string spriteName)
+    {
+        GameObject obj = GetGameObject(parentID, childID);
         Sprite sprite = null;
         if (obj != null)
         {
@@ -68,7 +104,7 @@ public class ObjectsHelper
 
     public static void SetSlider(int parentID, int childID, float value)
     {
-        GameObject obj = allObjectsDic[parentID][childID];
+        GameObject obj = GetGameObject(parentID, childID);
         if (obj != null)
         {
             Slider uiSlider = obj.GetComponent<Slider>();
@@ -79,9 +115,24 @@ public class ObjectsHelper
         }
     }
 
+    public static float GetSlider(int parentID, int childID)
+    {
+        float value = 0;
+        GameObject obj = GetGameObject(parentID, childID);
+        if (obj != null)
+        {
+            Slider uiSlider = obj.GetComponent<Slider>();
+            if (uiSlider != null)
+            {
+                value = uiSlider.value;
+            }
+        }
+        return value;
+    }
+
     public static void SetScrollbar(int parentID, int childID, float value)
     {
-        GameObject obj = allObjectsDic[parentID][childID];
+        GameObject obj = GetGameObject(parentID, childID);
         if (obj != null)
         {
             Scrollbar uiScrollbar = obj.GetComponent<Scrollbar>();
@@ -92,9 +143,24 @@ public class ObjectsHelper
         }
     }
 
+    public static float GetScrollbar(int parentID, int childID)
+    {
+        float value = 0;
+        GameObject obj = GetGameObject(parentID, childID);
+        if (obj != null)
+        {
+            Scrollbar uiScrollbar = obj.GetComponent<Scrollbar>();
+            if (uiScrollbar != null)
+            {
+                value = uiScrollbar.value;
+            }
+        }
+        return value;
+    }
+
     public static void SetInputField(int parentID, int childID, string value)
     {
-        GameObject obj = allObjectsDic[parentID][childID];
+        GameObject obj = GetGameObject(parentID, childID);
         if (obj != null)
         {
             InputField uiInputField = obj.GetComponent<InputField>();
@@ -105,10 +171,25 @@ public class ObjectsHelper
         }
     }
 
+    public static string GetInputField(int parentID, int childID)
+    {
+        string content = string.Empty;
+        GameObject obj = GetGameObject(parentID, childID);
+        if (obj != null)
+        {
+            InputField uiInputField = obj.GetComponent<InputField>();
+            if (uiInputField != null)
+            {
+                content = uiInputField.text;
+            }
+        }
+        return content;
+    }
+
 
     public static void AddButtonClick(int parentID, int childID, LuaFunction func)
     {
-        GameObject obj = allObjectsDic[parentID][childID];
+        GameObject obj = GetGameObject(parentID, childID);
         Button btn = obj.GetComponent<Button>();
         btn.onClick.AddListener(delegate ()
         {
@@ -118,7 +199,7 @@ public class ObjectsHelper
 
     public static void AddToggleClick(int parentID, int childID, LuaFunction func)
     {
-        GameObject obj = allObjectsDic[parentID][childID];
+        GameObject obj = GetGameObject(parentID, childID);
         Toggle tog = obj.GetComponent<Toggle>();
         tog.onValueChanged.AddListener(delegate (bool isOn)
         {
@@ -126,15 +207,30 @@ public class ObjectsHelper
         });
     }
 
+    public static void SetToggleGroup(int parentID, int childID, int mparentID, int mchildID)
+    {
+        GameObject obj = GetGameObject(parentID, childID);
+        GameObject child = GetGameObject(mparentID, mchildID);
+        if (obj && child)
+        {
+            Toggle toggle = child.GetComponent<Toggle>();
+            ToggleGroup toggleGroup = obj.GetComponent<ToggleGroup>();
+            if (toggle && toggleGroup)
+            {
+                toggle.group = toggleGroup;
+            }
+        }
+    }
+
     public static void SetObjIsActive(int parentID, int childID, int flag)
     {
-        GameObject obj = allObjectsDic[parentID][childID];
+        GameObject obj = GetGameObject(parentID, childID);
         obj.SetActive(flag > 0);
     }
 
-    public static void SetSortOrder(int parentID, int childID)
+    public static void SetSortOrder(int parentID, int childID, int torder)
     {
-        GameObject page = allObjectsDic[parentID][childID];
+        GameObject page = GetGameObject(parentID, childID);
         if (page == null)
         {
             return;
@@ -147,17 +243,24 @@ public class ObjectsHelper
         }
 
         int order = 0;
-        int index = page.transform.GetSiblingIndex();
-        for (int i = index - 1; i >= 0; --i)
+        if (torder > 0)
         {
-            var child = page.transform.parent.GetChild(index - 1);
-            var canvas = child.GetComponent<Canvas>();
-            if (canvas != null)
+            order = torder;
+        }
+        else
+        {
+            int index = page.transform.GetSiblingIndex();
+            for (int i = index - 1; i >= 0; --i)
             {
-                if (canvas.sortingOrder < 300)
+                var child = page.transform.parent.GetChild(index - 1);
+                var canvas = child.GetComponent<Canvas>();
+                if (canvas != null)
                 {
-                    order = canvas.sortingOrder + (index - i) * 10;
-                    break;
+                    if (canvas.sortingOrder < 300)
+                    {
+                        order = canvas.sortingOrder + (index - i) * 10;
+                        break;
+                    }
                 }
             }
         }
@@ -179,12 +282,11 @@ public class ObjectsHelper
         }
     }
 
-
-    public static void SetIsReceiveClick(int parentID, int childID, bool isCanClick)
+    public static void SetIsReceiveClick(int parentID, int childID, int isCanClick)
     {
-        GameObject go = allObjectsDic[parentID][childID];
+        GameObject go = GetGameObject(parentID, childID);
         if (go == null) return;
-        if (isCanClick)
+        if (isCanClick > 0)
         {
             GraphicRaycaster comp = go.GetComponent<GraphicRaycaster>();
             if (comp != null)
@@ -202,7 +304,4 @@ public class ObjectsHelper
             comp.enabled = false;
         }
     }
-
-   
- 
 }

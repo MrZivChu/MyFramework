@@ -9,13 +9,23 @@ public class ObjectsHelperWrap
 		L.BeginClass(typeof(ObjectsHelper), typeof(System.Object));
 		L.RegFunction("SpawnPage", SpawnPage);
 		L.RegFunction("SetPageNull", SetPageNull);
+		L.RegFunction("GetGameObject", GetGameObject);
 		L.RegFunction("SetText", SetText);
+		L.RegFunction("GetText", GetText);
 		L.RegFunction("SetImage", SetImage);
+		L.RegFunction("SetSlider", SetSlider);
+		L.RegFunction("GetSlider", GetSlider);
+		L.RegFunction("SetScrollbar", SetScrollbar);
+		L.RegFunction("GetScrollbar", GetScrollbar);
+		L.RegFunction("SetInputField", SetInputField);
+		L.RegFunction("GetInputField", GetInputField);
 		L.RegFunction("AddButtonClick", AddButtonClick);
 		L.RegFunction("AddToggleClick", AddToggleClick);
+		L.RegFunction("SetToggleGroup", SetToggleGroup);
 		L.RegFunction("SetObjIsActive", SetObjIsActive);
 		L.RegFunction("SetSortOrder", SetSortOrder);
 		L.RegFunction("SetIsReceiveClick", SetIsReceiveClick);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateObjectsHelper);
 		L.RegFunction("__tostring", ToLua.op_ToString);
 		L.RegVar("allObjectsDic", get_allObjectsDic, set_allObjectsDic);
@@ -83,6 +93,24 @@ public class ObjectsHelperWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetGameObject(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			UnityEngine.GameObject o = ObjectsHelper.GetGameObject(arg0, arg1);
+			ToLua.Push(L, o);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int SetText(IntPtr L)
 	{
 		try
@@ -101,6 +129,24 @@ public class ObjectsHelperWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetText(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			string o = ObjectsHelper.GetText(arg0, arg1);
+			LuaDLL.lua_pushstring(L, o);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int SetImage(IntPtr L)
 	{
 		try
@@ -111,6 +157,114 @@ public class ObjectsHelperWrap
 			string arg2 = ToLua.CheckString(L, 3);
 			ObjectsHelper.SetImage(arg0, arg1, arg2);
 			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetSlider(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			float arg2 = (float)LuaDLL.luaL_checknumber(L, 3);
+			ObjectsHelper.SetSlider(arg0, arg1, arg2);
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetSlider(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			float o = ObjectsHelper.GetSlider(arg0, arg1);
+			LuaDLL.lua_pushnumber(L, o);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetScrollbar(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			float arg2 = (float)LuaDLL.luaL_checknumber(L, 3);
+			ObjectsHelper.SetScrollbar(arg0, arg1, arg2);
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetScrollbar(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			float o = ObjectsHelper.GetScrollbar(arg0, arg1);
+			LuaDLL.lua_pushnumber(L, o);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetInputField(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			string arg2 = ToLua.CheckString(L, 3);
+			ObjectsHelper.SetInputField(arg0, arg1, arg2);
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetInputField(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			string o = ObjectsHelper.GetInputField(arg0, arg1);
+			LuaDLL.lua_pushstring(L, o);
+			return 1;
 		}
 		catch(Exception e)
 		{
@@ -155,6 +309,25 @@ public class ObjectsHelperWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int SetToggleGroup(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 4);
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
+			int arg2 = (int)LuaDLL.luaL_checknumber(L, 3);
+			int arg3 = (int)LuaDLL.luaL_checknumber(L, 4);
+			ObjectsHelper.SetToggleGroup(arg0, arg1, arg2, arg3);
+			return 0;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int SetObjIsActive(IntPtr L)
 	{
 		try
@@ -177,10 +350,11 @@ public class ObjectsHelperWrap
 	{
 		try
 		{
-			ToLua.CheckArgsCount(L, 2);
+			ToLua.CheckArgsCount(L, 3);
 			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
 			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
-			ObjectsHelper.SetSortOrder(arg0, arg1);
+			int arg2 = (int)LuaDLL.luaL_checknumber(L, 3);
+			ObjectsHelper.SetSortOrder(arg0, arg1, arg2);
 			return 0;
 		}
 		catch(Exception e)
@@ -197,7 +371,7 @@ public class ObjectsHelperWrap
 			ToLua.CheckArgsCount(L, 3);
 			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
 			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
-			bool arg2 = LuaDLL.luaL_checkboolean(L, 3);
+			int arg2 = (int)LuaDLL.luaL_checknumber(L, 3);
 			ObjectsHelper.SetIsReceiveClick(arg0, arg1, arg2);
 			return 0;
 		}
@@ -205,6 +379,15 @@ public class ObjectsHelperWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(ObjectsHelper);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]

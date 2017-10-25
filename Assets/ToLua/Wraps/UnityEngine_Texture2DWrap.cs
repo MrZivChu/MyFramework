@@ -26,6 +26,7 @@ public class UnityEngine_Texture2DWrap
 		L.RegFunction("ReadPixels", ReadPixels);
 		L.RegFunction("EncodeToPNG", EncodeToPNG);
 		L.RegFunction("EncodeToJPG", EncodeToJPG);
+		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_Texture2D);
 		L.RegFunction("__eq", op_Equality);
 		L.RegFunction("__tostring", ToLua.op_ToString);
@@ -710,6 +711,15 @@ public class UnityEngine_Texture2DWrap
 		{
 			return LuaDLL.toluaL_exception(L, e);
 		}
+	}
+
+	static Type classType = typeof(UnityEngine.Texture2D);
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetClassType(IntPtr L)
+	{
+		ToLua.Push(L, classType);
+		return 1;
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
