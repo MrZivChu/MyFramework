@@ -55,6 +55,7 @@ public class Main : MonoBehaviour {
         lua.Start();
         string fullPath = Application.dataPath.Replace("Assets", "Lua");
         lua.AddSearchPath(fullPath);
+        print("开始加载main这个lua文件");
         lua.DoFile("Others/main.lua");
         //lua.Collect();
         //lua.CheckTop();
@@ -182,8 +183,8 @@ public class Main : MonoBehaviour {
                 tipText.gameObject.SetActive(false);
                 progress.gameObject.SetActive(false);
                 slider.gameObject.SetActive(false);
-                //startBtn.gameObject.SetActive(true);
-                StartGame(null, null);
+                startBtn.gameObject.SetActive(true);
+                //StartGame(null, null);
             }
             preCheckStatus = currentCheckStatus;
         }
