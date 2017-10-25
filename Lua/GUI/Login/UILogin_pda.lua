@@ -1,1 +1,1 @@
-local tab = { 	["UILogin"] = 0}return tab
+local tab = { 	["UILogin"] = 0,	["btnOK"] = 1}return tab

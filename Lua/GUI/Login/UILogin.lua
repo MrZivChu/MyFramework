@@ -8,7 +8,7 @@ UILogin.config = {
 }
 
 function UILogin:prepareData( data )
-	self:addButtonClik(self.id,self.index.E,self.StartLogin )
+	self:addButtonClik(self.id,self.index.btnOK,self.StartLogin )
 end
 
 function UILogin:onNotify( sender , e , data )
@@ -18,9 +18,7 @@ function UILogin:onNotify( sender , e , data )
 end
 
 function UILogin:StartLogin( data )
-	
+
 end
-
-
 
 return UILogin
