@@ -21,7 +21,7 @@ public static class StaticText {
     public static readonly string ConfirmDownloadAssetsHasWifi = "本次热更新资源大小为{0}\n您现在处于WIFI环境中,可以放心下载\n是否确认下载";
     public static readonly string ConfirmDownloadAssetsNoWifi = "本次热更新资源大小为{0}\n您现在处于非WIFI环境中\n是否确认下载";
     public static readonly string StartDownloadAssets = "开始下载";
-    public static readonly string DownloadShowText = "本次下载{0}，速度为{1}/s ({2})";
+    public static readonly string DownloadShowText = "本次下载{0}，速度为{1}/s (Ver{2})";
 
 
     public static readonly string CheckVersioning = "正在检查版本更新";

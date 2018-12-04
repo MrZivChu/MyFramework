@@ -1,1 +1,0 @@
-local tab = { 	["TipBox"] = 0,	["tip"] = 1,	["leftButton"] = 2,	["leftBtnText"] = 3,	["rightButton"] = 4,	["rightBtnText"] = 5}return tab

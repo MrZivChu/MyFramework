@@ -6,6 +6,7 @@ using LuaInterface;
 using BindType = ToLuaMenu.BindType;
 using System.Reflection;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public static class CustomSettings
 {
@@ -143,9 +144,38 @@ public static class CustomSettings
         _GT(typeof(Resources)),
 
 
+        //UGUI
+        _GT(typeof(UnityEngine.EventSystems.UIBehaviour)),
+        _GT(typeof(ColorBlock)),
+        _GT(typeof(Selectable)),
+        _GT(typeof(Graphic)),
+        _GT(typeof(MaskableGraphic)),
+        _GT(typeof(Text)),
+        _GT(typeof(Image)),
+        _GT(typeof(UnityEngine.Events.UnityEventBase)),
+        _GT(typeof(UnityEngine.Events.UnityEvent)),
+        _GT(typeof(Button.ButtonClickedEvent)),
+        _GT(typeof(Button)),
+        _GT(typeof(Toggle)),
+        _GT(typeof(UnityEngine.Events.UnityEvent<bool>)),
+        _GT(typeof(Toggle.ToggleEvent)),
+        _GT(typeof(ToggleGroup)),
+        _GT(typeof(RawImage)),
+        _GT(typeof(GraphicRaycaster)),
+        _GT(typeof(LayoutElement)),
+        _GT(typeof(Scrollbar)),
+        _GT(typeof(GridLayoutGroup)),
+        _GT(typeof(Slider)),
+        _GT(typeof(InputField)),
+        _GT(typeof(Shadow)),
+        _GT(typeof(Outline)),
+        _GT(typeof(HorizontalOrVerticalLayoutGroup)),
+        _GT(typeof(BaseMeshEffect)),
+
 
         _GT(typeof(ObjectsHelper)),
-        _GT(typeof(LuaUtils)),
+        _GT(typeof(CSharpUtilsForLua)),
+        _GT(typeof(ChildrenHelper)),
 
     };
 

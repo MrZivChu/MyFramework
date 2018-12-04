@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class AppConfig {
+public static class AppConfig
+{
     //应用名称
     public const string APP_NAME = "MF";
     //公司哪个应用（ID唯一标识）
@@ -12,7 +13,7 @@ public static class AppConfig {
 
 
     //请求检查资源更新的服务器地址
-    public const string ServerURL = "http://www.hotupdate.xyz/";
+    public const string ServerURL = "http://www.moling.mobi/";
     //文件列表的文件名称
     public const string LIST_FILENAME = "files.list";
     //强更版本号
@@ -24,22 +25,79 @@ public static class AppConfig {
     //网络数据加密盐
     public const string APP_SALT = "AQMSQEchcrYkbN5A";
 
-
     //最大重试次数
     public const int MAX_TRY_TIMES = 3;
     //最大同时下载数量
-    public const int MAX_DOWNLOAD_TASKS = 3;
+    public const int MAX_DOWNLOAD_TASKS = 5;
 
     // 热更新资源所在路径
-    public static string HotAssetsPath {
-        get {
-#if UNITY_EDITOR || UNITY_STANDALONE
-            return Application.persistentDataPath + "/assets/";
-#elif UNITY_ANDROID
-            return Application.persistentDataPath + "/assets/";
-#else
-            return Application.temporaryCachePath + "/assets/";
-#endif
+    public static string HotAssetsPath
+    {
+        get
+        {
+            return Application.persistentDataPath + "/";
+        }
+    }
+
+    /// <summary>
+    /// 应用程序内容路径，即streamingAssetsPath目录
+    /// </summary>
+    public static string AppContentPath()
+    {
+        string path = string.Empty;
+        switch (Application.platform)
+        {
+            case RuntimePlatform.Android:
+                path = "jar:file://" + Application.dataPath + "!/assets/";
+                break;
+            case RuntimePlatform.IPhonePlayer:
+                path = Application.dataPath + "/Raw/";
+                break;
+            default:
+                path = Application.dataPath + "/StreamingAssets/";
+                break;
+        }
+        return path;
+    }
+
+    public static string InnerLuaHotAssetsPath
+    {
+        get
+        {
+            return HotAssetsPath + "/Lua/InnerLua/";
+        }
+    }
+
+    public static string GameLuaHotAssetsPath
+    {
+        get
+        {
+            return HotAssetsPath + "/Lua/GameLua/";
+        }
+    }
+
+    public static string UIHotAssetsPath
+    {
+        get
+        {
+            return HotAssetsPath + "/UI/";
+        }
+    }
+
+
+    public static string SearchGameLuaPath
+    {
+        get
+        {
+            return Application.isEditor ? Application.dataPath + "/Lua/GameLua" : GameLuaHotAssetsPath;
+        }
+    }
+
+    public static string SearchUIABPath
+    {
+        get
+        {
+            return Application.isEditor ? @"F:\MyFrameworkAssets\tempUIABPath\" : UIHotAssetsPath;
         }
     }
 }

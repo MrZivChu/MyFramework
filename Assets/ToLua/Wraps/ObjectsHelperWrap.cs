@@ -61,14 +61,30 @@ public class ObjectsHelperWrap
 	{
 		try
 		{
-			ToLua.CheckArgsCount(L, 4);
-			int arg0 = (int)LuaDLL.luaL_checknumber(L, 1);
-			int arg1 = (int)LuaDLL.luaL_checknumber(L, 2);
-			string arg2 = ToLua.CheckString(L, 3);
-			string arg3 = ToLua.CheckString(L, 4);
-			int o = ObjectsHelper.SpawnPage(arg0, arg1, arg2, arg3);
-			LuaDLL.lua_pushinteger(L, o);
-			return 1;
+			int count = LuaDLL.lua_gettop(L);
+
+			if (count == 2 && TypeChecker.CheckTypes(L, 1, typeof(string), typeof(string)))
+			{
+				string arg0 = ToLua.ToString(L, 1);
+				string arg1 = ToLua.ToString(L, 2);
+				UnityEngine.GameObject o = ObjectsHelper.SpawnPage(arg0, arg1);
+				ToLua.Push(L, o);
+				return 1;
+			}
+			else if (count == 4 && TypeChecker.CheckTypes(L, 1, typeof(int), typeof(int), typeof(string), typeof(string)))
+			{
+				int arg0 = (int)LuaDLL.lua_tonumber(L, 1);
+				int arg1 = (int)LuaDLL.lua_tonumber(L, 2);
+				string arg2 = ToLua.ToString(L, 3);
+				string arg3 = ToLua.ToString(L, 4);
+				int o = ObjectsHelper.SpawnPage(arg0, arg1, arg2, arg3);
+				LuaDLL.lua_pushinteger(L, o);
+				return 1;
+			}
+			else
+			{
+				return LuaDLL.luaL_throw(L, "invalid arguments to method: ObjectsHelper.SpawnPage");
+			}
 		}
 		catch(Exception e)
 		{

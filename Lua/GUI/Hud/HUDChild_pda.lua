@@ -1,1 +1,0 @@
-local tab = { 	["HUD"] = 0,	["A"] = 1}return tab

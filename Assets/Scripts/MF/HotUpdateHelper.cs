@@ -163,7 +163,7 @@ public class HotUpdateHelper : MonoBehaviour {
 
             string name = tokens[0].Trim();
             string md5 = tokens[1].Trim();
-
+            //最好实时获取本地文件的MD5值，与服务器端的MD5值进行比较，避免本地文件损坏，造成程序运行出现问题，主要出于性能考虑所以暂且不采用此方法
             if (!File.Exists(AppConfig.HotAssetsPath + name)) {
                 continue;
             }
@@ -234,7 +234,7 @@ public class HotUpdateHelper : MonoBehaviour {
     void onDownloadAssetSuccess(WWW www, object item) {
         print("单个ab下载成功");
         if (www.isDone && string.IsNullOrEmpty(www.error)) {
-            if (Utils.UncompressMemory(www.bytes)) {
+            if (CSharpUtils.UncompressMemory(AppConfig.HotAssetsPath,www.bytes)) {
                 FileData data = item as FileData;
                 data.needUpdate = false;
             }

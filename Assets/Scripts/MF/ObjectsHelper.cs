@@ -11,32 +11,25 @@ public class ObjectsHelper
 
     public static int SpawnPage(int parentID, int childID, string abName, string assetName)
     {
-        GameObject parent = null;
-        int pageID = -1;
-        if (parentID == 0)
-        {
-            parent = GameObject.Find("GUI/Canvas/Root");
-        }
-        else
-        {
-            parent = GetGameObject(parentID, childID);
-        }
-        if (parent)
-        {
-            GameObject page = GameObject.Instantiate(Resources.Load(assetName)) as GameObject;
-            if (page)
-            {
-                pageID = page.GetInstanceID();
-                InspectorObjectsHelper inspectorObjectsHelper = page.GetComponent<InspectorObjectsHelper>();
-                if (inspectorObjectsHelper)
-                {
-                    allObjectsDic[pageID] = inspectorObjectsHelper.allInspectorObjects;
-                }
-                page.transform.parent = parent.transform;
-                page.transform.localScale = Vector3.one;
-            }
-        }
-        return pageID;
+        return 0;
+    }
+
+    public static AssetBundle LoadAB(string abName)
+    {
+        return Main.abManager.GetAB(abName);
+    }
+
+    public static GameObject SpawnPage(string abName, string assetName)
+    {
+        AssetBundle ab = LoadAB(AppConfig.SearchUIABPath + abName);
+        UnityEngine.Object tt = ab.LoadAsset(assetName);
+
+        GameObject go = GameObject.Instantiate(tt) as GameObject;
+        GameObject root = GameObject.Find("Root");
+        go.transform.parent = root.transform;
+        go.transform.localScale = Vector3.one;
+        go.transform.localPosition = Vector3.zero;
+        return go;
     }
 
     public static void SetPageNull(int pageID)
