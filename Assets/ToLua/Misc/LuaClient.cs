@@ -25,6 +25,7 @@ using LuaInterface;
 using System.Collections;
 using System.IO;
 using System;
+using UnityEngine.SceneManagement;
 #if UNITY_5
 using UnityEngine.SceneManagement;
 #endif

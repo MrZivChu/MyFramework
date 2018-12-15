@@ -127,7 +127,7 @@ namespace LuaInterface
 
         public void AddSearchBundle(string name, AssetBundle bundle)
         {
-            zipMap[name] = bundle;            
+            zipMap[name] = bundle;
         }
 
         public string FindFile(string fileName)
@@ -138,7 +138,7 @@ namespace LuaInterface
             }
 
             if (Path.IsPathRooted(fileName))
-            {                
+            {
                 if (!fileName.EndsWith(".lua"))
                 {
                     fileName += ".lua";
@@ -146,7 +146,7 @@ namespace LuaInterface
 
                 return fileName;
             }
-            
+
             if (fileName.EndsWith(".lua"))
             {
                 fileName = fileName.Substring(0, fileName.Length - 4);
@@ -189,7 +189,7 @@ namespace LuaInterface
             {
                 return ReadZipFile(fileName);
             }
-        }        
+        }
 
         public virtual string FindFileError(string fileName)
         {
@@ -247,7 +247,7 @@ namespace LuaInterface
             {
                 sb.Append("_");
                 sb.Append(fileName.Substring(0, pos).ToLower());        //shit, unity5 assetbund'name must lower
-                sb.Replace('/', '_');                
+                sb.Replace('/', '_');
                 fileName = fileName.Substring(pos + 1);
             }
 
@@ -267,7 +267,7 @@ namespace LuaInterface
 #if UNITY_5
                 TextAsset luaCode = zipFile.LoadAsset<TextAsset>(fileName);
 #else
-                TextAsset luaCode = zipFile.Load(fileName, typeof(TextAsset)) as TextAsset;
+                TextAsset luaCode = zipFile.LoadAsset<TextAsset>(fileName);
 #endif
 
                 if (luaCode != null)

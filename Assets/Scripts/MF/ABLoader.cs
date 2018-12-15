@@ -34,7 +34,7 @@ public class ABLoader
 #if UNITY_5_3 || UNITY_5_4 || UNITY_5_5 || UNITY_5_6 || UNITY_5_7 || UNITY_5_8 || UNITY_5_9
                 ab = AssetBundle.LoadFromFile(path);
 #else
-                ab = AssetBundle.CreateFromFile(path);
+                ab = AssetBundle.LoadFromFile(path);
 #endif
                 list.Add(ab);
                 mLoaded[abName] = ab;

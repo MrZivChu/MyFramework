@@ -458,29 +458,29 @@ namespace LuaInterface
 #if UNITY_EDITOR
         private static bool GetConsoleWindowListView()
         {
-            if (logListView == null)
-            {
-                Assembly unityEditorAssembly = Assembly.GetAssembly(typeof(EditorWindow));
-                Type consoleWindowType = unityEditorAssembly.GetType("UnityEditor.ConsoleWindow");
-                FieldInfo fieldInfo = consoleWindowType.GetField("ms_ConsoleWindow", BindingFlags.Static | BindingFlags.NonPublic);
-                consoleWindow = fieldInfo.GetValue(null);
+            //    if (logListView == null)
+            //    {
+            //        Assembly unityEditorAssembly = Assembly.GetAssembly(typeof(EditorWindow));
+            //        Type consoleWindowType = unityEditorAssembly.GetType("UnityEditor.ConsoleWindow");
+            //        FieldInfo fieldInfo = consoleWindowType.GetField("ms_ConsoleWindow", BindingFlags.Static | BindingFlags.NonPublic);
+            //        consoleWindow = fieldInfo.GetValue(null);
 
-                if (consoleWindow == null)
-                {
-                    logListView = null;
-                    return false;
-                }
+            //        if (consoleWindow == null)
+            //        {
+            //            logListView = null;
+            //            return false;
+            //        }
 
-                FieldInfo listViewFieldInfo = consoleWindowType.GetField("m_ListView", BindingFlags.Instance | BindingFlags.NonPublic);
-                logListView = listViewFieldInfo.GetValue(consoleWindow);
-                logListViewCurrentRow = listViewFieldInfo.FieldType.GetField("row", BindingFlags.Instance | BindingFlags.Public);
+            //        FieldInfo listViewFieldInfo = consoleWindowType.GetField("m_ListView", BindingFlags.Instance | BindingFlags.NonPublic);
+            //        logListView = listViewFieldInfo.GetValue(consoleWindow);
+            //        logListViewCurrentRow = listViewFieldInfo.FieldType.GetField("row", BindingFlags.Instance | BindingFlags.Public);
 
-                Type logEntriesType = unityEditorAssembly.GetType("UnityEditorInternal.LogEntries");
-                LogEntriesGetEntry = logEntriesType.GetMethod("GetEntryInternal", BindingFlags.Static | BindingFlags.Public);
-                Type logEntryType = unityEditorAssembly.GetType("UnityEditorInternal.LogEntry");
-                logEntry = Activator.CreateInstance(logEntryType);
-                logEntryCondition = logEntryType.GetField("condition", BindingFlags.Instance | BindingFlags.Public);
-            }
+            //        Type logEntriesType = unityEditorAssembly.GetType("UnityEditorInternal.LogEntries");
+            //        LogEntriesGetEntry = logEntriesType.GetMethod("GetEntryInternal", BindingFlags.Static | BindingFlags.Public);
+            //        Type logEntryType = unityEditorAssembly.GetType("UnityEditorInternal.LogEntry");
+            //        logEntry = Activator.CreateInstance(logEntryType);
+            //        logEntryCondition = logEntryType.GetField("condition", BindingFlags.Instance | BindingFlags.Public);
+            //    }
 
             return true;
         }
@@ -522,7 +522,6 @@ namespace LuaInterface
             if (_instanceID == -1)
             {
                 string dir = "Assets/ToLua/Core/ToLua.cs";
-                UnityEngine.Debug.Log(dir);
                 _instanceID = AssetDatabase.LoadAssetAtPath(dir, typeof(MonoScript)).GetInstanceID();//"Assets/ToLua/Core/ToLua.cs"
             }
         }

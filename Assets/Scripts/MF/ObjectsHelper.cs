@@ -16,7 +16,8 @@ public class ObjectsHelper
 
     public static AssetBundle LoadAB(string abName)
     {
-        return Main.abManager.GetAB(abName);
+        Debug.Log("ab路径 = " + abName);
+        return Main.abManager.LoadAB(abName);
     }
 
     public static GameObject SpawnPage(string abName, string assetName)
@@ -26,7 +27,7 @@ public class ObjectsHelper
 
         GameObject go = GameObject.Instantiate(tt) as GameObject;
         GameObject root = GameObject.Find("Root");
-        go.transform.parent = root.transform;
+        go.transform.SetParent(root.transform);
         go.transform.localScale = Vector3.one;
         go.transform.localPosition = Vector3.zero;
         return go;

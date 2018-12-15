@@ -7,7 +7,7 @@ public class ABManager
     Dictionary<string, AssetBundle> hasLoadedABList = new Dictionary<string, AssetBundle>();
     Dictionary<AssetBundle, int> abCounter = new Dictionary<AssetBundle, int>();
 
-    public AssetBundle GetAB(string abName)
+    public AssetBundle LoadAB(string abName)
     {
         AssetBundle result = null;
         List<string> dependenciesList = GetGetDependencies(abName);
@@ -16,7 +16,7 @@ public class ABManager
             AssetBundle itemAB = null;
             for (int i = 0; i < dependenciesList.Count; i++)
             {
-                itemAB = LoadAB(dependenciesList[i]);
+                itemAB = GetAB(dependenciesList[i]);
                 if (i == 0)
                     result = itemAB;
             }
@@ -34,7 +34,7 @@ public class ABManager
         }
     }
 
-    AssetBundle LoadAB(string abName)
+    AssetBundle GetAB(string abName)
     {
         if (!hasLoadedABList.ContainsKey(abName))
         {

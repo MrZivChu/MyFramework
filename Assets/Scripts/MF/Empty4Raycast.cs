@@ -15,7 +15,7 @@ namespace UnityEngine.UI
 
 #if UNITY_4_7
         protected override void OnFillVBO(List<UIVertex> toFill)
-#elif UNITY_5
+#else 
         protected override void OnPopulateMesh(VertexHelper toFill)
 #endif
         {

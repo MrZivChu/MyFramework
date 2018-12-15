@@ -2,9 +2,8 @@ local HUDChild = class(MF.page)
 
 HUDChild.config = {
 	name = 'HUDChild',
-	ab = 'gui/hud.ab',
-	prefab = 'HUDChild',
-	podaPath = 'GUI/Hud/HUDChild_pda'
+	ab = 'hud.ab',
+	prefab = 'HUDChild'
 }
 
 function HUDChild:prepareData( data )

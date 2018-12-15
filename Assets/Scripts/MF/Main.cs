@@ -52,15 +52,18 @@ public class Main : MonoBehaviour
     void StartGame(GameObject obj, object param)
     {
         abManager = new ABManager();
-        abManager.GetAB(AppConfig.SearchUIABPath + "gui/comm.tex");
+        abManager.LoadAB(AppConfig.SearchUIABPath + "comm.tex");
 
         luaState = new LuaState();
-        //lua.AddSearchPath(AppConfig.InnerLuaHotAssetsPath);
+        luaState.AddSearchPath(AppConfig.SearchInnerLuaPath);
         luaState.AddSearchPath(AppConfig.SearchGameLuaPath);
 
         LuaBinder.Bind(luaState);
         luaState.Start();
         luaState.DoFile("Others/main.lua");
+        luaState.CheckTop();
+        //luaState.Dispose();
+        luaState = null;
     }
 
     /// <summary>

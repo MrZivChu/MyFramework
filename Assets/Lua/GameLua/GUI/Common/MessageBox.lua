@@ -2,7 +2,7 @@ local MessageBox = class(MF.page)
 
 MessageBox.config = {
 	name = 'MessageBox',
-	ab = 'gui/comm.ab',
+	ab = 'comm.ab',
 	prefab = 'MessageBox',
 }
 

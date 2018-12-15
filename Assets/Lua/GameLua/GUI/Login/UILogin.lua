@@ -2,7 +2,7 @@ local UILogin = class(MF.page)
 
 UILogin.config = {
 	name = 'UILogin',
-	ab = 'gui/login.ab',
+	ab = 'login.ab',
 	prefab = 'UILogin',
 }
 

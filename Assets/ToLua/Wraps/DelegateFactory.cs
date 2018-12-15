@@ -23,10 +23,12 @@ public static class DelegateFactory
 		dict.Add(typeof(System.Action<int>), System_Action_int);
 		dict.Add(typeof(System.Comparison<int>), System_Comparison_int);
 		dict.Add(typeof(UnityEngine.Camera.CameraCallback), UnityEngine_Camera_CameraCallback);
+		dict.Add(typeof(UnityEngine.Application.LowMemoryCallback), UnityEngine_Application_LowMemoryCallback);
 		dict.Add(typeof(UnityEngine.Application.AdvertisingIdentifierCallback), UnityEngine_Application_AdvertisingIdentifierCallback);
 		dict.Add(typeof(UnityEngine.Application.LogCallback), UnityEngine_Application_LogCallback);
 		dict.Add(typeof(UnityEngine.AudioClip.PCMReaderCallback), UnityEngine_AudioClip_PCMReaderCallback);
 		dict.Add(typeof(UnityEngine.AudioClip.PCMSetPositionCallback), UnityEngine_AudioClip_PCMSetPositionCallback);
+		dict.Add(typeof(System.Action<UnityEngine.AsyncOperation>), System_Action_UnityEngine_AsyncOperation);
 		dict.Add(typeof(UnityEngine.Events.UnityAction<bool>), UnityEngine_Events_UnityAction_bool);
 		dict.Add(typeof(UnityEngine.UI.InputField.OnValidateInput), UnityEngine_UI_InputField_OnValidateInput);
 	}
@@ -428,6 +430,49 @@ public static class DelegateFactory
 		}
 	}
 
+	class UnityEngine_Application_LowMemoryCallback_Event : LuaDelegate
+	{
+		public UnityEngine_Application_LowMemoryCallback_Event(LuaFunction func) : base(func) { }
+		public UnityEngine_Application_LowMemoryCallback_Event(LuaFunction func, LuaTable self) : base(func, self) { }
+
+		public void Call()
+		{
+			func.Call();
+		}
+
+		public void CallWithSelf()
+		{
+			func.BeginPCall();
+			func.Push(self);
+			func.PCall();
+			func.EndPCall();
+		}
+	}
+
+	public static Delegate UnityEngine_Application_LowMemoryCallback(LuaFunction func, LuaTable self, bool flag)
+	{
+		if (func == null)
+		{
+			UnityEngine.Application.LowMemoryCallback fn = delegate() { };
+			return fn;
+		}
+
+		if(!flag)
+		{
+			UnityEngine_Application_LowMemoryCallback_Event target = new UnityEngine_Application_LowMemoryCallback_Event(func);
+			UnityEngine.Application.LowMemoryCallback d = target.Call;
+			target.method = d.Method;
+			return d;
+		}
+		else
+		{
+			UnityEngine_Application_LowMemoryCallback_Event target = new UnityEngine_Application_LowMemoryCallback_Event(func, self);
+			UnityEngine.Application.LowMemoryCallback d = target.CallWithSelf;
+			target.method = d.Method;
+			return d;
+		}
+	}
+
 	class UnityEngine_Application_AdvertisingIdentifierCallback_Event : LuaDelegate
 	{
 		public UnityEngine_Application_AdvertisingIdentifierCallback_Event(LuaFunction func) : base(func) { }
@@ -619,6 +664,53 @@ public static class DelegateFactory
 		{
 			UnityEngine_AudioClip_PCMSetPositionCallback_Event target = new UnityEngine_AudioClip_PCMSetPositionCallback_Event(func, self);
 			UnityEngine.AudioClip.PCMSetPositionCallback d = target.CallWithSelf;
+			target.method = d.Method;
+			return d;
+		}
+	}
+
+	class System_Action_UnityEngine_AsyncOperation_Event : LuaDelegate
+	{
+		public System_Action_UnityEngine_AsyncOperation_Event(LuaFunction func) : base(func) { }
+		public System_Action_UnityEngine_AsyncOperation_Event(LuaFunction func, LuaTable self) : base(func, self) { }
+
+		public void Call(UnityEngine.AsyncOperation param0)
+		{
+			func.BeginPCall();
+			func.PushObject(param0);
+			func.PCall();
+			func.EndPCall();
+		}
+
+		public void CallWithSelf(UnityEngine.AsyncOperation param0)
+		{
+			func.BeginPCall();
+			func.Push(self);
+			func.PushObject(param0);
+			func.PCall();
+			func.EndPCall();
+		}
+	}
+
+	public static Delegate System_Action_UnityEngine_AsyncOperation(LuaFunction func, LuaTable self, bool flag)
+	{
+		if (func == null)
+		{
+			System.Action<UnityEngine.AsyncOperation> fn = delegate(UnityEngine.AsyncOperation param0) { };
+			return fn;
+		}
+
+		if(!flag)
+		{
+			System_Action_UnityEngine_AsyncOperation_Event target = new System_Action_UnityEngine_AsyncOperation_Event(func);
+			System.Action<UnityEngine.AsyncOperation> d = target.Call;
+			target.method = d.Method;
+			return d;
+		}
+		else
+		{
+			System_Action_UnityEngine_AsyncOperation_Event target = new System_Action_UnityEngine_AsyncOperation_Event(func, self);
+			System.Action<UnityEngine.AsyncOperation> d = target.CallWithSelf;
 			target.method = d.Method;
 			return d;
 		}

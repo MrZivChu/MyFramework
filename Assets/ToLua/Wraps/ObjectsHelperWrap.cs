@@ -8,6 +8,7 @@ public class ObjectsHelperWrap
 	{
 		L.BeginClass(typeof(ObjectsHelper), typeof(System.Object));
 		L.RegFunction("SpawnPage", SpawnPage);
+		L.RegFunction("LoadAB", LoadAB);
 		L.RegFunction("SetPageNull", SetPageNull);
 		L.RegFunction("GetGameObject", GetGameObject);
 		L.RegFunction("SetText", SetText);
@@ -85,6 +86,23 @@ public class ObjectsHelperWrap
 			{
 				return LuaDLL.luaL_throw(L, "invalid arguments to method: ObjectsHelper.SpawnPage");
 			}
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int LoadAB(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 1);
+			string arg0 = ToLua.CheckString(L, 1);
+			UnityEngine.AssetBundle o = ObjectsHelper.LoadAB(arg0);
+			ToLua.Push(L, o);
+			return 1;
 		}
 		catch(Exception e)
 		{

@@ -2,9 +2,8 @@ local HUD = class(MF.page)
 
 HUD.config = {
 	name = 'HUD',
-	ab = 'gui/hud.ab',
-	prefab = 'HUD',
-	podaPath = 'GUI/Hud/HUD_pda'
+	ab = 'hud.ab',
+	prefab = 'HUD'
 }
 
 function HUD:prepareData( data )

@@ -6,7 +6,7 @@ public class UnityEngine_AnimatorWrap
 {
 	public static void Register(LuaState L)
 	{
-		L.BeginClass(typeof(UnityEngine.Animator), typeof(UnityEngine.Experimental.Director.DirectorPlayer));
+		L.BeginClass(typeof(UnityEngine.Animator), typeof(UnityEngine.Behaviour));
 		L.RegFunction("GetFloat", GetFloat);
 		L.RegFunction("SetFloat", SetFloat);
 		L.RegFunction("GetBool", GetBool);
@@ -31,6 +31,7 @@ public class UnityEngine_AnimatorWrap
 		L.RegFunction("SetLookAtPosition", SetLookAtPosition);
 		L.RegFunction("SetLookAtWeight", SetLookAtWeight);
 		L.RegFunction("SetBoneLocalRotation", SetBoneLocalRotation);
+		L.RegFunction("GetBehaviours", GetBehaviours);
 		L.RegFunction("GetLayerName", GetLayerName);
 		L.RegFunction("GetLayerIndex", GetLayerIndex);
 		L.RegFunction("GetLayerWeight", GetLayerWeight);
@@ -100,7 +101,9 @@ public class UnityEngine_AnimatorWrap
 		L.RegVar("recorderStopTime", get_recorderStopTime, set_recorderStopTime);
 		L.RegVar("recorderMode", get_recorderMode, null);
 		L.RegVar("runtimeAnimatorController", get_runtimeAnimatorController, set_runtimeAnimatorController);
+		L.RegVar("hasBoundPlayables", get_hasBoundPlayables, null);
 		L.RegVar("avatar", get_avatar, set_avatar);
+		L.RegVar("playableGraph", get_playableGraph, null);
 		L.RegVar("layersAffectMassCenter", get_layersAffectMassCenter, set_layersAffectMassCenter);
 		L.RegVar("leftFeetBottomHeight", get_leftFeetBottomHeight, null);
 		L.RegVar("rightFeetBottomHeight", get_rightFeetBottomHeight, null);
@@ -770,6 +773,25 @@ public class UnityEngine_AnimatorWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int GetBehaviours(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 3);
+			UnityEngine.Animator obj = (UnityEngine.Animator)ToLua.CheckObject(L, 1, typeof(UnityEngine.Animator));
+			int arg0 = (int)LuaDLL.luaL_checknumber(L, 2);
+			int arg1 = (int)LuaDLL.luaL_checknumber(L, 3);
+			UnityEngine.StateMachineBehaviour[] o = obj.GetBehaviours(arg0, arg1);
+			ToLua.Push(L, o);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int GetLayerName(IntPtr L)
 	{
 		try
@@ -1324,14 +1346,7 @@ public class UnityEngine_AnimatorWrap
 		{
 			int count = LuaDLL.lua_gettop(L);
 
-			if (count == 2 && TypeChecker.CheckTypes(L, 1, typeof(UnityEngine.Animator), typeof(UnityEngine.Experimental.Director.Playable)))
-			{
-				UnityEngine.Animator obj = (UnityEngine.Animator)ToLua.ToObject(L, 1);
-				UnityEngine.Experimental.Director.Playable arg0 = (UnityEngine.Experimental.Director.Playable)ToLua.ToObject(L, 2);
-				obj.Play(arg0);
-				return 0;
-			}
-			else if (count == 2 && TypeChecker.CheckTypes(L, 1, typeof(UnityEngine.Animator), typeof(int)))
+			if (count == 2 && TypeChecker.CheckTypes(L, 1, typeof(UnityEngine.Animator), typeof(int)))
 			{
 				UnityEngine.Animator obj = (UnityEngine.Animator)ToLua.ToObject(L, 1);
 				int arg0 = (int)LuaDLL.lua_tonumber(L, 2);
@@ -2269,6 +2284,25 @@ public class UnityEngine_AnimatorWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_hasBoundPlayables(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.Animator obj = (UnityEngine.Animator)o;
+			bool ret = obj.hasBoundPlayables;
+			LuaDLL.lua_pushboolean(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index hasBoundPlayables on a nil value" : e.Message);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_avatar(IntPtr L)
 	{
 		object o = null;
@@ -2284,6 +2318,25 @@ public class UnityEngine_AnimatorWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index avatar on a nil value" : e.Message);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_playableGraph(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.Animator obj = (UnityEngine.Animator)o;
+			UnityEngine.Playables.PlayableGraph ret = obj.playableGraph;
+			ToLua.PushValue(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index playableGraph on a nil value" : e.Message);
 		}
 	}
 

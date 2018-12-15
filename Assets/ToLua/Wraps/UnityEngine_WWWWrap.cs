@@ -6,33 +6,29 @@ public class UnityEngine_WWWWrap
 {
 	public static void Register(LuaState L)
 	{
-		L.BeginClass(typeof(UnityEngine.WWW), typeof(System.Object));
+		L.BeginClass(typeof(UnityEngine.WWW), typeof(UnityEngine.CustomYieldInstruction));
+		L.RegFunction("LoadImageIntoTexture", LoadImageIntoTexture);
 		L.RegFunction("Dispose", Dispose);
-		L.RegFunction("InitWWW", InitWWW);
 		L.RegFunction("EscapeURL", EscapeURL);
 		L.RegFunction("UnEscapeURL", UnEscapeURL);
-		L.RegFunction("GetAudioClip", GetAudioClip);
-		L.RegFunction("GetAudioClipCompressed", GetAudioClipCompressed);
-		L.RegFunction("LoadImageIntoTexture", LoadImageIntoTexture);
 		L.RegFunction("LoadFromCacheOrDownload", LoadFromCacheOrDownload);
 		L.RegFunction("GetClassType", GetClassType);
 		L.RegFunction("New", _CreateUnityEngine_WWW);
 		L.RegFunction("__tostring", ToLua.op_ToString);
-		L.RegVar("responseHeaders", get_responseHeaders, null);
-		L.RegVar("text", get_text, null);
+		L.RegVar("assetBundle", get_assetBundle, null);
 		L.RegVar("bytes", get_bytes, null);
-		L.RegVar("size", get_size, null);
+		L.RegVar("bytesDownloaded", get_bytesDownloaded, null);
 		L.RegVar("error", get_error, null);
-		L.RegVar("texture", get_texture, null);
-		L.RegVar("textureNonReadable", get_textureNonReadable, null);
-		L.RegVar("audioClip", get_audioClip, null);
 		L.RegVar("isDone", get_isDone, null);
 		L.RegVar("progress", get_progress, null);
-		L.RegVar("uploadProgress", get_uploadProgress, null);
-		L.RegVar("bytesDownloaded", get_bytesDownloaded, null);
-		L.RegVar("url", get_url, null);
-		L.RegVar("assetBundle", get_assetBundle, null);
+		L.RegVar("responseHeaders", get_responseHeaders, null);
+		L.RegVar("text", get_text, null);
+		L.RegVar("texture", get_texture, null);
+		L.RegVar("textureNonReadable", get_textureNonReadable, null);
 		L.RegVar("threadPriority", get_threadPriority, set_threadPriority);
+		L.RegVar("uploadProgress", get_uploadProgress, null);
+		L.RegVar("url", get_url, null);
+		L.RegVar("keepWaiting", get_keepWaiting, null);
 		L.EndClass();
 	}
 
@@ -47,7 +43,7 @@ public class UnityEngine_WWWWrap
 			{
 				string arg0 = ToLua.CheckString(L, 1);
 				UnityEngine.WWW obj = new UnityEngine.WWW(arg0);
-				ToLua.PushObject(L, obj);
+				ToLua.Push(L, obj);
 				return 1;
 			}
 			else if (count == 2 && TypeChecker.CheckTypes(L, 1, typeof(string), typeof(byte[])))
@@ -55,7 +51,7 @@ public class UnityEngine_WWWWrap
 				string arg0 = ToLua.CheckString(L, 1);
 				byte[] arg1 = ToLua.CheckByteBuffer(L, 2);
 				UnityEngine.WWW obj = new UnityEngine.WWW(arg0, arg1);
-				ToLua.PushObject(L, obj);
+				ToLua.Push(L, obj);
 				return 1;
 			}
 			else if (count == 2 && TypeChecker.CheckTypes(L, 1, typeof(string), typeof(UnityEngine.WWWForm)))
@@ -63,7 +59,7 @@ public class UnityEngine_WWWWrap
 				string arg0 = ToLua.CheckString(L, 1);
 				UnityEngine.WWWForm arg1 = (UnityEngine.WWWForm)ToLua.CheckObject(L, 2, typeof(UnityEngine.WWWForm));
 				UnityEngine.WWW obj = new UnityEngine.WWW(arg0, arg1);
-				ToLua.PushObject(L, obj);
+				ToLua.Push(L, obj);
 				return 1;
 			}
 			else if (count == 3 && TypeChecker.CheckTypes(L, 1, typeof(string), typeof(byte[]), typeof(System.Collections.Generic.Dictionary<string,string>)))
@@ -72,13 +68,30 @@ public class UnityEngine_WWWWrap
 				byte[] arg1 = ToLua.CheckByteBuffer(L, 2);
 				System.Collections.Generic.Dictionary<string,string> arg2 = (System.Collections.Generic.Dictionary<string,string>)ToLua.CheckObject(L, 3, typeof(System.Collections.Generic.Dictionary<string,string>));
 				UnityEngine.WWW obj = new UnityEngine.WWW(arg0, arg1, arg2);
-				ToLua.PushObject(L, obj);
+				ToLua.Push(L, obj);
 				return 1;
 			}
 			else
 			{
 				return LuaDLL.luaL_throw(L, "invalid arguments to ctor method: UnityEngine.WWW.New");
 			}
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int LoadImageIntoTexture(IntPtr L)
+	{
+		try
+		{
+			ToLua.CheckArgsCount(L, 2);
+			UnityEngine.WWW obj = (UnityEngine.WWW)ToLua.CheckObject(L, 1, typeof(UnityEngine.WWW));
+			UnityEngine.Texture2D arg0 = (UnityEngine.Texture2D)ToLua.CheckUnityObject(L, 2, typeof(UnityEngine.Texture2D));
+			obj.LoadImageIntoTexture(arg0);
+			return 0;
 		}
 		catch(Exception e)
 		{
@@ -94,25 +107,6 @@ public class UnityEngine_WWWWrap
 			ToLua.CheckArgsCount(L, 1);
 			UnityEngine.WWW obj = (UnityEngine.WWW)ToLua.CheckObject(L, 1, typeof(UnityEngine.WWW));
 			obj.Dispose();
-			return 0;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int InitWWW(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 4);
-			UnityEngine.WWW obj = (UnityEngine.WWW)ToLua.CheckObject(L, 1, typeof(UnityEngine.WWW));
-			string arg0 = ToLua.CheckString(L, 2);
-			byte[] arg1 = ToLua.CheckByteBuffer(L, 3);
-			string[] arg2 = ToLua.CheckStringArray(L, 4);
-			obj.InitWWW(arg0, arg1, arg2);
 			return 0;
 		}
 		catch(Exception e)
@@ -188,110 +182,6 @@ public class UnityEngine_WWWWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int GetAudioClip(IntPtr L)
-	{
-		try
-		{
-			int count = LuaDLL.lua_gettop(L);
-
-			if (count == 2 && TypeChecker.CheckTypes(L, 1, typeof(UnityEngine.WWW), typeof(bool)))
-			{
-				UnityEngine.WWW obj = (UnityEngine.WWW)ToLua.ToObject(L, 1);
-				bool arg0 = LuaDLL.lua_toboolean(L, 2);
-				UnityEngine.AudioClip o = obj.GetAudioClip(arg0);
-				ToLua.Push(L, o);
-				return 1;
-			}
-			else if (count == 3 && TypeChecker.CheckTypes(L, 1, typeof(UnityEngine.WWW), typeof(bool), typeof(bool)))
-			{
-				UnityEngine.WWW obj = (UnityEngine.WWW)ToLua.ToObject(L, 1);
-				bool arg0 = LuaDLL.lua_toboolean(L, 2);
-				bool arg1 = LuaDLL.lua_toboolean(L, 3);
-				UnityEngine.AudioClip o = obj.GetAudioClip(arg0, arg1);
-				ToLua.Push(L, o);
-				return 1;
-			}
-			else if (count == 4 && TypeChecker.CheckTypes(L, 1, typeof(UnityEngine.WWW), typeof(bool), typeof(bool), typeof(UnityEngine.AudioType)))
-			{
-				UnityEngine.WWW obj = (UnityEngine.WWW)ToLua.ToObject(L, 1);
-				bool arg0 = LuaDLL.lua_toboolean(L, 2);
-				bool arg1 = LuaDLL.lua_toboolean(L, 3);
-				UnityEngine.AudioType arg2 = (UnityEngine.AudioType)ToLua.ToObject(L, 4);
-				UnityEngine.AudioClip o = obj.GetAudioClip(arg0, arg1, arg2);
-				ToLua.Push(L, o);
-				return 1;
-			}
-			else
-			{
-				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.WWW.GetAudioClip");
-			}
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int GetAudioClipCompressed(IntPtr L)
-	{
-		try
-		{
-			int count = LuaDLL.lua_gettop(L);
-
-			if (count == 1 && TypeChecker.CheckTypes(L, 1, typeof(UnityEngine.WWW)))
-			{
-				UnityEngine.WWW obj = (UnityEngine.WWW)ToLua.ToObject(L, 1);
-				UnityEngine.AudioClip o = obj.GetAudioClipCompressed();
-				ToLua.Push(L, o);
-				return 1;
-			}
-			else if (count == 2 && TypeChecker.CheckTypes(L, 1, typeof(UnityEngine.WWW), typeof(bool)))
-			{
-				UnityEngine.WWW obj = (UnityEngine.WWW)ToLua.ToObject(L, 1);
-				bool arg0 = LuaDLL.lua_toboolean(L, 2);
-				UnityEngine.AudioClip o = obj.GetAudioClipCompressed(arg0);
-				ToLua.Push(L, o);
-				return 1;
-			}
-			else if (count == 3 && TypeChecker.CheckTypes(L, 1, typeof(UnityEngine.WWW), typeof(bool), typeof(UnityEngine.AudioType)))
-			{
-				UnityEngine.WWW obj = (UnityEngine.WWW)ToLua.ToObject(L, 1);
-				bool arg0 = LuaDLL.lua_toboolean(L, 2);
-				UnityEngine.AudioType arg1 = (UnityEngine.AudioType)ToLua.ToObject(L, 3);
-				UnityEngine.AudioClip o = obj.GetAudioClipCompressed(arg0, arg1);
-				ToLua.Push(L, o);
-				return 1;
-			}
-			else
-			{
-				return LuaDLL.luaL_throw(L, "invalid arguments to method: UnityEngine.WWW.GetAudioClipCompressed");
-			}
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int LoadImageIntoTexture(IntPtr L)
-	{
-		try
-		{
-			ToLua.CheckArgsCount(L, 2);
-			UnityEngine.WWW obj = (UnityEngine.WWW)ToLua.CheckObject(L, 1, typeof(UnityEngine.WWW));
-			UnityEngine.Texture2D arg0 = (UnityEngine.Texture2D)ToLua.CheckUnityObject(L, 2, typeof(UnityEngine.Texture2D));
-			obj.LoadImageIntoTexture(arg0);
-			return 0;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int LoadFromCacheOrDownload(IntPtr L)
 	{
 		try
@@ -303,7 +193,7 @@ public class UnityEngine_WWWWrap
 				string arg0 = ToLua.ToString(L, 1);
 				UnityEngine.Hash128 arg1 = (UnityEngine.Hash128)ToLua.ToObject(L, 2);
 				UnityEngine.WWW o = UnityEngine.WWW.LoadFromCacheOrDownload(arg0, arg1);
-				ToLua.PushObject(L, o);
+				ToLua.Push(L, o);
 				return 1;
 			}
 			else if (count == 2 && TypeChecker.CheckTypes(L, 1, typeof(string), typeof(int)))
@@ -311,7 +201,16 @@ public class UnityEngine_WWWWrap
 				string arg0 = ToLua.ToString(L, 1);
 				int arg1 = (int)LuaDLL.lua_tonumber(L, 2);
 				UnityEngine.WWW o = UnityEngine.WWW.LoadFromCacheOrDownload(arg0, arg1);
-				ToLua.PushObject(L, o);
+				ToLua.Push(L, o);
+				return 1;
+			}
+			else if (count == 3 && TypeChecker.CheckTypes(L, 1, typeof(string), typeof(UnityEngine.CachedAssetBundle), typeof(uint)))
+			{
+				string arg0 = ToLua.ToString(L, 1);
+				UnityEngine.CachedAssetBundle arg1 = (UnityEngine.CachedAssetBundle)ToLua.ToObject(L, 2);
+				uint arg2 = (uint)LuaDLL.lua_tonumber(L, 3);
+				UnityEngine.WWW o = UnityEngine.WWW.LoadFromCacheOrDownload(arg0, arg1, arg2);
+				ToLua.Push(L, o);
 				return 1;
 			}
 			else if (count == 3 && TypeChecker.CheckTypes(L, 1, typeof(string), typeof(UnityEngine.Hash128), typeof(uint)))
@@ -320,7 +219,7 @@ public class UnityEngine_WWWWrap
 				UnityEngine.Hash128 arg1 = (UnityEngine.Hash128)ToLua.ToObject(L, 2);
 				uint arg2 = (uint)LuaDLL.lua_tonumber(L, 3);
 				UnityEngine.WWW o = UnityEngine.WWW.LoadFromCacheOrDownload(arg0, arg1, arg2);
-				ToLua.PushObject(L, o);
+				ToLua.Push(L, o);
 				return 1;
 			}
 			else if (count == 3 && TypeChecker.CheckTypes(L, 1, typeof(string), typeof(int), typeof(uint)))
@@ -329,7 +228,7 @@ public class UnityEngine_WWWWrap
 				int arg1 = (int)LuaDLL.lua_tonumber(L, 2);
 				uint arg2 = (uint)LuaDLL.lua_tonumber(L, 3);
 				UnityEngine.WWW o = UnityEngine.WWW.LoadFromCacheOrDownload(arg0, arg1, arg2);
-				ToLua.PushObject(L, o);
+				ToLua.Push(L, o);
 				return 1;
 			}
 			else
@@ -353,7 +252,7 @@ public class UnityEngine_WWWWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_responseHeaders(IntPtr L)
+	static int get_assetBundle(IntPtr L)
 	{
 		object o = null;
 
@@ -361,32 +260,13 @@ public class UnityEngine_WWWWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.WWW obj = (UnityEngine.WWW)o;
-			System.Collections.Generic.Dictionary<string,string> ret = obj.responseHeaders;
-			ToLua.PushObject(L, ret);
+			UnityEngine.AssetBundle ret = obj.assetBundle;
+			ToLua.Push(L, ret);
 			return 1;
 		}
 		catch(Exception e)
 		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index responseHeaders on a nil value" : e.Message);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_text(IntPtr L)
-	{
-		object o = null;
-
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			UnityEngine.WWW obj = (UnityEngine.WWW)o;
-			string ret = obj.text;
-			LuaDLL.lua_pushstring(L, ret);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index text on a nil value" : e.Message);
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index assetBundle on a nil value" : e.Message);
 		}
 	}
 
@@ -410,7 +290,7 @@ public class UnityEngine_WWWWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_size(IntPtr L)
+	static int get_bytesDownloaded(IntPtr L)
 	{
 		object o = null;
 
@@ -418,13 +298,13 @@ public class UnityEngine_WWWWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.WWW obj = (UnityEngine.WWW)o;
-			int ret = obj.size;
+			int ret = obj.bytesDownloaded;
 			LuaDLL.lua_pushinteger(L, ret);
 			return 1;
 		}
 		catch(Exception e)
 		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index size on a nil value" : e.Message);
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index bytesDownloaded on a nil value" : e.Message);
 		}
 	}
 
@@ -444,63 +324,6 @@ public class UnityEngine_WWWWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index error on a nil value" : e.Message);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_texture(IntPtr L)
-	{
-		object o = null;
-
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			UnityEngine.WWW obj = (UnityEngine.WWW)o;
-			UnityEngine.Texture2D ret = obj.texture;
-			ToLua.Push(L, ret);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index texture on a nil value" : e.Message);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_textureNonReadable(IntPtr L)
-	{
-		object o = null;
-
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			UnityEngine.WWW obj = (UnityEngine.WWW)o;
-			UnityEngine.Texture2D ret = obj.textureNonReadable;
-			ToLua.Push(L, ret);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index textureNonReadable on a nil value" : e.Message);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_audioClip(IntPtr L)
-	{
-		object o = null;
-
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			UnityEngine.WWW obj = (UnityEngine.WWW)o;
-			UnityEngine.AudioClip ret = obj.audioClip;
-			ToLua.Push(L, ret);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index audioClip on a nil value" : e.Message);
 		}
 	}
 
@@ -543,6 +366,101 @@ public class UnityEngine_WWWWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_responseHeaders(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.WWW obj = (UnityEngine.WWW)o;
+			System.Collections.Generic.Dictionary<string,string> ret = obj.responseHeaders;
+			ToLua.PushObject(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index responseHeaders on a nil value" : e.Message);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_text(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.WWW obj = (UnityEngine.WWW)o;
+			string ret = obj.text;
+			LuaDLL.lua_pushstring(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index text on a nil value" : e.Message);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_texture(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.WWW obj = (UnityEngine.WWW)o;
+			UnityEngine.Texture2D ret = obj.texture;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index texture on a nil value" : e.Message);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_textureNonReadable(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.WWW obj = (UnityEngine.WWW)o;
+			UnityEngine.Texture2D ret = obj.textureNonReadable;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index textureNonReadable on a nil value" : e.Message);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
+	static int get_threadPriority(IntPtr L)
+	{
+		object o = null;
+
+		try
+		{
+			o = ToLua.ToObject(L, 1);
+			UnityEngine.WWW obj = (UnityEngine.WWW)o;
+			UnityEngine.ThreadPriority ret = obj.threadPriority;
+			ToLua.Push(L, ret);
+			return 1;
+		}
+		catch(Exception e)
+		{
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index threadPriority on a nil value" : e.Message);
+		}
+	}
+
+	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
 	static int get_uploadProgress(IntPtr L)
 	{
 		object o = null;
@@ -558,25 +476,6 @@ public class UnityEngine_WWWWrap
 		catch(Exception e)
 		{
 			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index uploadProgress on a nil value" : e.Message);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_bytesDownloaded(IntPtr L)
-	{
-		object o = null;
-
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			UnityEngine.WWW obj = (UnityEngine.WWW)o;
-			int ret = obj.bytesDownloaded;
-			LuaDLL.lua_pushinteger(L, ret);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index bytesDownloaded on a nil value" : e.Message);
 		}
 	}
 
@@ -600,7 +499,7 @@ public class UnityEngine_WWWWrap
 	}
 
 	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_assetBundle(IntPtr L)
+	static int get_keepWaiting(IntPtr L)
 	{
 		object o = null;
 
@@ -608,32 +507,13 @@ public class UnityEngine_WWWWrap
 		{
 			o = ToLua.ToObject(L, 1);
 			UnityEngine.WWW obj = (UnityEngine.WWW)o;
-			UnityEngine.AssetBundle ret = obj.assetBundle;
-			ToLua.Push(L, ret);
+			bool ret = obj.keepWaiting;
+			LuaDLL.lua_pushboolean(L, ret);
 			return 1;
 		}
 		catch(Exception e)
 		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index assetBundle on a nil value" : e.Message);
-		}
-	}
-
-	[MonoPInvokeCallbackAttribute(typeof(LuaCSFunction))]
-	static int get_threadPriority(IntPtr L)
-	{
-		object o = null;
-
-		try
-		{
-			o = ToLua.ToObject(L, 1);
-			UnityEngine.WWW obj = (UnityEngine.WWW)o;
-			UnityEngine.ThreadPriority ret = obj.threadPriority;
-			ToLua.Push(L, ret);
-			return 1;
-		}
-		catch(Exception e)
-		{
-			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index threadPriority on a nil value" : e.Message);
+			return LuaDLL.toluaL_exception(L, e, o == null ? "attempt to index keepWaiting on a nil value" : e.Message);
 		}
 	}
 

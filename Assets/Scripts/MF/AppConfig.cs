@@ -39,6 +39,14 @@ public static class AppConfig
         }
     }
 
+    public static string LocalMD5FilePath
+    {
+        get
+        {
+            return HotAssetsPath + "/" + LIST_FILENAME;
+        }
+    }
+
     /// <summary>
     /// 应用程序内容路径，即streamingAssetsPath目录
     /// </summary>
@@ -64,7 +72,7 @@ public static class AppConfig
     {
         get
         {
-            return HotAssetsPath + "/Lua/InnerLua/";
+            return HotAssetsPath + "/InnerLua/";
         }
     }
 
@@ -72,7 +80,7 @@ public static class AppConfig
     {
         get
         {
-            return HotAssetsPath + "/Lua/GameLua/";
+            return HotAssetsPath + "/GameLua/";
         }
     }
 
@@ -93,11 +101,19 @@ public static class AppConfig
         }
     }
 
+    public static string SearchInnerLuaPath
+    {
+        get
+        {
+            return Application.isEditor ? Application.dataPath + "/Lua/InnerLua" : InnerLuaHotAssetsPath;
+        }
+    }
+
     public static string SearchUIABPath
     {
         get
         {
-            return Application.isEditor ? @"F:\MyFrameworkAssets\tempUIABPath\" : UIHotAssetsPath;
+            return Application.isEditor ? @"F:\MyFrameworkAssets\UI\" : UIHotAssetsPath;
         }
     }
 }

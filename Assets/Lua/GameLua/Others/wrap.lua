@@ -26,6 +26,12 @@ import "UnityEngine.UI.Outline"
 import "UnityEngine.UI.HorizontalOrVerticalLayoutGroup"
 import "UnityEngine.UI.BaseMeshEffect"
 
+
+import "UnityEngine.MonoBehaviour"
+import "UnityEngine.Behaviour"
+import "UnityEngine.Component"
+import "UnityEngine.Object"
+
 import "ObjectsHelper"
 CSharpUtilsForLua = import "CSharpUtilsForLua"
 ChildrenHelperWrap = import "ChildrenHelper"
