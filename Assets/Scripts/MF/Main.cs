@@ -53,11 +53,9 @@ public class Main : MonoBehaviour
     {
         abManager = new ABManager();
         abManager.LoadAB(AppConfig.SearchUIABPath + "comm.tex");
-
         luaState = new LuaState();
         luaState.AddSearchPath(AppConfig.SearchInnerLuaPath);
         luaState.AddSearchPath(AppConfig.SearchGameLuaPath);
-
         LuaBinder.Bind(luaState);
         luaState.Start();
         luaState.DoFile("Others/main.lua");
@@ -89,8 +87,6 @@ public class Main : MonoBehaviour
         }
     }
 
-    //游戏的完整版本号
-    string appVersion = string.Empty;
     void onRequestSuccess(string message)
     {
         currentCheckStatus = CheckStatus.CheckVersionOver;
@@ -118,7 +114,7 @@ public class Main : MonoBehaviour
                 }
                 else
                 {
-                    appVersion = "";//(string)note["Version"];
+                    //AppConfig.APP_FoceVERSION = (string)note["Version"]; 
                     hotUpdateUrl = ((string)note["hotUpdateUrl"]).Replace("com", "xyz");
                     CallHotUpdateHelper();
                 }
@@ -240,7 +236,7 @@ public class Main : MonoBehaviour
         {
             if (hotUpdateHelper.NeedUpdateSize > 0)
             {
-                downloadTipText.text = string.Format(StaticText.DownloadShowText, GetShortSize(hotUpdateHelper.NeedUpdateSize), GetShortSize((int)hotUpdateHelper.DownloadSizePerSecond), appVersion);
+                downloadTipText.text = string.Format(StaticText.DownloadShowText, GetShortSize(hotUpdateHelper.NeedUpdateSize), GetShortSize((int)hotUpdateHelper.DownloadSizePerSecond), AppConfig.APP_FoceVERSION);
                 float value = ((float)hotUpdateHelper.HasDownloadSize / hotUpdateHelper.NeedUpdateSize);
                 progress.text = string.Format("{0:#.##}%", value * 100);
                 slider.value = value;

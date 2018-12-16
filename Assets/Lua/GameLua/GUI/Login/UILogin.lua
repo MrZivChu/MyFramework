@@ -16,6 +16,11 @@ end
 function UILogin:Start( )
 	local loginBtn = self:getHieChild('UILogin/Background/btnOK')
 	self:registerBtnClick(loginBtn,self.StartLogin ,"hello")
+
+	local selectServerBtn = self:getHieChild('UILogin/Background/selectServerBtn')
+	self:registerBtnClick(selectServerBtn,function (  )
+		MF.route.push('ServerList')
+	end)
 end
 
 function UILogin:onNotify( sender , e , data )

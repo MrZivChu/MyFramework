@@ -1,27 +1,28 @@
 local Page = {}
 
 function Page:ctor()
-	print_t('Page:ctor')
+	-- print_t('Page:ctor')
+	self.children = {}
 end
 
 function Page:Awake()
-	print_t('Page:Awake')
+	-- print_t('Page:Awake')
 end
 
 function Page:OnEnable()
-	print_t('Page:OnEnable')
+	-- print_t('Page:OnEnable')
 end
 
 function Page:Start()
-	print_t('Page:Start')
+	-- print_t('Page:Start')
 end
 
 function Page:OnDisable()
-	print_t('Page:OnDisable')
+	-- print_t('Page:OnDisable')
 end
 
 function Page:OnDestroy()
-	print_t('Page:OnDestroy')
+	-- print_t('Page:OnDestroy')
 end
 
 function Page:SetActive(isActive)
@@ -86,12 +87,62 @@ function Page:onNotify( sender , e , data )
 	
 end
 
-function Page:addChild( name , parentID , ... )
-	local layer = requireLuaFile(name)
-	if layer then
-		MF.route.callLifeCycle(layer,self.id,parentID,...)
-		table.insert(self.childs,layer)
-		return layer
+function Page:spawnCellForTable( childName , parent , data , spawnOrUpdate )
+	if data and #data > 0 and parent then
+		local showCount = #data --实际要显示几个孩子
+		local hasCount =  parent.transform.childCount --已经有几个孩子
+
+		local fuyongCount = 0 --可以复用的数量
+		local hideCount = 0 --隐藏的数量
+		local spawnCount = 0 --要生成的数量
+
+		if showCount >= hasCount then
+			fuyongCount = hasCount
+			hideCount = 0
+			spawnCount = showCount - fuyongCount
+		else
+			fuyongCount = showCount
+			hideCount = hasCount - showCount
+			spawnCount = 0
+		end
+		
+		if fuyongCount > 0 then
+			for i=1,fuyongCount do
+				local obj = parent.transform:GetChild(i-1).gameObject
+				local thePage = self:findChild(obj)
+				spawnOrUpdate(self,thePage,obj,data[i],i-1)
+				obj:SetActive(true)
+			end
+		end
+
+		if spawnCount > 0 then
+			for i=1,spawnCount do
+				local thePage = self:addChild(childName,parent)
+				spawnOrUpdate(self, thePage , thePage.gameObject , data[fuyongCount + i] , fuyongCount + i - 1 )
+			end
+		end
+
+		if hideCount > 0 then
+			for i=fuyongCount,hasCount-1 do
+				parent.transform:GetChild(i).gameObject:SetActive(false)
+			end
+		end 
+	end
+end
+
+function Page:findChild( child )
+	for i,v in ipairs(self.children) do
+		if v.gameObject:Equals(child) then
+			return v 
+		end
+	end
+end
+
+function Page:addChild( name , parent )
+	local p = MF.route.Instance(name,parent)
+	if p then
+		table.insert(self.children,p)
+		return p
 	end
 end
 

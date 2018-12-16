@@ -15,5 +15,7 @@ MF.luaFileList = require 'Others/pagePath'
 MF.route = require 'Others/route'
 MF.page = require 'Others/page'
 
+MF.uiRoot = GameObjectWrap.Find("Root")
+
 --弹出登录界面
 MF.route.push('UILogin')

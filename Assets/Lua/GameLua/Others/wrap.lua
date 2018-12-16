@@ -31,6 +31,7 @@ import "UnityEngine.MonoBehaviour"
 import "UnityEngine.Behaviour"
 import "UnityEngine.Component"
 import "UnityEngine.Object"
+GameObjectWrap = import "UnityEngine.GameObject"
 
 import "ObjectsHelper"
 CSharpUtilsForLua = import "CSharpUtilsForLua"

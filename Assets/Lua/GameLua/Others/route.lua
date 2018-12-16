@@ -1,11 +1,11 @@
 local Route = {}
 
-local nodes = {}
+local pages = {}
 
 --生成UI界面
-function Route.SpawnUI( abName , prefabName)
+local function SpawnUI( abName , prefabName , parent)
 	if abName and prefabName then		
-		return ObjectsHelper.SpawnPage(abName,prefabName)
+		return ObjectsHelper.SpawnPage(abName,prefabName,parent)
 	end
 	return nil
 end
@@ -19,26 +19,35 @@ local function ExecLifeCycle( page )
 	end
 end
 
-function Route.push( name )
+function Route.Instance( name , parent )
 	local page = requireLuaFile(name)
 	if page then
-		local uiPanel = Route.SpawnUI(page.config.ab,page.config.prefab)
+		local theParent = parent and parent or MF.uiRoot
+		local uiPanel = SpawnUI(page.config.ab,page.config.prefab, theParent)
 		if uiPanel ~= nil then
 			page.gameObject = uiPanel
 			page.transform = uiPanel.transform
+			page.parent = theParent
 			ExecLifeCycle(page)
-			--设置上一个界面不好点击
-			-- local prePage = nodes[#nodes]
-			-- if prePage then
-			-- 	ObjectsHelper.SetIsReceiveClick(prePage.id,0,0)
-			-- end
-			--设置界面的Canvas
-			--ObjectsHelper.SetSortOrder(page.id,0,0)
-			--执行自定义方法
-			--page:checkCustomOpenPage()
-			table.insert(nodes,page)
 			return page
 		end
+	end
+end
+
+function Route.push( name  )
+	local page = Route.Instance(name)
+	if page then
+		--设置上一个界面不好点击
+		-- local prePage = pages[#pages]
+		-- if prePage then
+		-- 	ObjectsHelper.SetIsReceiveClick(prePage.id,0,0)
+		-- end
+		--设置界面的Canvas
+		--ObjectsHelper.SetSortOrder(page.id,0,0)
+		--执行自定义方法
+		--page:checkCustomOpenPage()
+		table.insert(pages,page)
+		return page
 	end
 end
 
@@ -57,15 +66,15 @@ function Route.batch( paths )
 		local flag = 0
 		for i,v in ipairs(tempPath) do
 			local tpath = string.split(v, ',')
-			if nodes[i] then
-				if nodes[i].config.name ~= tpath[1] then
+			if pages[i] then
+				if pages[i].config.name ~= tpath[1] then
 					flag = i
 				else
 					local isActive = tpath[2] == 'true' and 1 or 0
-					ObjectsHelper.SetObjIsActive(nodes[i].id,0,isActive)
+					ObjectsHelper.SetObjIsActive(pages[i].id,0,isActive)
 				end
 				if flag ~= 0 then
-					Route.pop(#nodes - flag + 1)
+					Route.pop(#pages - flag + 1)
 					index = flag
 					break
 				end
@@ -86,24 +95,24 @@ end
 function Route.pop( target )
 	local index = nil
 	if type(target) == 'string' then
-		for i=#nodes,1,-1 do
-			if nodes[i].config.name == target then
+		for i=#pages,1,-1 do
+			if pages[i].config.name == target then
 				index = i
 				break
 			end
 		end
 	elseif type(target) == 'number' then
 		for i=1,num do
-			local node = nodes[#nodes]
+			local node = pages[#pages]
 			if node then
-				table.remove(nodes)
+				table.remove(pages)
 				node:onExit()
 			end
 		end
 		return
 	elseif type(target) == 'table' then
-		for i=#nodes,1,-1 do
-			if nodes[i].id == target.id then
+		for i=#pages,1,-1 do
+			if pages[i].id == target.id then
 				index = i
 				break
 			end
@@ -112,20 +121,20 @@ function Route.pop( target )
 
 	if index == nil then return end
 
-	local page = nodes[index]
-	table.remove(nodes, index)
+	local page = pages[index]
+	table.remove(pages, index)
 	page:onExit()
 
 end
 
 function  Route.notify( sender , e , data)
-	for i,v in ipairs(nodes) do
-		nodes[i]:onNotify(sender , e , data)
+	for i,v in ipairs(pages) do
+		pages[i]:onNotify(sender , e , data)
 	end
 end
 
 function Route.listenPage( name, e, f )
-	for _,v in ipairs(nodes) do
+	for _,v in ipairs(pages) do
 		if v.config.name == name then 
 			v:listen(e, f) 
 			return 
@@ -134,7 +143,7 @@ function Route.listenPage( name, e, f )
 end
 
 function Route.deafPage( name, e, f )
-	for _,v in ipairs(nodes) do
+	for _,v in ipairs(pages) do
 		if v.config.name == name then 
 			v:deaf(e) 
 			return 
@@ -143,7 +152,7 @@ function Route.deafPage( name, e, f )
 end
 
 function Route.emitPage( name, e, data )
-	for _,v in ipairs(nodes) do
+	for _,v in ipairs(pages) do
 		if v.config.name == name then 
 			v:emit(e, data) 
 			return 

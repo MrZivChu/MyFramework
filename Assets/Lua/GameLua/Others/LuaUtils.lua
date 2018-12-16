@@ -1,10 +1,34 @@
-function class(parent)
-	local metatable = {}
-	metatable.__index = parent
-	local child = setmetatable({},metatable)
-	child.parent = parent
-    child:ctor()
-	return child
+function clone(object)
+    local lookup_table = {}
+    local function _copy(object)
+        if type(object) ~= "table" then
+            return object
+        elseif lookup_table[object] then
+            return lookup_table[object]
+        end
+        local new_table = {}
+        lookup_table[object] = new_table
+        for key, value in pairs(object) do
+            new_table[_copy(key)] = _copy(value)
+        end
+        return setmetatable(new_table, getmetatable(object))
+    end
+    return _copy(object)
+end
+
+function class(super)    
+    local  cls = {}
+    cls = super--clone(super)
+    cls.super = super
+    cls.__index = cls
+
+    function cls.New(...)
+        --元表cls为子类和父类的成员集合
+        local instance = setmetatable({}, cls)
+        instance:ctor(...)
+        return instance
+    end
+    return cls
 end
 
 function requireLuaFile( name )
@@ -12,6 +36,7 @@ function requireLuaFile( name )
     if file then
         package.loaded[file] = nil 
         local layer = require(file)
+        layer = layer.New()
         return layer
     end
 end
@@ -75,4 +100,39 @@ function RemoveTableItem( tableList , func , removeAll )
             i = i + 1
         end
     end
+end
+
+-- 判断c#对象是否为空
+function IsNil( uobj )
+    return uobj == nil or uobj:Equals(nil)
+end
+
+
+--判断字符串中 汉字、字母、数字、其他字符 的个数
+function getCharCount (content)
+    local chineseCount = 0
+    local englishCount = 0
+    local numberCount = 0
+    local otherCount = 0
+    local contentArray = string.gmatch(content, ".[\128-\191]*")
+    for w in contentArray do   
+        local ascii = string.byte(w)
+        if (ascii >= 65 and ascii <= 90) or (ascii>=97 and ascii <=122) then
+            englishCount = englishCount + 1
+        elseif ascii >= 48 and ascii <= 57 then
+            numberCount = numberCount + 1
+        elseif (ascii >= 0 and ascii <= 47) or (ascii >= 58 and ascii <= 64) or 
+            (ascii >= 91 and ascii <= 96) or (ascii >= 123 and ascii <= 127) then
+            otherCount = otherCount + 1
+        else
+            --ios输入法上可以输入系统表情，而此表情的ascii码值正好在这个区间，所以要用字节数来判断是否是中文
+            --226 227 239 240 为ios系统表情的ascii码值
+            if string.len(w) == 3 and ascii ~= 226 and ascii ~= 227 and ascii ~= 239 and ascii ~= 240  then
+                chineseCount = chineseCount + 1
+            else
+                otherCount = otherCount + 1
+            end
+        end
+    end
+    return chineseCount, englishCount, numberCount, otherCount
 end

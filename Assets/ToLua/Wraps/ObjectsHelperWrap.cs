@@ -64,11 +64,12 @@ public class ObjectsHelperWrap
 		{
 			int count = LuaDLL.lua_gettop(L);
 
-			if (count == 2 && TypeChecker.CheckTypes(L, 1, typeof(string), typeof(string)))
+			if (count == 3 && TypeChecker.CheckTypes(L, 1, typeof(string), typeof(string), typeof(UnityEngine.GameObject)))
 			{
 				string arg0 = ToLua.ToString(L, 1);
 				string arg1 = ToLua.ToString(L, 2);
-				UnityEngine.GameObject o = ObjectsHelper.SpawnPage(arg0, arg1);
+				UnityEngine.GameObject arg2 = (UnityEngine.GameObject)ToLua.ToObject(L, 3);
+				UnityEngine.GameObject o = ObjectsHelper.SpawnPage(arg0, arg1, arg2);
 				ToLua.Push(L, o);
 				return 1;
 			}

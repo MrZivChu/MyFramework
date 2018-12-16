@@ -73,7 +73,7 @@ public class HotUpdateHelper : MonoBehaviour
 
     /// <summary>
     /// 根据不同的平台来确定不同的热更地址
-    /// </summary>
+    /// </summary>`
     /// <param name="hotUpdateUrl"></param>
     void HandleHotUpdateUrl()
     {
