@@ -295,7 +295,7 @@ public class HotUpdateHelper : MonoBehaviour
                     reslut += fileData.name + "|" + fileData.md5 + "|" + fileData.size + "\n";
                 }
             }
-            reslut.TrimEnd('\n');
+            reslut = reslut.TrimEnd('\n');
             File.WriteAllText(AppConfig.LocalMD5FilePath, reslut);
             print("保存已经下载的文件的MD5值");
         }
