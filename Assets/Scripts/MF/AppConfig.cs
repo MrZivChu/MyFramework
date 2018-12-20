@@ -20,7 +20,8 @@ public static class AppConfig
     //我们的热更新规则是根据下载的文件列表来确定更新内容的，而不是根据版本号
     //因为本地文件有可能会被清除，所以用下载的文件列表对本地文件进行检测是最保险的方式
     //所以检查更新，只要检查是否有强更就行了，没有强更就下载文件列表进行资源更新检测
-    public static string APP_FoceVERSION = "1.3";
+    public static int APP_ForceVERSION = 0;
+    public static string APP_WeakVERSION = "1.1.1.0";
 
     //网络数据加密盐
     public const string APP_SALT = "AQMSQEchcrYkbN5A";
@@ -68,44 +69,11 @@ public static class AppConfig
         return path;
     }
 
-    public static string InnerLuaHotAssetsPath
-    {
-        get
-        {
-            return HotAssetsPath + "/InnerLua/";
-        }
-    }
-
-    public static string GameLuaHotAssetsPath
-    {
-        get
-        {
-            return HotAssetsPath + "/GameLua/";
-        }
-    }
-
-    public static string UIHotAssetsPath
-    {
-        get
-        {
-            return HotAssetsPath + "/UI/";
-        }
-    }
-
-
     public static string SearchGameLuaPath
     {
         get
         {
-            return Application.isEditor ? Application.dataPath + "/Lua/GameLua" : GameLuaHotAssetsPath;
-        }
-    }
-
-    public static string SearchInnerLuaPath
-    {
-        get
-        {
-            return Application.isEditor ? Application.dataPath + "/Lua/InnerLua" : InnerLuaHotAssetsPath;
+            return Application.isEditor ? Application.dataPath : Application.persistentDataPath;
         }
     }
 
@@ -113,7 +81,7 @@ public static class AppConfig
     {
         get
         {
-            return Application.isEditor ? @"F:\MyFrameworkAssets\UI\" : UIHotAssetsPath;
+            return Application.isEditor ? @"F:\MyFrameworkAssets\UI\" : Application.persistentDataPath;
         }
     }
 }

@@ -83,7 +83,7 @@ public class HotUpdateHelper : MonoBehaviour
             {
                 HotUpdateUrl += "/";
             }
-            HotUpdateUrl += AppConfig.APP_FoceVERSION + "/" + Application.platform.ToString() + "/";
+            HotUpdateUrl += AppConfig.APP_WeakVERSION + "/" + Application.platform.ToString() + "/";
         }
         print("服务器热更地址 = " + HotUpdateUrl);
     }

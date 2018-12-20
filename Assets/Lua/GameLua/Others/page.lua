@@ -132,7 +132,7 @@ end
 
 function Page:findChild( child )
 	for i,v in ipairs(self.children) do
-		if v.gameObject:Equals(child) then
+		if v.gameObject == child then
 			return v 
 		end
 	end

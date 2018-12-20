@@ -54,7 +54,6 @@ public class Main : MonoBehaviour
         abManager = new ABManager();
         abManager.LoadAB(AppConfig.SearchUIABPath + "comm.tex");
         luaState = new LuaState();
-        luaState.AddSearchPath(AppConfig.SearchInnerLuaPath);
         luaState.AddSearchPath(AppConfig.SearchGameLuaPath);
         LuaBinder.Bind(luaState);
         luaState.Start();
@@ -82,8 +81,7 @@ public class Main : MonoBehaviour
         else
         {
             currentCheckStatus = CheckStatus.CheckVersioning;
-            string fields = "name&Tom&age&18";
-            GameUtils.PostHttp(AppConfig.ServerURL + "Login.ashx", fields, onRequestSuccess, onRequestFailed);
+            GameUtils.PostHttp(AppConfig.ServerURL + "Login.ashx", null, onRequestSuccess, onRequestFailed);
         }
     }
 
@@ -93,18 +91,21 @@ public class Main : MonoBehaviour
         try
         {
             JsonData res = JsonMapper.ToObject(message);
-            string result = (string)res["result"];
-            if (result == "success")
+            bool success = (bool)res["success"];
+            if (success)
             {
                 JsonData note = res["data"];
-                int encrypted = Convert.ToInt16(res["encrypted"].ToString());
-                if (encrypted > 0)
-                {//是加密数据 
+                bool encrypted = (bool)res["encrypted"];
+                if (encrypted)
+                {
+                    //是加密数据 
                     note = JsonMapper.ToObject(CSharpUtils.Decrypt((string)note, AppConfig.APP_SALT));
                 }
-                string version = (string)note["version"];
-                if (version == "needReplace")
-                { //需要强更换包
+                int serverForceVersion = (int)note["forceVersion"];
+                int localForceVersion = AppConfig.APP_ForceVERSION;
+                if (localForceVersion < serverForceVersion)
+                {
+                    //需要强更换包
                     string replaceAppUrl = (string)note["replaceAppUrl"];
                     MessageBox.Instance.PopOK(StaticText.ChangeApp, () =>
                     {
@@ -114,8 +115,9 @@ public class Main : MonoBehaviour
                 }
                 else
                 {
-                    //AppConfig.APP_FoceVERSION = (string)note["Version"]; 
-                    hotUpdateUrl = ((string)note["hotUpdateUrl"]).Replace("com", "xyz");
+                    string serverWeakVersion = (string)note["weakVersion"];
+                    AppConfig.APP_WeakVERSION = serverWeakVersion; 
+                    hotUpdateUrl = ((string)note["hotUpdateUrl"]);
                     CallHotUpdateHelper();
                 }
             }
@@ -236,7 +238,7 @@ public class Main : MonoBehaviour
         {
             if (hotUpdateHelper.NeedUpdateSize > 0)
             {
-                downloadTipText.text = string.Format(StaticText.DownloadShowText, GetShortSize(hotUpdateHelper.NeedUpdateSize), GetShortSize((int)hotUpdateHelper.DownloadSizePerSecond), AppConfig.APP_FoceVERSION);
+                downloadTipText.text = string.Format(StaticText.DownloadShowText, GetShortSize(hotUpdateHelper.NeedUpdateSize), GetShortSize((int)hotUpdateHelper.DownloadSizePerSecond), AppConfig.APP_ForceVERSION);
                 float value = ((float)hotUpdateHelper.HasDownloadSize / hotUpdateHelper.NeedUpdateSize);
                 progress.text = string.Format("{0:#.##}%", value * 100);
                 slider.value = value;

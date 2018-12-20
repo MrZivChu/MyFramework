@@ -43,7 +43,7 @@ public static class GameUtils
         }
         url += "&appId=" + AppConfig.APP_ID;
         url += "&channelId=" + AppConfig.CHANNEL_ID;
-        url += "&clientFoceVersion=" + AppConfig.APP_FoceVERSION;
+        url += "&clientFoceVersion=" + AppConfig.APP_ForceVERSION;
 
         WWW www = new WWW(url);
         yield return www;
@@ -86,7 +86,7 @@ public static class GameUtils
         WWWForm form = new WWWForm();
         form.AddField("appId", AppConfig.APP_ID.ToString());
         form.AddField("channelId", AppConfig.CHANNEL_ID.ToString());
-        form.AddField("clientFoceVersion", AppConfig.APP_FoceVERSION);
+        form.AddField("clientFoceVersion", AppConfig.APP_ForceVERSION);
         if (fields != null)
         {
             foreach (var item in fields)
