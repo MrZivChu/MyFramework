@@ -63,23 +63,36 @@ public class UrlData {
     public void Update() {
         if (www != null) {
             if (!string.IsNullOrEmpty(www.error)) {
-                if (TryTimes == AppConfig.MAX_TRY_TIMES) {
-                    if (onFailed != null) {
-                        onFailed(Url + ":" + www.error, Data);
-                    }
-                }
-                www.Dispose();
-                www = null;
-                IsFailed = true;
+                DownloadError();
             } else if (www.isDone) {
-                if (onSuccess != null) {
-                    onSuccess(www, Data);
-                }
-                www.Dispose();
-                www = null;
-                IsSuccess = true;
+                if(www.bytes.Length == 0)
+                    DownloadError();
+                else
+                    DownloadSuccess();
             }
         }
+    }
+    
+    void DownloadError()
+    {
+        if (TryTimes == AppConfig.MAX_TRY_TIMES) {
+            if (onFailed != null) {
+                onFailed(Url + ":" + www.error, Data);
+            }
+        }
+        www.Dispose();
+        www = null;
+        IsFailed = true;
+    }
+    
+    void DownloadSuccess()
+    {
+        if (onSuccess != null) {
+            onSuccess(www, Data);
+        }
+        www.Dispose();
+        www = null;
+        IsSuccess = true;
     }
 };
 
