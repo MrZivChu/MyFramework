@@ -114,11 +114,10 @@ public class HotUpdateHelper : MonoBehaviour
         }
     }
 
-    string[] downloadFileStringList = null;
     List<FileData> mServerFileList = null;
     void onDownLoadFileListSuccess(WWW www, object o)
     {
-        downloadFileStringList = www.text.Split('\n');
+        string[] downloadFileStringList = www.text.Split('\n');
         mServerFileList = new List<FileData>();
         foreach (var item in downloadFileStringList)
         {
@@ -237,10 +236,10 @@ public class HotUpdateHelper : MonoBehaviour
 
     void onDownloadAssetsWorkDone(object sender, System.EventArgs e)
     {
+        UpdateFileList();
         if (fileDownloadHelper.IsCompleted)
         {
             print("所有ab资源下载成功");
-            File.WriteAllLines(AppConfig.LocalMD5FilePath, downloadFileStringList);
             if (StartGame != null)
             {
                 StartGame();
@@ -249,12 +248,11 @@ public class HotUpdateHelper : MonoBehaviour
         else
         {
             print("ab资源下载失败");
-            UpdateFileList();
             if (DownloadAssetsError != null)
             {
                 DownloadAssetsError();
             }
-        }
+        }        
     }
 
 
