@@ -26,7 +26,6 @@ public class Main : MonoBehaviour
     string hotUpdateUrl = string.Empty; //热更地址
     HotUpdateHelper hotUpdateHelper = null;
     CheckStatus currentCheckStatus = CheckStatus.Default;
-    CheckStatus preCheckStatus = CheckStatus.Default;
 
     public Text tipText;
     public Text downloadTipText;
@@ -81,6 +80,7 @@ public class Main : MonoBehaviour
         else
         {
             currentCheckStatus = CheckStatus.CheckVersioning;
+            UpdateUIStatus();
             GameUtils.PostHttp(AppConfig.ServerURL + "Login.ashx", null, onRequestSuccess, onRequestFailed);
         }
     }
@@ -88,6 +88,7 @@ public class Main : MonoBehaviour
     void onRequestSuccess(string message)
     {
         currentCheckStatus = CheckStatus.CheckVersionOver;
+        UpdateUIStatus();
         try
         {
             JsonData res = JsonMapper.ToObject(message);
@@ -164,6 +165,7 @@ public class Main : MonoBehaviour
         hotUpdateHelper.ConfirmDownloadAssets += () =>
         {
             currentCheckStatus = CheckStatus.CheckAssetsOver;
+            UpdateUIStatus();
             string tip = GameUtils.WifiIsAvailable ? StaticText.ConfirmDownloadAssetsHasWifi : StaticText.ConfirmDownloadAssetsNoWifi;
             MessageBox.Instance.PopYesNo(string.Format(tip, GetShortSize(hotUpdateHelper.NeedUpdateSize)), () =>
             {
@@ -171,6 +173,7 @@ public class Main : MonoBehaviour
             }, () =>
             {
                 currentCheckStatus = CheckStatus.DownloadAssetsing;
+                UpdateUIStatus();
                 hotUpdateHelper.StartDownloadAssets();
                 downloadTipText.gameObject.SetActive(true);
                 progress.gameObject.SetActive(true);
@@ -179,8 +182,11 @@ public class Main : MonoBehaviour
         hotUpdateHelper.StartGame += () =>
         {
             currentCheckStatus = CheckStatus.StartGame;
+            UpdateUIStatus();
+            StartGame();
         };
         currentCheckStatus = CheckStatus.CheckAssetsing;
+        UpdateUIStatus();
         hotUpdateHelper.StartUpdate(hotUpdateUrl);
     }
 
@@ -198,42 +204,6 @@ public class Main : MonoBehaviour
 
     void Update()
     {
-        if (preCheckStatus != currentCheckStatus)
-        {
-            if (currentCheckStatus == CheckStatus.CheckVersioning)
-            {
-                tipText.text = StaticText.CheckVersioning;
-            }
-            else if (currentCheckStatus == CheckStatus.CheckVersionOver)
-            {
-                tipText.text = StaticText.CheckVersionOver;
-            }
-            else if (currentCheckStatus == CheckStatus.CheckAssetsing)
-            {
-                tipText.text = StaticText.CheckAssetsing;
-            }
-            else if (currentCheckStatus == CheckStatus.CheckAssetsOver)
-            {
-                tipText.text = StaticText.CheckAssetsOver;
-            }
-            else if (currentCheckStatus == CheckStatus.DownloadAssetsing)
-            {
-                downloadTipText.gameObject.SetActive(true);
-                progress.gameObject.SetActive(true);
-                slider.gameObject.SetActive(true);
-                tipText.text = StaticText.DownloadAssetsing;
-            }
-            else if (currentCheckStatus == CheckStatus.StartGame)
-            {
-                downloadTipText.gameObject.SetActive(false);
-                tipText.gameObject.SetActive(false);
-                progress.gameObject.SetActive(false);
-                slider.gameObject.SetActive(false);
-                startBtn.gameObject.SetActive(true);
-                //StartGame(null, null);
-            }
-            preCheckStatus = currentCheckStatus;
-        }
         if (currentCheckStatus == CheckStatus.DownloadAssetsing)
         {
             if (hotUpdateHelper.NeedUpdateSize > 0)
@@ -242,11 +212,43 @@ public class Main : MonoBehaviour
                 float value = ((float)hotUpdateHelper.HasDownloadSize / hotUpdateHelper.NeedUpdateSize);
                 progress.text = string.Format("{0:#.##}%", value * 100);
                 slider.value = value;
-                if (value == 1)
-                {
-                    currentCheckStatus = CheckStatus.StartGame;
-                }
             }
+        }
+    }
+    
+    void UpdateUIStatus()
+    {
+        if (currentCheckStatus == CheckStatus.CheckVersioning)
+        {
+            tipText.text = StaticText.CheckVersioning;
+        }
+        else if (currentCheckStatus == CheckStatus.CheckVersionOver)
+        {
+            tipText.text = StaticText.CheckVersionOver;
+        }
+        else if (currentCheckStatus == CheckStatus.CheckAssetsing)
+        {
+            tipText.text = StaticText.CheckAssetsing;
+        }
+        else if (currentCheckStatus == CheckStatus.CheckAssetsOver)
+        {
+            tipText.text = StaticText.CheckAssetsOver;
+        }
+        else if (currentCheckStatus == CheckStatus.DownloadAssetsing)
+        {
+            downloadTipText.gameObject.SetActive(true);
+            progress.gameObject.SetActive(true);
+            slider.gameObject.SetActive(true);
+            tipText.text = StaticText.DownloadAssetsing;
+        }
+        else if (currentCheckStatus == CheckStatus.StartGame)
+        {
+            downloadTipText.gameObject.SetActive(false);
+            tipText.gameObject.SetActive(false);
+            progress.gameObject.SetActive(false);
+            slider.gameObject.SetActive(false);
+            startBtn.gameObject.SetActive(true);
+            //StartGame(null, null);
         }
     }
 
