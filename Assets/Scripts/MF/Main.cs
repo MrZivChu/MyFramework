@@ -183,7 +183,7 @@ public class Main : MonoBehaviour
         {
             currentCheckStatus = CheckStatus.StartGame;
             UpdateUIStatus();
-            StartGame();
+            StartGame(null,null);
         };
         currentCheckStatus = CheckStatus.CheckAssetsing;
         UpdateUIStatus();
